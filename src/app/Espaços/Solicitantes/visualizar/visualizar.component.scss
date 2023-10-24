@@ -1,0 +1,19 @@
+.container {
+  #title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  #list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

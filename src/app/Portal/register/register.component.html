@@ -1,0 +1,60 @@
+<div class="flex-box">
+    <div class="left">
+        <div class="tittle">
+            <a (click)=irParaLogin()>
+                <img src="../../../assets/Icons/icon-fundacao.svg" alt="Icone da Fundação FSTN" class="icon-tittle">
+            </a>
+            <h1>Por favor, insira seus dados</h1>
+        </div>
+        <form action="" class="forms" [formGroup]="form">
+            <div class="flex-box-form">
+                <div class="form-left">
+                    <div class="dados">
+                        <label for="" class="tittle-form">Nome Completo</label>
+                        <input type="text" placeholder="Nome Completo" class="input-form" formControlName="nome">
+                    </div>
+                    <div class="dados">
+                        <label for="" class="tittle-form">Telefone</label>
+
+                        <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" class="input-form" formControlName="telefone" appOnlyNumbers>
+
+                    </div>
+                    <div class="dados">
+                        <label for="" class="tittle-form">Senha</label>
+                        <input type="password" placeholder="*************" class="input-form" formControlName="senha">
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="dados">
+                        <label for="" class="tittle-form">Instituição</label>
+                        <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form w704" placeholder="Nome do Evento">
+                          <option value="0"> Selecione uma Instituiçao </option>
+                          <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{ instituicoes.nome }} </option>
+                        </select>
+                    </div>
+                    <div class="dados">
+                        <label for="" class="tittle-form">E-mail Corporativo</label>
+                        <input type="email" placeholder="email@email.com" class="input-form" formControlName="email">
+                    </div>
+                </div>
+            </div>
+            <button (click)=onSubmit() class="button-register">Cadastrar</button>
+        </form>
+
+        <div class="footer">
+            <div class="icon">
+                <img src="../../../assets/Icons/icon-fundacao-text.svg" alt="Icone da Fundação FSTN" class="image-footer">
+            </div>
+            <div class="text">
+                <label class="tittle-footer">Dúvida? entre em contato</label>
+                <div class="contact">
+                    <label for="">comunicacao@fsnt.com.br</label>
+                    <label for="">(14) 3405-2033</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="../../../assets/Portal/image-register.svg" alt="Imagem do Museu Nishimura">
+
+</div>

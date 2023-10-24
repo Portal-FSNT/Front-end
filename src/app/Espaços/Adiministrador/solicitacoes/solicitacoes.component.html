@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div class="container">
+  <!--Ínicio do header-->
+  <section id="title">
+    <h2>Lista de Agendamentos Pendentes</h2>
+    <div class="buttons">
+      <button class="btn1" routerLink="/solicitacoes-confirmadas">
+        Solicitações Confirmadas
+      </button>
+      <button class="btn1 yellow" routerLink="/espacos">
+        Espacos
+      </button>
+    </div>
+  </section>
+
+  <!--Início da tabela-->
+
+  <section id="body">
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>DATA</th>
+          <th>HORÁRIO</th>
+          <th>LOCAL</th>
+          <th>DATA SOLICITAÇÃO</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let rows of exibirsolicitacoes">
+        <tr *ngIf="rows.status_solicitacao === 0" (click)="openModal_aceitar(rows)">
+          <td>{{ rows.data_inicio | date : "dd/MM/yyyy" }}</td>
+          <td>{{ rows.hora_inicio | timeFormat }}</td>
+          <td>{{ rows.espaco_nome }}</td>
+          <td>{{ rows.data_solicitacao | date : "dd/MM/yyyy"}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

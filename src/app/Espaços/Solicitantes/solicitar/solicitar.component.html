@@ -1,0 +1,58 @@
+<app-header-solicitante></app-header-solicitante>
+<div class="container">
+  <section id="title">
+    <h2>Solicitar Espaço</h2>
+    <div class="buttons">
+      <button class="btn1" routerLink="/visualizar">
+        Ver Solicitações
+      </button>
+    </div>
+  </section>
+
+  <section id="body">
+    <!--Início dos inputs-->
+    <div class="inicio">
+
+      <div class="inputs">
+        <div class="dados">
+          <label class="tittle-form">Selecione Um Espaço</label>
+    
+          <select [(ngModel)]="espacoSelecionado" class="input-form w392">
+            <option *ngFor="let espaco of espacos" name="espaco" value={{espaco.id}}> {{ espaco.nome }} </option>
+          </select>
+        </div>
+        <div class="dados">
+          <label for="" class="tittle-form">Data</label>
+          <input type="text" name="data" placeholder="Data" onfocus="(this.type='date')" onblur="(this.type='text')"
+          class="input-form w392" [(ngModel)]="data">
+        </div>
+        
+        <div class="dados">
+          <label for="" class="tittle-form">Hora Entrada</label>
+          
+          
+          <input type="text" name="horario_entrada" placeholder="Horário entrada" onfocus="(this.type='time')"
+          onblur="(this.type='text')" class="input-form w392" [(ngModel)]="horario_entrada">
+        </div>
+        <div class="dados">
+          <label for="" class="tittle-form">Hora Saída</label>
+          
+          <input type="text" name="horario_saida" placeholder="Horário saída " onfocus="(this.type='time')"
+          onblur="(this.type='text')" class="input-form w392" [(ngModel)]="horario_saida">
+        </div>
+  
+      </div>
+      
+      <div class="dados">
+        
+        <label for="" class="tittle-form">Descrição</label>
+        <textarea type="text" name="descricao" placeholder="Descrição: Preciso de notebook e datashow. " class="input-form descric" id="description" [(ngModel)]="descricao"></textarea>
+      </div>
+    </div>
+    
+
+    <div class="botao">
+      <button class="btn2" (click)="solicitar()">Enviar</button>
+
+    </div>
+  </section>

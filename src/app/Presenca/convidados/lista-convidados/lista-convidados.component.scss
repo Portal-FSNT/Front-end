@@ -1,0 +1,152 @@
+h1{
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 50px;
+  
+}
+
+
+p{
+  text-align: center;
+  margin-top: 150px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+//---TABLE--- 
+
+table {
+     width: 1400px;
+     margin-top: 20px;
+     margin-left: auto;
+     margin-right: auto;
+     border-collapse: collapse;
+     margin:      5;
+     font-size: 0.9em;
+     border-radius: 25px 25px 0 0;
+     overflow: scroll;
+     
+ 
+}
+
+th:first-child {
+  border-radius: 25px 0 0 0; /* Adicione o border-radius desejado */
+}
+
+th:last-child {
+  border-radius: 0 25px 0 0; /* Adicione o border-radius desejado */
+}
+
+th, td {
+  border: none;
+  padding: 8px;
+  text-align: center;
+}
+
+
+th {
+  background-color: #00A54E;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+tr:hover {
+  background-color: #e6e6e6;
+}
+
+//   // STATUS 
+
+th{
+  background-color: #00A54E;
+
+}
+  #status{
+    width: 1500px;
+    margin: 0 auto;
+    font-weight: 20px;
+margin-bottom: 60px;
+    
+  }
+
+  #status div{
+    width: 19%;
+    display: inline-block;
+ 
+    text-align: center;
+    line-height: 30px;
+  }
+.pi{
+  border-right: 1px solid;
+  border-left: 1px solid;
+  border-color:  #A3A3A3;
+}
+  .p2{
+    font-size: 14px;
+    color: #A3A3A3;
+    
+  }
+
+  .invite{
+    position: relative;
+    top: 6px;
+  }
+
+ .time, .x{
+  position: relative;
+  top: 3px;
+ }
+
+ .btn.btn-primary{
+  border-radius: 25px;
+ }
+
+  button.btn.btn-edit{
+  background: #DA884D;
+  color: #fff;
+  border-radius: 25px;
+}
+  .btn-delet{
+  background: #F04F65;
+  color: #fff;
+  border-radius: 25px;
+}
+
+.comands {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  margin-right: 50px;
+}
+
+ button{
+  margin-right: 20px; 
+  margin-top: 30px;
+}
+
+th {
+  background-color: #00A54E;
+  color: #FFF;
+ }
+
+ h1{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
+
+
+  /* Escala de Cinza/200 */
+
+  color: #4E4B59;
+}
+
+button{
+  border-radius: 16px;
+  border: none;
+}

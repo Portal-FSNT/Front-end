@@ -1,0 +1,47 @@
+
+// NAVBAR ADM LOGO-TITULO-BOTAO
+
+
+
+#navbar{
+    width: 1500px;
+    margin: 0 auto;
+    min-width: 1300px;
+ 
+  }  
+  #logo {
+    width: 60%;
+    display: inline-block;
+  }
+  #logo img{
+    width: 60px;
+    height: 60px;
+  }
+  
+  #navbar-adm{
+    width: 40%;
+    display: inline-block;
+    position: relative;
+    bottom: 30px;
+  }
+  
+  #navbar-adm img {
+    width: 40px;
+    height: 19px;
+  }
+  
+  #navbar-adm p{
+    display: inline;
+    position: relative;
+    bottom: 5px;
+    padding-right: 19px;
+  }
+  
+  #navbar-adm a {
+    text-decoration: none;
+    color: black;
+  }
+
+@media screen and (max-width: 400px) {
+  .navbar { width:-100px; }
+}

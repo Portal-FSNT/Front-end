@@ -1,0 +1,28 @@
+<div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="dropdown-active button-dropdown"
+            aria-controls="dropdown-basic">
+            <img src="../../../../assets/Icons/icon-convidados.svg" alt=""> 
+            Presença
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/lista-eventos" class="dropdown-item"  href="#">
+                <img src="../../../../assets/Icons/icon-espacos.svg" alt=""> 
+                Home
+            </a>
+        </li>
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/lista-pessoas" class="dropdown-item" href="#">
+                <img src="../../../../assets/Icons/icon-convidados.svg" alt="">
+                Pessoas
+            </a>
+        </li>
+        <li role="menuitem">
+            <a routerLink="/lista-empresas" class="dropdown-item" href="#">
+                <img src="../../../../assets/Icons/icon-empresas.svg" alt="">
+                Empresas
+            </a>
+        </li>
+    </ul>
+</div>

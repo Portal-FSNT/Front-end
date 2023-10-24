@@ -1,0 +1,18 @@
+
+<div *ngIf="mostrar">
+<div class="modal" @modal>
+    <label>Cadastrar evento</label>
+    <img src="../../../../assets/icon/check-box.svg">
+</div>
+<form>
+    <div class="label"><label><img class="icon" src="../../../assets/icon/carbon_user-filled.svg">Usuário</label>
+    </div>
+    <input class="input" type="text" name="email" id="email"> <br>
+
+    <div class="label"><label><img class="icon" src="../../../assets/icon/uis_padlock.svg">Senha</label> </div>
+    <input class="input" type="password" name="senha" id="senha"> <br>
+
+
+    <button (click)="alterar()" class="btn btn-primary"> Entrar </button>
+</form>
+</div>

@@ -1,0 +1,78 @@
+<app-header></app-header>
+
+<div id="navbar">
+   
+<div id="conteudo">
+
+    <h1>Lista de convidados</h1>
+
+    <div class="comands">
+      <button (click)="addConvidado()" class="btn btn-primary"><img src="../../../../assets/icon-presenca/plus-circle.svg" alt=""> Convidado</button>
+      <button (click)="updateEvento(evento)" class="btn btn-edit"><img src="../../../../assets/icon-presenca/edit-2.svg" alt=""> Editar evento</button>
+      <button (click)="deletEvento()" class="btn btn-delet"><img src="../../../../assets/icon-presenca/trash-2.svg" alt="">Apagar evento</button>
+    </div>
+
+</div>
+
+
+<!-- Status dos convidados -->
+<div id="status" *ngFor="let s of listaStatus">
+  <div>
+    <p>Status</p>
+    <p>Convidados</p>
+  </div>
+
+  <div class="pi">
+    <p>{{s.total}}
+    <img class="invite " src="../../../../assets/icon-presenca/invite-line.svg"></p>
+    <p class="p2">Convidados Total</p>
+  </div>
+  <div class="pi">
+    <p>{{s.confirmados}}
+    <img src="../../../../assets/icon-presenca/icon_check.svg"></p>
+    <p class="p2 ">Confirmados</p>
+  </div>
+  <div class="pi">
+    <p>{{s.nao_respondeu}}
+    <img class="time" src="../../../../assets/icon-presenca/icon_time.svg"></p>
+    <p class="p2 ">Pendentes</p>
+  </div>
+  <div>
+    <p>{{s.nao_confirmados}}
+    <img class="x" src="../../../../assets/icon-presenca/icon_x.svg"></p>
+    <p class="p2">Recusados</p>
+  </div>
+</div> 
+
+<table>
+  <thead>
+    <tr>
+      <th>CONVIDADO</th>
+      <th>CARGO</th>
+      <th>EMPRESA</th>
+      <th>E-MAIL</th>
+      <th>TELEFONE</th>
+      <th>STATUS</th>
+      <th>ANUNCIADO</th>
+      <th>PRESENÇA</th>
+      <th>EDITAR</th>
+      <th>EXCLUIR</th>  
+    </tr>
+  </thead>
+  <tbody> 
+
+    <tr *ngFor="let convidados of filteredListConvidados">
+      <td>{{convidados.nome}}</td>
+      <td>{{convidados.cargo}}</td>
+      <td>{{convidados.nome_empresa}}</td>
+      <td>{{convidados.email}}</td>
+      <td>{{convidados.telefone}}</td>
+      <td>{{convidados.condicao}}</td>
+      <td>{{getStatusLabel(convidados.anunciado)}}</td>
+      <td>{{getStatusLabel(convidados.presenca)}}</td>
+      <td (click)="updateConvidado(convidados)"><a><img src="../../../../assets/Icons/icon-pencil-black.svg"></a></td>
+      <td (click)="deletConvidado(convidados.id_convidado)"><a><img src="../../../../assets/Icons/icon-lixeira-white.svg"></a></td>
+
+    </tr>  
+  </tbody>    
+</table>

@@ -1,0 +1,32 @@
+.btn{
+  display: block;
+  min-width: 200px;
+  line-height: 50px;
+  padding: 0px 16px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  border: 0;
+}
+
+.btn-primary{
+ background: #4EA926;
+  color: #fff;
+}
+.btn-edit{
+  background: #DA884D;
+  color: #fff;
+}
+.btn-delet{
+  background: #F04F65;
+  color: #fff;
+}
+
+
+.btn-secondary{
+  width: 200px;
+  background: #57B055;
+  position: relative;
+  bottom: 10px;
+  color: #fff;
+}

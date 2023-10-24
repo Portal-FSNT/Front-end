@@ -1,0 +1,55 @@
+<div class="container" let user of table>
+    <form action="patch" class="forms" [formGroup]="form">
+        <div class="modal-header">
+            <h2 class="title-h2-bold">
+                Alterar Dados
+            </h2>
+            <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+              <span aria-hidden="true" class="visually-hidden">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            
+            <div class="flex-box-form">
+                <div class="form-left">
+                    <div class="dados">
+                        <label for="" class="tittle-form">Nome</label>
+                        <input type="text" formControlName="nome" class="input-form">
+                    </div>
+                    <div class="dados">
+                        <label for="" class="tittle-form">Telefone</label>
+
+                        <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" formControlName="telefone" class="input-form" appOnlyNumbers>
+
+                    </div>
+                    <!-- <div class="dados">
+                        <label for="" class="tittle-form">Senha</label>
+                        <input type="password" formControlName="senha" class="input-form">
+                    </div> -->
+                </div>
+                <div class="form-right">
+                    <div class="dados">
+                        <label for="" class="tittle-form">Instituição</label>
+                        <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form w704" placeholder="Nome do Evento">
+                          <option value="0"> Selecione uma Instituiçao </option>
+                          <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{ instituicoes.nome }} </option>
+                        </select>
+                    </div>
+                    <div class="dados">
+                        <label for="" class="tittle-form">Cargo</label>
+                        <input type="text" formControlName="cargo" class="input-form">
+                    </div>
+                    <div class="dados">
+                        <label for="" class="tittle-form">E-mail Corporativo</label>
+                        <input type="email" formControlName="email" class="input-form">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="button-register" (click)="updateUser(list[1])">Alterar</button>
+                <button class="button-senha" (click)="openModalSenha(list[1])">Redefinir Senha</button>
+            </div>
+    
+        </div>
+    </form>
+</div>

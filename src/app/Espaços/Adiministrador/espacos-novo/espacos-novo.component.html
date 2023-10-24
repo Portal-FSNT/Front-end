@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container">
+  <section id="title">
+    <h2>Cadastrar Novo Espaços</h2>
+    <div class="buttons">
+      <button class="btn1" routerLink="/espacos">
+        Voltar
+      </button>
+    </div>
+  </section>
+
+    <!--Início dos inputs-->
+    <section id="body">
+      <div class="inputs">
+
+        <div class="campo-cadastro">
+          <div class="dados">
+            <label for="" class="tittle-form">Nome do Espaço</label>
+            <input placeholder="Nome" class="input-form w392"  [(ngModel)]="espaco.nome" />
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Proximidade</label>
+            <input placeholder="Proximidade" class="input-form w392"  [(ngModel)]="espaco.ponto_referencia" />
+          </div>
+        </div>
+        <div class="campo-cadastro">
+          <div class="dados">
+            <label for="" class="tittle-form">Descrição</label>
+            <textarea type="text" placeholder="Descrição" class="input-form descri" id="description" [(ngModel)]="espaco.descricao"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="botao">
+        <button (click)="cadastrarEspaco()" class="btn2">Cadastrar</button>
+      </div>
+    </section>
+
+    
+
+
+  </div>

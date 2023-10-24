@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="container">
+    <section id="body">
+        <h2>Lista Usuários Pendentes</h2>
+        <div class="buttons">
+            <button class="btn1" routerLink="/users">Usuários</button>
+            <button class="btn1 yellow" routerLink="/register-adm">Cadastrar Usuário</button>
+        </div>
+    </section>
+
+    <section id="list">
+        <ng-container *ngIf="table.length > 0; else noUsers">
+            <table>
+                <thead>
+                    <tr class="principal">
+                        <th >ID</th>
+                        <th >NOME</th>
+                        <th >INSTITUIÇÃO</th>
+                        <th>E-MAIL</th>
+                        <th >CONTATO</th>
+                        <th >TIPO</th>
+                    </tr>
+                </thead>
+
+                <tbody *ngFor="let user of table" (click)="openModalWithComponent(user)">
+                    <td >{{ user.id }}</td>
+                    <td>{{ user.nome }}</td>
+                    <td>{{ user.nome_instituicao }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.telefone | phone }}</td>
+                    <td>
+                        <div [ngClass]="{'adm':adm === user.nivel_acesso, 'soli': soli===user.nivel_acesso}">
+                            {{ user.nivel_acesso }}
+                        </div>
+                    </td>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-template #noUsers>
+            <p class="noUsers">Nenhum usuário pendente.</p>
+        </ng-template>
+    </section>
+</div>

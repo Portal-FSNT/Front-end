@@ -1,0 +1,40 @@
+<div class="modal-modal">
+    <div class="modal-top">
+        <label class="modal-title">Editar convidado</label>
+     <a>   <img (click)="bsModalRef.hide()" src="../../../../assets/icon-presenca/x.svg"></a>
+    </div>
+    <form [formGroup]="form">
+        <div class="dados">
+
+            <div class="modal-label opcao1"><label>Status</label>
+                <select  formControlName="condicao" class="modal-input">
+                    <option>Confirmado</option>
+                    <option>Pendente</option>
+                    <option>Negado</option>
+                </select> 
+            </div>
+        </div>
+        <div class="dados">
+            <div class="modal-label opcao1"><label>Anunciado</label>
+                <select  formControlName="anunciado" class="modal-input">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="dados">
+
+                <div class="modal-label opcao1"><label>Presença</label>
+                    <select  formControlName="presenca" class="modal-input">
+                        <option value="0">Não</option>
+                        <option value="1">Sim</option>
+                    </select> 
+                </div>   
+        </div>
+     
+
+
+        <button class="modal-button" (click)="salvar()"> Salvar </button>
+    </form>
+</div>    

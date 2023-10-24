@@ -1,0 +1,29 @@
+<div class="modal-modal">
+  <div class="modal-top">
+    <label class="modal-title">Cadastrar evento</label>
+    <a (click)="bsModalRef.hide()">
+      <img  src="../../../../assets/icon-presenca/x.svg"/>
+    </a>
+  </div>
+  <form [formGroup]="form">
+
+    <div class="dados">
+      <div class="modal-label"><label>Nome do evento</label></div>
+      <input formControlName="nome" class="modal-input" type="text" />
+    </div>
+
+    <div class="dados">
+      <div class="modal-label"><label>Descrição</label></div>
+      <input formControlName="descricao" class="modal-input" type="text" />
+    </div>
+
+    <div class="dados">
+      <div class="modal-label"><label>Data</label></div>
+      <input formControlName="data_hora" class="modal-input" type="date" />
+    </div>
+
+    <button class="modal-button" (click)="onSubmit()">
+      Cadastrar
+    </button>
+  </form>
+</div>

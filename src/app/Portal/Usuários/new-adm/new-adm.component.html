@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="container">
+  <section id="title">
+    <h2>Cadastrar Novo Usuário</h2>
+    <div class="buttons">
+      <button class="btn1" routerLink="/users">Usuários</button>
+      <button class="btn1 yellow" routerLink="/users-pending">Pendente</button>
+    </div>
+  </section>
+
+  <section id="forms">
+    <form action="" class="forms" [formGroup]="form">
+      <div class="flex-box-form">
+        <div class="form-left">
+          <div class="dados">
+            <label for="" class="tittle-form">Nome</label>
+            <input type="text" placeholder="Nome Completo" class="input-form w392" formControlName="nome" />
+          </div>
+
+          <div class="dados">
+            <label for="" class="tittle-form">Telefone</label>
+            <input maxlength="15" [value]="form.get('telefone')!.value! | phone" appOnlyNumbers type="tel"
+              placeholder="(14) 99999-9999" class="input-form w392" formControlName="telefone" />
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Senha</label>
+            <input type="password" placeholder="*************" class="input-form w392" formControlName="senha" />
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Tipo de Usuário</label>
+            <select formControlName="nivelAcesso" name="text" class="select" id="select" class="input-form w392 "
+              placeholder="Nome do Evento">
+              <option value="Administrador" > Administrador </option>
+              <option value="Solicitante" > Solicitante </option>
+            </select>
+          </div>
+        </div>
+        <div class="form-right">
+          <!-- <div class="dados">
+            <label for="" class="tittle-form">Empresa</label>
+            <input type="text" placeholder="Fundação FSNT" class="input-form w392" formControlName="instituicao"/>
+            
+          </div> -->
+          <div class="dados">
+            <label for="" class="tittle-form">Instituição</label>
+            <select formControlName="instituicao" name="text" class="select" id="select" class="input-form w392 w704"
+              placeholder="Nome do Evento">
+              <option value="0" disabled> Selecione uma Instituiçao </option>
+              <option *ngFor="let empresa of empresa" name="empresa" value={{empresa.id}}> {{empresa.nome }} </option>
+            </select>
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Cargo</label>
+            <input type="text" placeholder="Analista" class="input-form w392" formControlName="cargo" />
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">E-mail Corporativo</label>
+            <input type="email" placeholder="email@email.com" class="input-form w392" formControlName="email" />
+          </div>
+        </div>
+      </div>
+      <div class="buttons-footer">
+        <button type="button" class="btn2 red" (click)="onCancel()">Cancelar</button>
+        <button type="submit" class="btn2 " (click)="onSubmit()">Cadastrar</button>
+      </div>
+    </form>
+  </section>
+
+
+</div>

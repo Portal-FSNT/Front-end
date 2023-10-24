@@ -1,0 +1,35 @@
+<app-header-solicitante></app-header-solicitante>
+
+<div class="container">
+    <section id="title">
+      <h2>Vizualizar Socilitações</h2>
+      <div class="buttons">
+        <button class="btn1" routerLink="/solicitar">
+          Solicitar
+        </button>
+      </div>
+    </section>
+
+    <!--Início da tabela-->
+
+    <section id="list">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Local</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let rows of solicitacoes">
+          <tr >
+            <td>{{ rows.data_inicio | date : "dd/MM/yyyy" }}</td>
+            <td>{{ rows.hora_inicio | timeFormat }}</td>
+            <td>{{ rows.espaco_nome }}</td>
+            <td>{{ getStatus(rows.status_solicitacao) }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>

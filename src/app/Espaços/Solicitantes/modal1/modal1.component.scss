@@ -1,0 +1,39 @@
+.container{
+    position: absolute;
+    background: #ffffff;
+    border-radius: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 894px;
+    height: 220px;
+
+    .title{
+
+        display: flex;
+        align-items: center;
+        gap: 159px;
+
+
+
+        img{
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+        }
+    }
+    p{
+        color: var(--escala-de-cinza-300, #5F5C6B);
+        text-align: center;
+        /* Título/h2 */
+        font-size: 16px;
+        font-family: Montserrat;
+        line-height: 100%;
+    }
+    
+}

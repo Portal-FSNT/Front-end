@@ -1,0 +1,28 @@
+
+<div class="modal-modal">
+    <div class="modal-top">
+        <label class="modal-title">Editar evento</label>
+     <a>   <img (click)="bsModalRef.hide()" src="../../../../assets/icon-presenca/x.svg"></a>
+     </div>
+    <form  [formGroup]="form"> 
+        <div class="dados">
+
+            <div class="modal-label"><label>Descrição do Evento</label>
+            </div>
+            <input formControlName="descricao" [value]="form.value.descricao"class="modal-input" type="text">
+        </div>
+        <div class="dados">
+
+            <div class="modal-label"><label>Data</label> </div>
+            <input formControlName="data_hora" [value]="form.value.data_hora" class="modal-input" type="date"> 
+        </div>
+        
+    
+    
+        
+    
+    
+        <button class="modal-button" (click)="salvar()"> Salvar </button>
+     </form> 
+    </div>
+    

@@ -1,0 +1,201 @@
+// @media (min-width: 864px) and (max-width: 1152px), (min-width: 768px) and (max-width: 1366px) {
+//   .card {
+//     width: 310px !important;
+//     height: 330px !important;
+//     .card-top {
+//       width: 310px !important;
+//       height: 140px !important;
+//       .align-btn-card-top {
+//         button {
+//           width: 100px !important;
+//           font-size: 12.3px !important;
+//           height: 23px !important;
+//         }
+//       }
+//     }
+//     h1 {
+//       font-size: 14px !important;
+//     }
+//     .date, .time {
+//       font-size: 14px !important;
+//     }
+//     .align-descricao-event {
+//       font-size: 12px !important;
+//     }
+//   }
+// }
+
+main {
+  .container {
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 32px 0px;
+
+      h3{
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        color: var(--gray-200);
+      }
+
+      .new-evento{
+        padding: 8px;
+        border: 2px solid var(--color-one);
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        width: 209px;
+        height: 36px;
+        color: #00A54E;
+        cursor: pointer;
+      }
+    }
+
+    // .card {
+    //   display: flex;
+    //   align-items: center;
+    //   flex-wrap: wrap;
+    //   gap: 24px;
+    //   justify-content: center;
+    // }
+  }
+}
+
+
+.card-ng {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+
+  .card {
+    width: 392px;
+    height: 430px;
+    background: var(--color-white);
+    box-shadow: 3px 5px 22px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    border: none;
+    display: grid;
+    position: relative;
+
+    .title-card {
+      position: relative;
+      display: flex;
+      height: 166px;
+      width: 392px;
+      border-radius: 16px;
+
+      .andamento {
+        margin-top: 18px;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-40%, -80%);
+        padding: 5px 10px;
+        background: #F1D302;
+        border-radius: 43px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        color: #FFFFFF;
+        opacity: 1;
+        z-index: 1;
+      }
+
+      .folder {
+        object-fit: cover;
+        height: auto;
+        width: 392px;
+        border-radius: 16px;
+        opacity: 0.1;
+        background-color:#00A54E;
+      }
+
+      .edit {
+        position: absolute;
+        right: 5%;
+        top: 7%;
+        cursor: pointer;
+      }
+    }
+
+    .body-card {
+      padding: 18px 25px;
+
+      h2 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 100%;
+        color: var(--gray-200);
+        margin-bottom: 27px;
+        height: 48px;
+      }
+
+      .data-hora {
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 32px;
+
+        .row1 {
+          display: flex;
+          gap: 16px;
+          align-items: center;
+
+          .info {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            color: var(--gray-200);
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .localidade {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: var(--gray-200);
+    }
+
+    .mini {
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 100%;
+      color: var(--gray-200);
+    }
+
+  }
+}
+
+footer {
+  padding-bottom: 24px;
+
+  .align-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 29px;
+    gap: 16px;
+
+    button {
+      cursor: pointer;
+      width: 35px;
+      height: 40px;
+      background-color: var(--color-primary);
+      border: none;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 29px;
+      text-align: center;
+    }
+  }
+}

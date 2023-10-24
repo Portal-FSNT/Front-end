@@ -1,0 +1,61 @@
+<app-header></app-header>
+<header></header>
+
+<main>
+  <div class="container">
+    <div class="main-header">
+      <h3>Calendário de Eventos</h3>
+      <a routerLink="/cad-eventos" class="new-evento">
+        Cadastrar novo evento
+      </a>
+    </div>
+
+    <section class="card-ng">
+      <div class="card" *ngFor="let card of eventos">
+        <div class="title-card">
+
+          <div class="folder"></div>
+          <!-- <img
+
+            src=""
+            alt=""
+            class="folder"
+          /> -->
+          <img
+            src="../../../assets/Icons/edit-card.svg"
+            alt=""
+            class="edit"
+            (click)="changeEvent(card)"
+          />
+        </div>
+        <div class="body-card">
+          <h2 class="bold">
+            {{ card.nome }}
+          </h2>
+          <div class="data-hora">
+            <div class="row1">
+              <img src="../../../assets/Icons/icon-calendario-g.svg" alt="" />
+              <p class="info">
+                {{ card.data_inicio | date : "dd/MM/yyyy" }} -
+                {{ card.data_termino | date : "dd/MM/yyyy" }}
+              </p>
+            </div>
+            <div class="row1">
+              <img
+                src="../../../assets/Icons/icon-relogio-pulso-g.svg"
+                alt=""
+              />
+              <p class="info">
+                {{ card.hora_inicio | timeFormat }} - {{ card.hora_termino | timeFormat }}
+              </p>
+            </div>
+          </div>
+          <div class="localidade">
+            <p>{{ card.nome_lugar }} - {{ card.nome_instituicao }}</p>
+          </div>
+          <p class="mini">{{card.endereco}}</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

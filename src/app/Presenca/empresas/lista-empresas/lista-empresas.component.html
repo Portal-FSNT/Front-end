@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div id="navbar">
+   
+<div class="conteudo">
+  <h1>Lista de Empresas</h1>
+  <button (click)="novoEmpresa()" class="btn btn-primary"><img src="../../../../assets/icon-presenca/plus-circle.svg">Empresa</button>
+</div>
+
+
+<table *ngIf="listaEmpresa.length>0 , else semEmpresa">
+
+  <thead>
+    <tr>
+      <th>NOME</th>
+      <th>EDITAR</th>
+      <th>EXCLUIR</th>
+    </tr>
+  </thead>
+
+  <tbody >
+    <tr *ngFor="let empresa of listaEmpresa">
+      <td> {{empresa.nome}}</td>
+      <!-- <td><img (click)="edit(empresa.nome,empresa.nome)" src="../../../../assets/icon-presenca/caneta_black.svg"></td> -->
+      <td><img (click)="editarEmpresa(empresa)" src="../../../../assets/Icons/icon-pencil-black.svg" class="icon-funcion"></td>
+
+      <td><img (click)="delet(empresa.id)" src="../../../../assets/Icons/icon-lixeira-white.svg" class="icon-funcion"></td>
+    </tr>
+  </tbody>
+
+  <div >
+
+  </div>
+
+</table>
+
+<ng-template #semEmpresa>
+  <p>Ainda não há empresas cadastradas</p>
+</ng-template>

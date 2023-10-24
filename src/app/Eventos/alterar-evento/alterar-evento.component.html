@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<div class="container">
+  <section id="body">
+    <h3>Alterar as Informações do Evento .....</h3>
+    <form class="forms" [formGroup]="form">
+      <div class="flex-box-form">
+        <div class="form-left">
+  
+          <div class="dados">
+            <label for="" class="tittle-form">Nome do Evento</label>
+            <input formControlName="nome" id="input-cad-eventos" type="text" placeholder="Nome do Evento" class="input-form w704">
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Endereço</label>
+            <input type="text" placeholder="Endereço" class="input-form w704" formControlName="endereco">
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Descrição</label>
+            <textarea formControlName="descricao" placeholder="Descrição" id="descricao" cols="55" rows="5" class="input-form descri"></textarea>
+          </div>
+        </div>
+  
+        <div class="form-right">
+  
+          <div class="collun2">
+            <div class="dados">
+              <label for="" class="tittle-form">Data de Início</label>
+              <input formControlName="data_inicio" type="date" placeholder="Fundação FSNT" class="input-form w184 pad"/>
+            </div>
+            <div class="dados">
+              <label for="" class="tittle-form">Data de Término</label>
+              <input formControlName="data_termino" type="date" placeholder="Fundação FSNT" class="input-form w184 pad"/>
+            </div>
+
+          </div>
+          <div class="collun2">
+            <div class="dados">
+              <label for="" class="tittle-form">Hora de Início</label>
+              <input formControlName="hora_inicio" type="time" placeholder="Fundação FSNT" class="input-form w184 pad"/>
+            </div>
+            <div class="dados">
+              <label for="" class="tittle-form">Hora de Término</label>
+              <input formControlName="hora_termino" type="time" placeholder="Fundação FSNT" class="input-form w184 pad"/>
+            </div>
+          </div>
+  
+          
+          <div class="dados">
+            <label for="" class="tittle-form">Tipo de Evento</label>
+
+            <select formControlName="id_tipo" name="text" class="select" id="select" class="input-form w392" placeholder="Nome do Evento">
+              <option value="0"> Selecione um Espaço </option>
+              <option *ngFor="let tipos of tipos" name="espaco" value={{tipos.id}}> {{ tipos.tipo }} </option>
+            </select>
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Espaço</label>
+            <select formControlName="id_lugar" name="text" class="select" id="select" class="input-form w392" placeholder="Nome do Evento">
+              <option value="0"> Selecione um Espaço </option>
+              <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
+            </select>
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Instituição</label>
+            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form w392" placeholder="Nome do Evento">
+              <option value="0"> Selecione uma Instituiçao </option>
+              <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{ instituicoes.nome }} </option>
+            </select>
+          </div>
+  
+        </div>
+      </div>
+      <div class="buttons">
+
+        <button type="button" class="button-cancel" (click)="onCancel()">Cancelar</button>
+        <button type="submit" class="button-register" (click)="onSubmit()">Atualizar</button>
+      </div>
+    </form>
+  </section>
+</div>

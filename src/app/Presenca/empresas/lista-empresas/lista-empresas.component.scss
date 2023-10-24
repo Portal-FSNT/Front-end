@@ -1,0 +1,80 @@
+h1{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+
+    /* Escala de Cinza/200 */
+
+    color: #4E4B59;
+}
+
+button{
+    background-color: #00A54E;
+    border-radius: 16px;
+    border: none;
+}
+
+p{
+    text-align: center;
+    margin-top: 150px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+//---TABLE--- 
+
+table {
+    width: 500px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin:      5;
+    font-size: 0.9em;
+    overflow: scroll;
+    
+
+}
+
+th:first-child {
+ border-radius: 25px 0 0 0; /* Adicione o border-radius desejado */
+}
+
+th:last-child {
+ border-radius: 0 25px 0 0; /* Adicione o border-radius desejado */
+}
+
+th, td {
+ border: none;
+ padding: 8px;
+ text-align: center;
+}
+
+
+th {
+ background-color: #00A54E;
+ color: #FFF;
+}
+
+tr:nth-child(even) {
+ background-color: #f3f3f3;
+}
+
+tr:hover {
+ background-color: #e6e6e6;
+}
+
+.conteudo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.icon-funcion{
+    height: 18px;
+}

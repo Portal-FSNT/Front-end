@@ -1,0 +1,21 @@
+<div class="modal">
+  <div class="componentes-modal">
+    <h2>Deseja deletar este espaço?</h2>
+    <!-- <img class="exit" src="../../../../assets/Icons/icon-fechar-modal-g.svg" /> -->
+
+    <div class="list">
+      <div class="informacoes">
+        <img class="icon" src="../../../../assets/Icons/icon-espacos.svg" alt="" />
+        <span class="link">{{ exibirEspaco.nome }}</span>
+      </div>
+      <div class="informacoes">
+        <img class="icon" src="../../../../assets/Icons/icon-mapa.svg" alt="" />
+        <span class="link">{{ exibirEspaco.ponto_referencia }}</span>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="not btn" (click)="fecharModal()">Cancelar</button>
+      <button class="yes btn" (click)="deletarEspaco()">Deletar</button>
+    </div>
+  </div>
+</div>

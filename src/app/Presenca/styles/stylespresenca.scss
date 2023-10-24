@@ -1,0 +1,17 @@
+@import "./button.scss";
+@import "./components.scss";
+@import "./functions.scss";
+@import "./modal.scss";
+@import "./navbar-adm.scss";
+@import "./reset.scss";
+@import "./top-lista.scss";
+@import "./variaveis.scss";
+
+
+//modal
+ion-modal {
+  &.modal {
+    --height: auto;
+    --border-radius: 8px;
+  }
+}

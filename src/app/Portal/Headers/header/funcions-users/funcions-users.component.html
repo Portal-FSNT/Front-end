@@ -1,0 +1,29 @@
+
+<div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="dropdown-active button-dropdown"
+            aria-controls="dropdown-basic">
+            <img src="../../../../../assets/Icons/icon-user.svg" alt="">
+            Usuários
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/users" class="dropdown-item">
+                <img src="../../../../assets/icon-presenca/icon-users.svg" alt="">
+                Usuários
+            </a>
+        </li>
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/users-pending" class="dropdown-item">
+                <img src="../../../../assets/icon-presenca/icon-clock.svg" alt="">
+                Pendentes
+            </a>
+        </li>
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/register-adm" class="dropdown-item">
+                <img class="icon" src="../../../../assets/icon-presenca/icon-new.svg" alt="">
+                Novo
+            </a>
+        </li>
+    </ul>
+</div>

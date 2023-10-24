@@ -1,0 +1,35 @@
+
+<div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="dropdown-active button-dropdown"
+            aria-controls="dropdown-basic">
+            <img src="../../../../assets/Icons/icon-mapa.svg" alt="">
+            Espaços
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/solicitacoes" class="dropdown-item">
+                <img src="../../../../assets/Icons/icon-clock.svg" alt="">
+                Solicitações Pendentes
+            </a>
+        </li>
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/solicitacoes-confirmadas" class="dropdown-item">
+                <img src="../../../../assets/icon-presenca/icon-aprovado.svg" alt="">
+                Solicitações Confirmadas
+            </a>
+        </li>
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/espacos" class="dropdown-item">
+                <img src="../../../../assets/Icons/icon-espacos.svg" alt="">
+                Espaços
+            </a>
+        </li>
+        <li role="menuitem" class="li-dropdown">
+            <a routerLink="/solicitar" class="dropdown-item">
+                <img src="../../../../assets/Icons/icon-mapa.svg" alt="">
+                Solicitar Espaços
+            </a>
+        </li>
+    </ul>
+</div>

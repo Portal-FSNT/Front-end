@@ -1,0 +1,49 @@
+
+<div class="modal-modal">
+    <div class="modal-top">
+        <label class="modal-title">Cadastrar Pessoas </label>
+     <a>   <img (click)="bsModalRef.hide()" src="../../../../assets/icon-presenca/x.svg"></a>
+    </div>
+    <form [formGroup]="form">
+        <div class="dados">
+
+            <div class="modal-label"><label>Nome</label>
+            </div>
+            <input formControlName="nome" class="modal-input" type="text" placeholder="Nome" >
+        </div>
+        <div class="dados">
+
+            <div class="modal-label">
+                <label>Cargo</label>
+            </div>
+            <input formControlName="cargo" class="modal-input" type="text" placeholder="Cargo"  >
+        </div>
+        <div class="dados">
+
+            <div  class="modal-label">
+                <label>Empresa</label>
+            </div>
+            <select formControlName="empresa" class="modal-input" type="text" >
+                <option placeholder="Empresas" *ngFor="let empresa of listaPessoa" [value]="empresa.id">{{empresa.nome}}</option>
+            </select>
+        </div>
+        <div class="dados">
+
+            <div class="modal-label">
+                <label>E-mail</label>
+            </div>
+            <input type="email" placeholder="example@example.com" formControlName="email" class="modal-input" />
+        </div>
+        <div class="dados">
+
+            
+            <div class="modal-label">
+                <label>Telefone</label>
+            </div>
+            <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" formControlName="telefone" class="modal-input" appOnlyNumbers />
+        </div>
+    
+        <button class="modal-button" (click)="onSubmit()"> Cadastrar </button>
+    </form>
+</div>
+    

@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div id="conteudo">
+  <h1>Lista de Eventos</h1>
+  <button (click)="novoEvento()" class="btn btn-primary">
+    <img src="../../../../assets/icon-presenca/plus-circle.svg" />Novo Evento
+  </button>
+</div>
+
+<section class="cards">
+  <div class="card" *ngFor="let evento of listaEvento" (click)="editar(evento.id_evento)">
+    <h2 class="titleCard">
+      {{evento.nome}}
+    </h2>
+    <p class="date">
+      {{evento.data_hora | date:'dd/MM/yyyy'}}
+    </p>
+
+    <div class="status">
+      <div class="statu">
+        <img class="img-convidado" src="../../../../assets/icon-presenca/invite-line.svg" alt="" />
+        <div class="info">
+          <p class="negrito">
+            {{evento.total}}
+          </p>
+          <p>Convidados</p>
+        </div>
+      </div>
+      <div class="statu">
+        <img class="img-confirmado" src="../../../../assets/icon-presenca/check-box.svg" alt="" />
+        <div class="info">
+          <p class="negrito">
+            {{evento.confirmados}}
+          </p>
+          <p>Confirmados</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- </div> -->
+<ng-template #semEvento>
+  <p>Não há eventos cadastrados</p>
+</ng-template>

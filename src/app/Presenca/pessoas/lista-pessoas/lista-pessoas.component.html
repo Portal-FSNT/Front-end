@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div id="navbar">
+
+<div id="conteudo">
+  <h1>Lista de Pessoas</h1>
+  <button (click)="novoPessoa()" class="btn btn-primary"><img src="../../../../assets/icon-presenca/plus-circle.svg">Adicionar Novo</button>
+</div>
+
+<table *ngIf="listaPessoa.length>0 , else semPessoa">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cargo</th>
+      <th>Empresa</th>
+      <th>E-mail</th>
+      <th>Telefone</th>
+      <th>Editar</th>
+      <th>Excluir</th>
+      </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let pessoa of listaPessoa" >
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.cargo}}</td>
+      <td>{{pessoa.empresa}}</td>
+      <td>{{pessoa.email}}</td>
+      <td>{{pessoa.telefone}}</td>
+      <td><img (click)="updatePessoa(pessoa)" src="../../../../assets/Icons/icon-pencil-black.svg"></td>
+      <td><img (click)="delet(pessoa.id)" src="../../../../assets/Icons/icon-lixeira-white.svg"></td>
+    </tr>
+  </tbody>
+  <div > 
+  </div>
+</table>
+
+<ng-template #semPessoa>
+  <p>Ainda não há usuários cadastrados</p>
+</ng-template>

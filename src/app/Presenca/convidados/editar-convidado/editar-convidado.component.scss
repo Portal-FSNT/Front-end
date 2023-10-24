@@ -1,0 +1,27 @@
+select{
+    box-sizing: border-box;
+    height: 40px;
+    background: #fcfcfc;
+    border: 1px solid rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.opcao1{
+    width: 30%;
+    display: inline;
+    margin: 0 10px 16px;
+
+    select{
+        margin-left: 5px;
+    }
+}
+
+.empresa{
+    width: 100%;
+}
+select option{
+    border-radius: 8px;
+}

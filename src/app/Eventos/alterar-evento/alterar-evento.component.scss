@@ -1,0 +1,62 @@
+.container{
+    width: 1250px;
+    display: flex;
+    justify-content: center;
+  
+    #body{
+      width: 100%;
+  
+      h3{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 100%;
+        color: var(--gray-200);
+        text-align: start;
+        margin: 40px 0  ;
+      }
+  
+      form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+  
+        .flex-box-form{
+          display: flex;
+          gap: 25px;
+        }
+  
+        .buttons{
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 40px;
+  
+          button{
+            border-radius: 50px;
+            width: 154px;
+            height: 56px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--color-white);
+    
+          }
+          .button-register{
+            background-color: var(--color-one);
+          }
+          .button-cancel{
+            background-color: var(--color-five);
+          }
+        }
+      }
+  
+    }
+    
+  }
+  
+  
+  .option-tipo{
+    color: var(--gray-200);
+  }
+  

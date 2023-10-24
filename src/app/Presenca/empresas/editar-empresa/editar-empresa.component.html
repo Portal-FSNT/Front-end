@@ -1,0 +1,15 @@
+
+<div class="modal-modal">
+    <div class="modal-top">
+        <label class="modal-title">Editar empresa</label>
+     <a (click)="bsModalRef.hide()">   <img src="../../../../assets/Icons/icon-x-red.svg"></a>
+    </div>
+    <form [formGroup]="form" submit="updateEmpresa()">
+        <div class="modal-label"><label>Nome da empresa</label>
+        </div>
+        <input formControlName="nome" class="modal-input" type="text" name="empresa" value="empresa.value.nome">
+    
+        <button class="modal-button" (click)="updateEmpresa(form.value.id)"> Alterar </button>     
+    </form>
+</div>
+    
