@@ -6,7 +6,6 @@ import { TokenService } from 'src/app/authentication/token.service';
 
 const API = environment.API;
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +16,7 @@ export class SolicitacoesService {
     private http: HttpClient  
   ) { }
 
-  private readonly API = `${API}/solicitacao`;
+  private readonly API = `${API}solicitacao`;
   private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
 

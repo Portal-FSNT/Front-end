@@ -7,7 +7,6 @@ import { TokenService } from '../app/authentication/token.service';
 import jwt_decode from 'jwt-decode';
 import { User } from '../app/authentication/user/user';
 
-
 @Injectable({
   providedIn: 'root'
 })

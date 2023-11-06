@@ -16,19 +16,24 @@
       <table>
         <thead>
           <tr>
-            <th>NOME</th>
-            <th>PROXIMIDADE</th>
-            <th>DESCRIÇÃO</th>
-            <th>AÇÕES</th>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Proximidade</th>
+            <th>Descrição</th>
+            <th>Instituição</th>
+            <th>Ações</th>
           </tr>
 
         </thead>
         <tbody *ngFor="let rows of table">
 
           <tr >
+            <td>{{ rows.id }}</td>
             <td>{{ rows.nome }}</td>
             <td>{{ rows.ponto_referencia }}</td>
             <td class="max200">{{ rows.descricao }}</td>
+            <td>{{ rows.instituicao }}</td>
+
             <td class="center" (click)="openModal_deletar_espaco(rows)"><img src="../../../../assets/Icons/icon-lixeira-white.svg"
                 alt=""></td>
           </tr>

@@ -20,9 +20,18 @@ export class SolicitacoesComponent implements OnInit {
   ) { }
   
   ngOnInit(): void {
-    this.service.listarSolicitacoes().subscribe((event)=> {
-      this.exibirsolicitacoes = event.result as Solicitacoes[]
-      console.log(this.exibirsolicitacoes);
+    // this.service.listarSolicitacoes().subscribe((event)=> {
+    //   this.exibirsolicitacoes = event.result as Solicitacoes[]
+    //   console.log(this.exibirsolicitacoes);
+    // })
+    this.service.listarSolicitacoes().subscribe({
+      next: (event) => {
+        this.exibirsolicitacoes = event
+        console.log(']e', this.exibirsolicitacoes, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
     })
   }
 

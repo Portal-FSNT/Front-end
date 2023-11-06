@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { HeaderComponent } from './Portal/Headers/header/header.component';
 import { HomeComponent } from './Portal/home/home.component';
@@ -22,7 +22,6 @@ import { UsersComponent } from './Portal/Usuários/users/users.component';
 import { ModalChangeDataUserComponent } from './Portal/Modal/modal-change-data-user/modal-change-data-user.component';
 import { CadEventosComponent } from './Eventos/cad-eventos/cad-eventos.component';
 import { HomeEventosComponent } from './Eventos/home-eventos/home-eventos.component';
-
 
 
 // =========== imports de espaços ==============
@@ -65,6 +64,7 @@ import { AlterarEventoComponent } from './Eventos/alterar-evento/alterar-evento.
 import { ModalChangePasswordComponent } from './Portal/Modal/modal-change-password/modal-change-password.component';
 import { ModalAvisoComponent } from './Portal/Modal/modal-aviso/modal-aviso.component';
 import { FuncionsUsersComponent } from './Portal/Headers/header/funcions-users/funcions-users.component';
+import { AuthTokenInterceptor } from 'src/shared/auth-token.interceptor';
 
 
 @NgModule({
@@ -140,10 +140,6 @@ import { FuncionsUsersComponent } from './Portal/Headers/header/funcions-users/f
     FormsModule,
     ReactiveFormsModule,
 
-
-
-
-
     // ====DECLARAÇÃOD DE ESPAÇOS ======
     IonicModule.forRoot(),
     HttpClientModule,
@@ -152,7 +148,7 @@ import { FuncionsUsersComponent } from './Portal/Headers/header/funcions-users/f
     BsDropdownModule.forRoot()
 
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

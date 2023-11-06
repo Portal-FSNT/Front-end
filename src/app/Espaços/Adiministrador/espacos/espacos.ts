@@ -4,5 +4,5 @@ export interface Espacos {
     ponto_referencia: string,
     localizacao: string,
     descricao: string,
-    id_instituicao: number  
+    instituicao: string  
 }

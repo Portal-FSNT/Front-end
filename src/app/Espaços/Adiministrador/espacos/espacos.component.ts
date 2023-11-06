@@ -19,8 +19,8 @@ export class EspacosComponent implements OnInit {
 
   ngOnInit() {
     this.service.listarEspacos().subscribe((event) => {
-      this.table = event.result as Espacos[]
-      console.log(this.table);
+      this.table = event
+      console.log(event, this.table);
     })
   }
 
