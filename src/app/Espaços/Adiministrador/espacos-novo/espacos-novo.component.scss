@@ -220,28 +220,59 @@
   }
 
   #body {
-    width: 100%;
+
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+
     .inputs{
       margin-bottom: 40px;
+      display: flex;
+      flex-direction: space-between;
+      gap:6rem;
+      
       .campo-cadastro {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: right; 
         gap: 16px;
         margin-bottom: 16px;
+        .tittle-form{
+          width: 500px;
+        }
+        
         textarea{
-          width: 800px;
+          width: 700px;
           height: 100px;
           padding: 8px; 
           border-radius: 16px;
           padding-left: 32px;
         }
       }
+        
+    .imagem{
+      display: flex;
+      flex-direction: column;
+      
+      .upload_img{
+        display: flex;
+        width: 400px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        background-color:#f1f0f5;
+        border-radius: 8px;
+        margin-left: 2%;  
+    }
+    .dados{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
     }
   }
+}
 }
 
 .input-form {
@@ -263,4 +294,61 @@
   font-family: "Montserrat", sans-serif;
   color: var(--gray-500);
 }
+.input-form-g{
+  height: 40px;
+  background: #f1f0f5;
+  border-radius: 50px;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 32px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  color: #2f3033;
+  width: 700px;
+}
+.input-form-g::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  font-family: "Montserrat", sans-serif;
+  color: var(--gray-500);
+}
 
+
+.upimg{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  align-items: center;
+  background-color: transparent;
+  justify-content: center;
+  border:solid 1px #2f3033 ;
+  border-style: dashed;
+
+
+}
+.upimg::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+
+
+.text{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn2{
+  width: 200px;
+}

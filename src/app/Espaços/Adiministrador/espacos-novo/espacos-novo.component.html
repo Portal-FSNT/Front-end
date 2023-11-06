@@ -3,39 +3,83 @@
   <section id="title">
     <h2>Cadastrar Novo Espaços</h2>
     <div class="buttons">
-      <button class="btn1" routerLink="/espacos">
-        Voltar
-      </button>
+      <button class="btn1" routerLink="/espacos">Voltar</button>
     </div>
   </section>
 
-    <!--Início dos inputs-->
-    <section id="body">
-      <div class="inputs">
-
+  <!--Início dos inputs-->
+  <section id="body">
+    <div class="inputs">
+      <div class="text">
         <div class="campo-cadastro">
           <div class="dados">
             <label for="" class="tittle-form">Nome do Espaço</label>
-            <input placeholder="Nome" class="input-form w392"  [(ngModel)]="espaco.nome" />
+            <input
+              placeholder="Nome"
+              class="input-form-g"
+              [(ngModel)]="espaco.nome"
+            />
           </div>
           <div class="dados">
-            <label for="" class="tittle-form">Proximidade</label>
-            <input placeholder="Proximidade" class="input-form w392"  [(ngModel)]="espaco.ponto_referencia" />
+            <label for="" class="tittle-form">Instituição</label>
+            <input
+              placeholder="Qual a instituição"
+              class="input-form"
+              [(ngModel)]="espaco.ponto_referencia"
+            />
           </div>
-        </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Capacidade</label>
+            <input
+              placeholder="Lotação máxima"
+              class="input-form"
+              
+            />
+          </div>
+        </div> 
         <div class="campo-cadastro">
           <div class="dados">
             <label for="" class="tittle-form">Descrição</label>
-            <textarea type="text" placeholder="Descrição" class="input-form descri" id="description" [(ngModel)]="espaco.descricao"></textarea>
+            <textarea
+              type="text"
+              placeholder="Breve descrição do ambiente"
+              class="input-form-g"
+              id="description"
+              [(ngModel)]="espaco.descricao"
+            ></textarea>
           </div>
         </div>
       </div>
-      <div class="botao">
-        <button (click)="cadastrarEspaco()" class="btn2">Cadastrar</button>
+     
+      <div class="imagem">
+        <div class="dados">
+          <label for="" class="tittle-form">Imagem princial</label>
+        </div>
+      <div class="upload_img">    <!-- (change)="processFile(imageInput)" -->
+        <!-- <label class="image-upload-container btn btn-bwm">  -->
+          <input
+            class="upimg"
+            #imageInput
+            type="file"
+            accept="image/*"
+            
+          />
+        <!-- </label> -->
+        
       </div>
-    </section>
+      <div class="dados">
+        <label for="" class="tittle-form">Link do drive</label>
+        <input
+          placeholder="Link do drive"
+          class="input-form"
 
-    
+          />
+      </div>
+    </div>
+    </div>
 
-
-  </div>
+    <div class="botao">
+      <button (click)="cadastrarEspaco()" class="btn2">Cadastrar</button>
+    </div>
+  </section>
+</div>
