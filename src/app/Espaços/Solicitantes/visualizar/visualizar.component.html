@@ -22,7 +22,7 @@
             <th>Status</th>
           </tr>
         </thead>
-        <tbody *ngFor="let rows of solicitacoes">
+        <tbody *ngFor="let rows of solicitacoes" class="conteudot">
           <tr >
             <td>{{ rows.data_inicio | date : "dd/MM/yyyy" }}</td>
             <td>{{ rows.hora_inicio | timeFormat }}</td>

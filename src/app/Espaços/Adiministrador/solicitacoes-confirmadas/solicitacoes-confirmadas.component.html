@@ -27,7 +27,7 @@
             <th>STATUS</th>
           </tr>
         </thead>
-        <tbody *ngFor="let rows of table">
+        <tbody *ngFor="let rows of table" class="conteudot">
           <tr *ngIf="rows.status_solicitacao === 1">
             <td>{{ rows.data_inicio | date:'dd/MM/yyyy' }}</td>
             <td>{{ rows.hora_inicio | timeFormat }}</td>

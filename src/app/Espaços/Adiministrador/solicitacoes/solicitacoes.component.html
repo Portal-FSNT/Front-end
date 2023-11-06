@@ -26,7 +26,7 @@
           <th>DATA SOLICITAÇÃO</th>
         </tr>
       </thead>
-      <tbody *ngFor="let rows of exibirsolicitacoes">
+      <tbody *ngFor="let rows of exibirsolicitacoes" class="conteudot">
         <tr *ngIf="rows.status_solicitacao === 0" (click)="openModal_aceitar(rows)">
           <td>{{ rows.data_inicio | date : "dd/MM/yyyy" }}</td>
           <td>{{ rows.hora_inicio | timeFormat }}</td>
