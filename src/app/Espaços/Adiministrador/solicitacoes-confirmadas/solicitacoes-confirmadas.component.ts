@@ -16,9 +16,18 @@ export class SolicitacoesConfirmadasComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.service.listarSolicitacoesConfirmadas().subscribe((event) => {
-        this.table = event.result as SolicitacoesConfirmadas[]
-        console.log(this.table);
+      // this.service.listarSolicitacoesConfirmadas().subscribe((event) => {
+      //   this.table = event.result as SolicitacoesConfirmadas[]
+      //   console.log(this.table);
+      // })
+      this.service.listarSolicitacoesConfirmadas().subscribe({
+        next: (event) => {
+          this.table = event
+          console.log(this.table, event);
+        },
+        error: (error) => {
+          console.log('erro: ', error);
+        }
       })
   }
   

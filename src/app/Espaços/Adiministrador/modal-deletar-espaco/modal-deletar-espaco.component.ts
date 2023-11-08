@@ -27,13 +27,24 @@ export class ModalDeletarEspacoComponent implements OnInit {
   }
   
   deletarEspaco() {
-    this.service.deletarEspaco(this.exibirEspaco.id).subscribe((event) => {
-      console.log(event)
-      this.fecharModal()
-      window.location.reload(); // Recarrega a página
+    // this.service.deletarEspaco(this.exibirEspaco.id).subscribe((event) => {
+    //   console.log(event)
+    //   this.fecharModal()
+    //   window.location.reload(); // Recarrega a página
 
-      // Solicitante
-      if(event.message === "Espaço removido com sucesso") {
+    //   // Solicitante
+    //   if(event.message === "Espaço removido com sucesso") {
+    //   }
+    // })
+    this.service.deletarEspaco(this.exibirEspaco.id).subscribe({
+      next: (event) => {
+        this.fecharModal();
+        console.log(event);
+        window.location.reload();
+      },
+      error: (error) => {
+        console.error('erro: ', error);
+        window.alert(error.error.message);
       }
     })
   }

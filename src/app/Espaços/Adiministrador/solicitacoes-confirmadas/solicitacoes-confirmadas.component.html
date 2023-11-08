@@ -20,23 +20,24 @@
       <table class="content-table">
         <thead>
           <tr>
-            <th>DATA</th>
+            <th>DATA DA SOLICITAÇÃO</th>
+            <th>DATA DE USO</th>
             <th>HORÁRIO</th>
-            <th>LOCAL</th>
-            <th>SOLICITANTE</th>
-            <th>STATUS</th>
+            <th>ESPAÇO</th>
+            <th>USUÁRIO</th>
+            <th>DESCRIÇÃO</th>
           </tr>
         </thead>
         <tbody *ngFor="let rows of table">
-          <tr *ngIf="rows.status_solicitacao === 1">
-            <td>{{ rows.data_inicio | date:'dd/MM/yyyy' }}</td>
+          <tr *ngIf="rows.status_solicitacao === 'Aprovada'">
+            <td>{{ rows.data_solicitacao | date : "dd/MM/yyyy"}}</td>
+            <td>{{ rows.data_uso | date : "dd/MM/yyyy" }}</td>
             <td>{{ rows.hora_inicio | timeFormat }}</td>
-            <td>{{ rows.espaco_nome }}</td>
-            <td>{{ rows.usuario_nome }}</td>
-            <td>Aprovado</td>
+            <td>{{ rows.nome_espaco }}</td>
+            <td>{{ rows.nome_usuario }}</td>
+            <td>{{ rows.descricao }}</td>
           </tr>
         </tbody>
       </table>
     </section>
   </div>
-

@@ -13,7 +13,7 @@ export class VisualizarService {
   
   constructor(private http: HttpClient, private tokenService : TokenService) { }
 
-  private readonly API=`${API}/solicitacao`
+  private readonly API=`${API}solicitacoes`
   private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
   visualizarAgendamentos():Observable<any>{

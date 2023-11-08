@@ -14,13 +14,22 @@ export class VisualizarComponent implements OnInit {
   constructor(private service: VisualizarService) { }
 
   ngOnInit() {
-    this.service.visualizarAgendamentos().subscribe((event) => {
-      this.solicitacoes = event.result as Visualizar[]
-      console.log(this.solicitacoes);
+    // this.service.visualizarAgendamentos().subscribe((event) => {
+    //   this.solicitacoes = event.result as Visualizar[]
+    //   console.log(this.solicitacoes);
+    // })
+    this.service.visualizarAgendamentos().subscribe({
+      next: (event) => {
+        this.solicitacoes = event
+        console.log(this.solicitacoes, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
     })
 }
-getStatus(valor: number): string {
-  return valor === 1 ? 'Aceito' : 'Pendente';
-}
+// getStatus(valor: number): string {
+//   return valor === 1 ? 'Aceito' : 'Pendente';
+// }
 
 }

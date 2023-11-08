@@ -24,10 +24,10 @@
         </thead>
         <tbody *ngFor="let rows of solicitacoes">
           <tr >
-            <td>{{ rows.data_inicio | date : "dd/MM/yyyy" }}</td>
+            <td>{{ rows.data_uso | date : "dd/MM/yyyy" }}</td>
             <td>{{ rows.hora_inicio | timeFormat }}</td>
-            <td>{{ rows.espaco_nome }}</td>
-            <td>{{ getStatus(rows.status_solicitacao) }}</td>
+            <td>{{ rows.nome_espaco }}</td>
+            <td>{{ rows.status_solicitacao }}</td>
           </tr>
         </tbody>
       </table>

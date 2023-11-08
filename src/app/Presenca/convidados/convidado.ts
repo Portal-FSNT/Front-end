@@ -1,8 +1,8 @@
 export interface Convidado{
-    id: number,
-    nome: string,
+    id: number;
+    nome: string;
+    email: string;
+    telefone: string;
     cargo: string,
-    empresa: string,
-    email: string,
-    telefone: string,
+    nome_empresa: string, 
 }

@@ -23,16 +23,32 @@ export class ModalAceitarComponent implements OnInit {
   }
 
   deniSolicitacao(id: number) {
-    this.service.deniSolicitacao(id).subscribe((event) => {
-      console.log(event)
-    });
-    window.location.reload()
+    // this.service.deniSolicitacao(id).subscribe((event) => {
+    //   console.log(event)
+    // });
+    this.service.deniSolicitacao(id).subscribe({
+      next: (event) => {
+        window.location.reload();
+        console.log(event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
+    })
   }
 
   aceptSolicitacao(id: number) {
-    this.service.aceptSolicitacao(id).subscribe((event) => {
-      console.log(event)
-    });
-    window.location.reload()
+    // this.service.aceptSolicitacao(id).subscribe((event) => {
+    //   console.log(event)
+    // });
+    this.service.aceptSolicitacao(id).subscribe({
+      next: (event) => {
+        window.location.reload();
+        console.log(event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
+    })
   }
-} 
+}

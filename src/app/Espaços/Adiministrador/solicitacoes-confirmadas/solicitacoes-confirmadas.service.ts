@@ -17,7 +17,7 @@ export class SolicitacoesConfirmadasService {
     private http: HttpClient  
   ) { }
 
-  private readonly API = `${API}/solicitacao`;
+  private readonly API = `${API}solicitacoes`;
   private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
 

@@ -30,10 +30,19 @@ export class ListaEventosComponent implements OnInit {
     ){}
 
   ngOnInit(): void {
-    this.service.listar().subscribe((event)=>{
-      this.listaEvento=event.result as Evento[]
-      console.log(this.listaEvento) 
-    });
+    // this.service.listar().subscribe((event)=>{
+    //   this.listaEvento=event.result as Evento[]
+    //   console.log(this.listaEvento) 
+    // });
+    this.service.listar().subscribe({
+      next: (event) => {
+        this.listaEvento = event
+        console.log(this.listaEvento, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
+    })
   }
 
   editar(id:number){

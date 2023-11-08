@@ -18,9 +18,18 @@ export class EspacosComponent implements OnInit {
   constructor(private service: EspacosService, private modalcontroler: ModalController) { }
 
   ngOnInit() {
-    this.service.listarEspacos().subscribe((event) => {
-      this.table = event
-      console.log(event, this.table);
+    // this.service.listarEspacos().subscribe((event) => {
+    //   this.table = event
+    //   console.log(event, this.table);
+    // })
+    this.service.listarEspacos().subscribe({
+      next: (event) => {
+        this.table = event
+        console.log(this.table, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
     })
   }
 

@@ -4,41 +4,26 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { TokenService } from 'src/app/authentication/token.service';
 
-const API = environment.API
-
 @Injectable({
   providedIn: 'root'
 })
 export class ModalAceitarService {
 
-  private readonly API=`${API}/aprovar_solicitacao`;
+  private readonly API = environment.API;
 
   constructor(
     private tokenService: TokenService,
     private http: HttpClient
   ) { }
 
-  aceptSolicitacao(idSolicitacao: number):Observable<any>{
+  aceptSolicitacao(id: number):Observable<any>{
 
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.tokenService.returnToken()}`,
-    })
-
-    const body = {status_solicitacao: 1};
-
-    return this.http.patch<any>(`${this.API}/${idSolicitacao}`,body,{headers})
+    return this.http.patch<any>(`${this.API}solicitacoes/aprovar/${id}`, null)
   }
 
-  deniSolicitacao(idSolicitacao: number):Observable<any>{
-
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.tokenService.returnToken()}`,
-    })
-
-    const body = {status_solicitacao: 2};
+  deniSolicitacao(id: number):Observable<any>{
     
-    return this.http.patch<any>(`${this.API}/${idSolicitacao}`,body,{headers})
+    return this.http.patch<any>(`${this.API}solicitacoes/rejeitar/${id}`, null)
   }
+
 }

@@ -1,6 +1,8 @@
 export interface Espaco {
-    id: number,
+    id: number;
     nome: string,
     ponto_referencia: string,
-    descricao: string
+    localizacao: string,
+    descricao: string,
+    instituicao: string  
 }

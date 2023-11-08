@@ -27,7 +27,7 @@ export class SolicitacoesComponent implements OnInit {
     this.service.listarSolicitacoes().subscribe({
       next: (event) => {
         this.exibirsolicitacoes = event
-        console.log(']e', this.exibirsolicitacoes, event);
+        console.log(this.exibirsolicitacoes, event);
       },
       error: (error) => {
         console.log('erro: ', error);
