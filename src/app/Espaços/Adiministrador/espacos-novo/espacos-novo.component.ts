@@ -13,9 +13,12 @@ import { Router } from '@angular/router';
 export class EspacosNovoComponent implements OnInit {
 
   espaco:Espaco = {
+    id: 0,
     nome: "",
     ponto_referencia: "",
+    localizacao : "",
     descricao: "",
+    instituicao : "",
   }
 
   constructor(private modalcontroler:ModalController,
@@ -48,7 +51,4 @@ export class EspacosNovoComponent implements OnInit {
         this.router.navigate(['/espacos']);
       })
     }
-
-
-
 }
