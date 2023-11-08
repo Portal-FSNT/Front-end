@@ -16,11 +16,41 @@
             <label for="" class="tittle-form">Endereço</label>
             <input type="text" placeholder="Endereço" class="input-form  w704" formControlName="endereco">
           </div>
+           <!-- Tipo -->
+          <div class="dados">
+            <label for="" class="tittle-form">Tipo de Evento</label>
+            <select formControlName="id_tipo" name="text" class="select" id="select" class="input-form w392"
+              placeholder="Nome do Evento">
+              <option value="0" selected disabled> Selecione uma modalidade </option>
+              <option *ngFor="let tipos of tipos" name="espaco" value={{tipos.id}}> {{ tipos.tipo }} </option>
+            </select>
+          </div>
+           <!-- Espaço -->
+          <div class="dados">
+            <label for="" class="tittle-form">Espaço</label>
+            <select formControlName="id_lugar" name="text" class="select" id="select" class="input-form w392"
+              placeholder="Nome do Evento">
+              <option value="0" selected disabled> Selecione um Espaço </option>
+              <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
+            </select>
+          </div>
+           <!-- Instituição -->
+          <div class="dados">
+            <label for="" class="tittle-form">Instituição</label>
+            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form w392"
+              placeholder="Nome do Evento">
+              <option value="0" selected disabled> Selecione uma Instituiçao </option>
+              <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{
+                instituicoes.nome }} </option>
+            </select>
+          </div>
+          <!-- descrição -->
           <div class="dados">
             <label for="" class="tittle-form">Descrição</label>
             <textarea formControlName="descricao" placeholder="Descrição" id="descricao" cols="55" rows="5"
               class="input-form descri"></textarea>
           </div>
+          
         </div>
 
         <div class="form-right">
@@ -50,32 +80,24 @@
                 class="input-form w184 pad" />
             </div>
           </div>
+          <div class="imagem">
           <div class="dados">
-            <label for="" class="tittle-form">Tipo de Evento</label>
-
-            <select formControlName="id_tipo" name="text" class="select" id="select" class="input-form w392"
-              placeholder="Nome do Evento">
-              <option value="0" selected disabled> Selecione um Espaço </option>
-              <option *ngFor="let tipos of tipos" name="espaco" value={{tipos.id}}> {{ tipos.tipo }} </option>
-            </select>
+            <label for="" class="tittle-form">Imagem princial</label>
           </div>
-          <div class="dados">
-            <label for="" class="tittle-form">Espaço</label>
-            <select formControlName="id_lugar" name="text" class="select" id="select" class="input-form w392"
-              placeholder="Nome do Evento">
-              <option value="0" selected disabled> Selecione um Espaço </option>
-              <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
-            </select>
+          <div class="upload_img">
+            
+                <input
+                  class="upimg"
+                  #imageInput
+                  type="file"
+                  accept="image/*"
+                  
+                />
+             
+              
+            
           </div>
-          <div class="dados">
-            <label for="" class="tittle-form">Instituição</label>
-            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form w392"
-              placeholder="Nome do Evento">
-              <option value="0" selected disabled> Selecione uma Instituiçao </option>
-              <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{
-                instituicoes.nome }} </option>
-            </select>
-          </div>
+         </div>
 
 
           <!-- <div class="dados">
