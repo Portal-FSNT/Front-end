@@ -15,12 +15,6 @@
         <div class="title-card">
 
           <div class="folder"></div>
-          <!-- <img
-
-            src=""
-            alt=""
-            class="folder"
-          /> -->
           <img
             src="../../../assets/Icons/edit-card.svg"
             alt=""
@@ -36,8 +30,7 @@
             <div class="row1">
               <img src="../../../assets/Icons/icon-calendario-g.svg" alt="" />
               <p class="info">
-                {{ card.data_evento | date : "dd/MM/yyyy" }}
-                <!-- {{ card.data_termino | date : "dd/MM/yyyy" }} -->
+                {{ card.data_evento| date : "dd/MM/yyyy" }}
               </p>
             </div>
             <div class="row1">
@@ -51,7 +44,7 @@
             </div>
           </div>
           <div class="localidade">
-            <p>{{ card.nome_espaco }} - {{ card.nome_instituicao }}</p>
+            <p>{{ card.nome_espaco }}</p>
           </div>
           <p class="mini">{{card.endereco}}</p>
         </div>

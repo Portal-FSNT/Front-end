@@ -5,18 +5,14 @@ import { environment } from 'src/environments/environment';
 import { TokenService } from '../../authentication/token.service';
 
 const API = environment.API;
-
 @Injectable({
   providedIn: 'root'
 })
 export class EventoService {
-  constructor(private tokenService : TokenService, private http: HttpClient) { }
-
-  private readonly  API = `${API}/eventos`;
-  private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
-
+  private readonly  API = `${API}eventos`;
+  constructor(private http: HttpClient) { }
 
   listarEvento():Observable<any>{
-    return this.http.get<any>(this.API, { headers: this.header})
+    return this.http.get<any>(this.API)
   }
 }
