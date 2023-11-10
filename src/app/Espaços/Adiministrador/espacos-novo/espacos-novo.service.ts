@@ -12,19 +12,25 @@ const API = environment.API;
 })
 
 export class EspacosNovoService {
+    private readonly API=`${API}espacos/create`;
+    private readonly API_BuscarInsituicoes = `${API}instituicoes`;
 
-    constructor(private tokenService : TokenService, private http: HttpClient) { }
 
-    private readonly API=`${API}/espaco`;
-    private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
-  
-   
+    constructor(private http: HttpClient, private tokenService: TokenService) { }
 
-    cadastrarEspaco(espaco:Espaco):Observable<any>{
-        return this.http.post<any>(this.API, {
-            nome: espaco.nome,
-            ponto_referencia: espaco.ponto_referencia,
-            descricao: espaco.descricao,
-        }, { headers: this.header})
+    private getHeader(): HttpHeaders {
+      const token = this.tokenService.returnToken();
+      return new HttpHeaders().set('Authorization', `Bearer ${token}`);
     }
+  
+    create(novoCampo: Espaco): Observable<any> {
+      const header = this.getHeader();
+      const params = { ...novoCampo }; 
+  
+      return this.http.post<any>(`${API}espacos/create`, params, { headers: header });
+    }
+
+    listarInstituicoes(): Observable<any> {
+        return this.http.get(this.API_BuscarInsituicoes);
+      }
 }
