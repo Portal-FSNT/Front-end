@@ -1,7 +1,9 @@
 #login{
     display: flex;
     height: 100vh;
+    
 }
+
 
 .left{
     width: 60%;
@@ -11,34 +13,64 @@
     justify-content: center;
 }
 
-
-
-.image-right{
-    width: 40%;
+.img{
+    width: 60%;
+    height: 100%;
     display: flex;
     justify-content: center;
     right: 0;
     object-fit: cover;
+    position: relative;
+   
 }
+
+.image-right{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    right: 0;
+    object-fit: cover;
+    
+    
+}
+
+.img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+    z-index: 1;
+  }
 
 .icon-tittle{
     width: 100px;
 }
+.dados{
+    align-items: center;
 
-input{
+}
+.input{
     
     font-family: 'Montserrat', sans-serif;
-    width: 447px;
-    height: 56px;
+    width: 448px;
+    height: 50px;
     top: 0px;
     background: #F1F0F5;
-    border-radius: 50px;
+    border-radius: 8px;
     border: none;
-    
     font-weight: 400;
     font-size: 16px;
     padding-left: 24px;
 }
+.tittle-form{
+    width: 448px;
+    font-weight: bold;
+
+  }
 
 input::placeholder{
     font-weight: 400;
@@ -55,14 +87,15 @@ input::placeholder{
 .button-entrar{
     background: #FF9F10;
     border-radius: 50px;
-    height: 45px;
-    width: 132px;
+    height: 50px;
+    width: 448px;
     border: none;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 100%;
     color: #FFFFFF;
-    transition: 0.1s;
+    transition: 0.5s;
+    border-radius: 8px;
 }
 
 .buttons{
@@ -70,12 +103,12 @@ input::placeholder{
     flex-direction: column;
     gap: 12px;
     align-items: center;
-    margin-top: 32px;
+    margin-top: 80px;
     margin-bottom: 50px;
 }
 
 .button-entrar:hover{
-    background: #f0c17a;
+    background: #df8a0b;
 }
 
 

@@ -28,6 +28,7 @@ nav{
     display: flex;
     align-items: center;
     gap: 30px;
+    
 }
 
 .button{
@@ -38,8 +39,8 @@ nav{
     padding: 0 5px;
 }
 
-.button:hover{
-    border-bottom: 2px #00A54E solid;
+.button-logout:hover{
+    background-color:#024d25 ;
 }
 
 
@@ -58,8 +59,10 @@ button{
     align-items: center;
     padding: 6px 10px;
     background: #00A54E;
-    border-radius: 16px;
+    border-radius: 8px;
     gap: 5px;
+    transition: 0.5s;
+
 }
 
 .logout{

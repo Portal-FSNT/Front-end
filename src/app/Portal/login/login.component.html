@@ -6,13 +6,19 @@
         </div>
         <div class="login">
             <form (ngSubmit)="doLogin()" class="form">
-                    <input [(ngModel)]="email"  name="email" class="input" type="text" placeholder="E-mail">
-                    <input [(ngModel)]="senha"  name="senha" class="input" type="password" placeholder="Senha">
+            <div class="dados">
+                <label for="" class="tittle-form">Email</label>
+                <input [(ngModel)]="email"  name="email" class="input" type="text" placeholder="Informe seu e-mail">
+            </div>
+            <div class="dados">
+                <label for="" class="tittle-form">Senha</label>
+                <input [(ngModel)]="senha"  name="senha" class="input" type="password" placeholder="Informe sua senha">
+            </div>
             </form>
 
             <div class="buttons">
                 <button class="button-entrar"(click)=doLogin()>Entrar</button>
-                <button class="button-cadastro" (click)=irParaTipoCadastro()>Cadastre-se</button>
+                <!-- <button class="button-cadastro" (click)=irParaTipoCadastro()>Cadastre-se</button> -->
             </div>
         </div>
         <div class="footer">
@@ -28,6 +34,7 @@
             </div>
         </div>
     </div>
+    <div class="img">
         <img src="../../../assets/Portal/image-login.svg" alt="" class="image-right">
-    
+    </div>
 </div>
