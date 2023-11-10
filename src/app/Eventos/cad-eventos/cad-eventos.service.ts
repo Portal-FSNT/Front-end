@@ -4,74 +4,33 @@ import { environment } from 'src/environments/environment';
 import { CadEventos } from './cad-eventos';
 import { TokenService } from 'src/app/authentication/token.service';
 import { Observable, switchMap, take } from 'rxjs';
-import { TipoEvento } from './tipo';
-import { Lugares } from './lugar';
-import { Instituicoes } from './instituicao';
-import { MarransatoMode } from 'src/shared/MaranssatoMode.interface';
 import { UserService } from 'src/app/authentication/user/user.service';
-
-
-
 
 const API = environment.API;
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CadEventosService {
-  private readonly API_BuscarTipos = `${API}/tipos`;
-  private readonly API_BuscarInstituicoes = `${API}/instituicoes`;
-  private readonly API_BuscarLugares = `${API}/lugar`;
+  private readonly API_BuscarLugares = `${API}espacos`;
 
-
-  constructor(private http: HttpClient, private tokenService : TokenService, private userService: UserService) { }
-
-  private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
+  constructor(private http: HttpClient, private tokenService: TokenService) { }
 
   private getHeader(): HttpHeaders {
     const token = this.tokenService.returnToken();
-    const userId = this.userService.returnUser().value.id || 0;
-  
-    return new HttpHeaders().set('Authorization', `Bearer ${token}`).set('X-User-ID', userId.toString());
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
   }
 
-  create(novoCampo: CadEventos) {
+  create(novoCampo: CadEventos): Observable<any> {
     const header = this.getHeader();
-  
-    return this.userService.returnUser().pipe(
-      take(1),
-      switchMap(user => {
-        const userId = user.id;
-        const params = { ...novoCampo, id_usuario: userId }; 
-  
-        return this.http.post<any>(`${API}/event`, params, { headers: header });
-      })
-    );
+    const params = { ...novoCampo }; 
+
+    return this.http.post<any>(`${API}eventos/create`, params, { headers: header });
   }
 
-
-  listarTipos(): Observable<MarransatoMode<TipoEvento[]>> {
-    return this.http.get<MarransatoMode<TipoEvento[]>>(this.API_BuscarTipos, { headers: this.header })
+  listarLugares(): Observable<any> {
+    return this.http.get(this.API_BuscarLugares);
   }
-
-  listarInstituicoes(): Observable<MarransatoMode<Instituicoes[]>> {  
-    return this.http.get<MarransatoMode<Instituicoes[]>>(this.API_BuscarInstituicoes, { headers: this.header })
-  }
-
-  // listarTipos(): Observable<any> {
-  //   return this.http.get(this.API_BuscarTipos, { headers: this.header })
-  // }
-
-  // listarInstituicoes(): Observable<any> {  
-  //   return this.http.get(this.API_BuscarInstituicoes, { headers: this.header })
-  // }
-  
-  listarLugares(): Observable<any> {  
-    return this.http.get(this.API_BuscarLugares, { headers: this.header })
-  }
-
-
-
- 
 
 }
