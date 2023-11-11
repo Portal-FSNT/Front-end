@@ -32,10 +32,19 @@ export class ListaPessoasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.service.listar().subscribe((event) => {
-      this.listaPessoa = event.result as Pessoa[];
-      console.log(this.listaPessoa);
-    });
+    // this.service.listar().subscribe((event) => {
+    //   this.listaPessoa = event.result as Pessoa[];
+    //   console.log(this.listaPessoa);
+    // });
+    this.service.listar().subscribe({
+      next: (event) => {
+        this.listaPessoa = event
+        console.log(this.listaPessoa, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
+    })
   }
 
   async add() {
@@ -53,8 +62,7 @@ export class ListaPessoasComponent implements OnInit {
     const email = pessoa.email;
     const cargo = pessoa.cargo;
     const telefone = pessoa.telefone;
-    const empresa = pessoa.empresa;
-    const id_empresa = pessoa.id_empresa
+    const nome_empresa = pessoa.nome_empresa;
 
     const initialState: ModalOptions = {
       initialState: {
@@ -64,8 +72,7 @@ export class ListaPessoasComponent implements OnInit {
           email,
           cargo,
           telefone,
-          empresa,
-          id_empresa,
+          nome_empresa
         ],
         title: 'Modal update pessoa',
         cssClass:"modal",

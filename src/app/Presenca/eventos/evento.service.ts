@@ -17,7 +17,7 @@ const API = environment.API;
 })
 export class EventoService {
 
-  private readonly API=`${API}/evento`;
+  private readonly API=`${API}eventos`;
 
   constructor(
     private http: HttpClient, 
@@ -36,9 +36,9 @@ export class EventoService {
   private header = this.getHeader();
 
   listar():Observable<any>{
-    return this.http.get<any>(this.API, { headers: this.header });
+    return this.http.get<any>(this.API);
   }
-  listarUm(id_evento:any):Observable<any>{
+  listarUm(id_evento:any): Observable<any>{
     return this.http.get(`${API}/evento/${id_evento}`, { headers: this.header })
   }
   edit(id_evento:number,reqBody:any){

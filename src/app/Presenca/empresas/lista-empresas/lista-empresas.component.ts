@@ -12,8 +12,6 @@ import { EmpresaService } from "./../empresa.service";
 // INTERFACE -----
 import { Empresa } from "../empresa";
 
-
-
 @Component({
   selector: "app-lista-empresas",
   templateUrl: "./lista-empresas.component.html",
@@ -31,10 +29,19 @@ export class ListaEmpresasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.service.listar().subscribe((event) => {
-      this.listaEmpresa = event.result as Empresa[];
-      console.log(this.listaEmpresa);
-    });
+    // this.service.listar().subscribe((event) => {
+    //   this.listaEmpresa = event.result as Empresa[];
+    //   console.log(this.listaEmpresa);
+    // });
+    this.service.listar().subscribe({
+      next: (event) => {
+        this.listaEmpresa = event
+        console.log(this.listaEmpresa, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
+    })
   }
 
   async add() {
@@ -57,13 +64,26 @@ export class ListaEmpresasComponent implements OnInit {
   // }
 
   delet(id: number) {
-    this.service.delet(id).subscribe(
-      () => {
+    // this.service.delet(id).subscribe(
+    //   () => {
+    //     this.router.navigate(["/empresas"]);
+    //   },
+    //   (error) => console.log(error)
+    // );
+    this.service.delet(id).subscribe({
+      next: (event) => {
         this.router.navigate(["/empresas"]);
+        console.log(event);
       },
-      (error) => console.log(error)
-    );
-    window.location.reload();
+      error: (error) => {
+        console.log('erro: ', error);
+        alert(error.error.message);
+      },
+      complete: () => {
+        window.location.reload();
+      }
+    })
+    
   }
   
 bsModalRef?: BsModalRef;

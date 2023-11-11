@@ -46,15 +46,24 @@ export class NovoConvidadoComponent implements OnInit {
       id_presenca: this.id_evento,
     });
 
-    this.service.listPessoa().subscribe(
-      (results) => {
-        this.pessoa = results.result;
-        console.log('Lista de Pessoas: '+this.pessoa); 
+    // this.service.listPessoa().subscribe(
+    //   (results) => {
+    //     this.pessoa = results.result;
+    //     console.log('Lista de Pessoas: '+this.pessoa); 
+    //   },
+    //   (error) => {
+    //     console.error(error)
+    //   }
+    // )
+    this.service.listPessoa().subscribe({
+      next: (event) => {
+        this.pessoa = event
+        console.log(this.pessoa, event);
       },
-      (error) => {
-        console.error(error)
+      error: (error) => {
+        console.log('erro: ', error);
       }
-    )
+    })
 
   }
 
@@ -63,12 +72,23 @@ export class NovoConvidadoComponent implements OnInit {
     console.log(this.form.value);
     if (this.form.valid) {
       console.log('Submit');
-      this.service.cadastrarConvidado(this.form.value).subscribe(
-        sucess => console.log('Sucesso'),
-        error => console.log('Error'),
-        () => console.log('Requisição Finalizada.')
-      );
-      window.location.reload();
+      // this.service.cadastrarConvidado(this.form.value).subscribe(
+      //   sucess => console.log('Sucesso'),
+      //   error => console.log('Error'),
+      //   () => console.log('Requisição Finalizada.')
+      // );
+      this.service.cadastrarConvidado(this.form.value).subscribe({
+        next: (event) => {
+          console.log(event);
+        },
+        error: (error) => {
+          console.log('erro: ', error);
+        },
+        complete: () => {
+          window.location.reload();
+        }
+      })
+
     }
   }
 

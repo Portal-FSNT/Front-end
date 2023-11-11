@@ -6,15 +6,17 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-eventos',
   templateUrl: './home-eventos.component.html',
   styleUrls: ['./home-eventos.component.scss' , '../styles.scss']
 })
 export class HomeEventosComponent implements OnInit {
 
   @Input() user: any;
+  
+  @Input() presenca?: boolean;
 
-  eventos:Evento[]=[];
+  eventos: Evento[] = [];
 
   constructor(private modalController:ModalController, private service: EventoService, private router: Router) { }
 
@@ -23,6 +25,7 @@ export class HomeEventosComponent implements OnInit {
       this.eventos = event
       console.log(this.eventos);
     });
+    // this.presenca = true;
   }
 
 

@@ -1,6 +1,4 @@
-<app-header></app-header>
-
-<div id="conteudo">
+<!-- <div id="conteudo">
   <h1>Lista de Eventos</h1>
   <button (click)="novoEvento()" class="btn btn-primary">
     <img src="../../../../assets/icon-presenca/plus-circle.svg" />Novo Evento
@@ -39,6 +37,7 @@
   </div>
 </section>
 <!-- </div> -->
+<app-home-eventos [presenca]="presenca"></app-home-eventos>
 <ng-template #semEvento>
   <p>Não há eventos cadastrados</p>
 </ng-template>
