@@ -2,53 +2,55 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Modal4Component } from '../modal4/modal4.component';
 import { Espaco } from './espaco';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EspacosNovoService } from './espacos-novo.service';
 import { Router } from '@angular/router';
+import { Instituicoes } from './instituicao';
+
 
 @Component({
   selector: 'app-espacos-novo',
   templateUrl: './espacos-novo.component.html',
   styleUrls: ['./espacos-novo.component.scss', '../../../../styles.scss']
 })
+
+
 export class EspacosNovoComponent implements OnInit {
 
-  espaco:Espaco = {
-    id: 0,
-    nome: "",
-    ponto_referencia: "",
-    localizacao : "",
-    descricao: "",
-    instituicao : "",
+  form: FormGroup;
+  submitted = false;
+  instituicao: Instituicoes[] = [];
+
+  constructor(private fb: FormBuilder,
+    private service: EspacosNovoService,
+    private router: Router) {
+
+    this.form = this.fb.group({
+      nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      descricao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
+      ponto_referencia: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      localizacao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      id_instituicao: [[Validators.required]],
+    });
   }
 
-  constructor(private modalcontroler:ModalController,
-    private service: EspacosNovoService,
-    private router: Router) {}
-    async openModal4(){
-      const modal = await this.modalcontroler.create({
-        component: Modal4Component,
-        cssClass: 'modal4'
+  ngOnInit() {
+    this.service.listarInstituicoes().subscribe((instituicaolista) => {
+        this.instituicao = instituicaolista
       });
-      await modal.present();
-      const res = await modal.onDidDismiss();
-    }
+  }
 
-    ngOnInit(): void {
-
-    }
-
-    cadastrarEspaco(){
-
-      // Valida se os inputs estão preenchidos
-      if(this.espaco.nome === ""
-      ||this.espaco.ponto_referencia === ""
-      ||this.espaco.descricao === "")
-      return;
-  
-      this.service.cadastrarEspaco(this.espaco).subscribe((event) => {
-        console.log(event)
-  
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.form.value);
+    if (this.form.valid) {
+      this.service.create(this.form.value).subscribe(
+        () => console.log('Request Completo')
+        );
         this.router.navigate(['/espacos']);
-      })
     }
+
+  }
 }
+
+

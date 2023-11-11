@@ -24,45 +24,44 @@ export class ConvidadoService {
   ) { }
   
   private readonly API= `${API}`
-  private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
 //REQUISIÇÕES_DE_CONVIDADOS -----
   listPessoa():Observable<any>{
-    return this.http.get<any>(`${this.API}/convidados`,{ headers: this.header})
+    return this.http.get<any>(`${this.API}convidados`)
   }
 
 //REQUISIÇÕES_DE_EVENTO -----
   listarStatus(id_evento:number):Observable<MarransatoMode<Status[]>>{
-    return this.http.get<MarransatoMode<Status[]>>(`${this.API}/evento/${id_evento}`,{ headers: this.header})
+    return this.http.get<MarransatoMode<Status[]>>(`${this.API}/evento/${id_evento}`)
   }
 
   delet(id_evento:number){
-    return this.http.delete(`${this.API}/evento/${id_evento}`,{ headers: this.header})
+    return this.http.delete(`${this.API}/evento/${id_evento}`)
   }
   
   edit(id_evento:any,evento:any):Observable<MarransatoMode<Pessoa[]>>{
-    return this.http.put<MarransatoMode<Pessoa[]>>(`${this.API}/evento/${id_evento}`,evento,{ headers: this.header})
+    return this.http.put<MarransatoMode<Pessoa[]>>(`${this.API}/evento/${id_evento}`,evento)
   }
 
 //REQUISIÇÕES_DE_EVENTO-CONVIDADOS -----
   listConvidado():Observable<any>{
-    return this.http.get<any>(`${this.API}/evento_convidado`,{ headers: this.header})
+    return this.http.get<any>(`${this.API}/evento_convidado`)
   }
 
   listOneConvidado(id_evento:number):Observable<any>{
-    return this.http.get(`${this.API}/evento_convidado/${id_evento}`,{ headers: this.header})
+    return this.http.get(`${this.API}/evento_convidado/${id_evento}`)
   }
 
   editConvidado(id_evento:any,reqBody:any){
-    return this.http.patch(`${this.API}/evento_convidado/${id_evento}`,reqBody,{ headers: this.header})
+    return this.http.patch(`${this.API}/evento_convidado/${id_evento}`,reqBody)
   }
 
   cadastrarConvidado(novoConvidado:any){
-   return this.http.post(`${this.API}/evento_convidado`,novoConvidado,{ headers: this.header});
+   return this.http.post(`${this.API}/evento_convidado`,novoConvidado);
   }
 
   deletConvidado(id_convidado:number,id_evento:number){
-    return this.http.delete(`${this.API}/evento_convidado/${id_evento}`,{body:{id_convidado}, headers: this.header})
+    return this.http.delete(`${this.API}/evento_convidado/${id_evento}`,{body:{id_convidado}})
   }
 
 }

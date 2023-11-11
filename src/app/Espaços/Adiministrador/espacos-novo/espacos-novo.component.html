@@ -12,31 +12,38 @@
     <div class="inputs">
       <div class="text">
         <div class="campo-cadastro">
+          <form class="forms" [formGroup]="form">
           <div class="dados">
             <label for="" class="tittle-form">Nome do Espaço</label>
             <input
               placeholder="Nome"
               class="input-form-g"
-              [(ngModel)]="espaco.nome"
+              formControlName="nome"
             />
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Instituição</label>
-            <input
-              placeholder="Qual a instituição"
-              class="input-form"
-              [(ngModel)]="espaco.ponto_referencia"
-            />
+            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form">
+              <option *ngFor="let instituicao of instituicao" name="espaco" value={{instituicao.id}}> {{ instituicao.nome }} </option>
+            </select>
+            
           </div>
           <div class="dados">
-            <label for="" class="tittle-form">Capacidade</label>
+            <label for="" class="tittle-form">Ponto de referência</label>
             <input
-              placeholder="Lotação máxima"
+              formControlName="ponto_referencia"
+              placeholder="Ponto de referência"
               class="input-form"
-              
-            />
+              />
           </div>
-        </div> 
+          <div class="dados">
+            <label for="" class="tittle-form">Localização</label>
+            <input
+              formControlName="localizacao"
+              placeholder="Localização"
+              class="input-form"
+              />
+          </div>
         <div class="campo-cadastro">
           <div class="dados">
             <label for="" class="tittle-form">Descrição</label>
@@ -45,11 +52,10 @@
               placeholder="Breve descrição do ambiente"
               class="input-form-g"
               id="description"
-              [(ngModel)]="espaco.descricao"
+              formControlName="descricao"
             ></textarea>
           </div>
         </div>
-      </div>
      
       <div class="imagem">
         <div class="dados">
@@ -76,10 +82,9 @@
           />
       </div>
     </div>
-    </div>
 
     <div class="botao">
-      <button (click)="cadastrarEspaco()" class="btn2">Cadastrar</button>
+      <button (click)="onSubmit()" class="btn2">Cadastrar</button>
     </div>
-  </section>
+  </form>
 </div>

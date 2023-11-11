@@ -19,8 +19,9 @@ import { DatePipe } from 'src/pipes/date.pipe';
   styleUrls: ['./lista-eventos.component.scss',"../../navbar-adm.scss"]
 })
 export class ListaEventosComponent implements OnInit {
-  id_evento !: Number;
-  listaEvento : Evento[]=[];
+  id_evento!: Number;
+  listaEvento: Evento[] = [];
+  presenca: boolean = false;
 
   constructor(
     private modalController:ModalController,

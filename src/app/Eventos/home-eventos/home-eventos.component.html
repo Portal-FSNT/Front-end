@@ -5,7 +5,7 @@
   <div class="container">
     <div class="main-header">
       <h3>Calendário de Eventos</h3>
-      <a routerLink="/cad-eventos" class="new-evento">
+      <a *ngIf="presenca || presenca === undefined || presenca === null" routerLink="/cad-eventos" class="new-evento">
         Cadastrar novo evento
       </a>
     </div>

@@ -16,8 +16,8 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class NovaPessoaComponent implements OnInit {
 
-  form!:FormGroup;
-  listaPessoa:Empresa[]=[];
+  form!: FormGroup;
+  listaPessoa: Empresa[] = [];
   submitted = false;
 
   constructor(
@@ -28,20 +28,32 @@ export class NovaPessoaComponent implements OnInit {
     private modalController:ModalController,
     public bsModalRef: BsModalRef,
 
-  ) {}
-
-  ngOnInit(): void {
-    this.empresaService.listar().subscribe((event)=>{
-      this.listaPessoa= event.result as Empresa[];
-      console.log(this.listaPessoa)
-    })
-    this.form=this.fb.group({
+  ) {
+    this.form = this.fb.group({
       nome:['',[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       email:['',[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       cargo :['',[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       telefone:['',[Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-      empresa:[]
+      empresa:['', [Validators.required]]
     })
+  }
+
+  ngOnInit(): void {
+    // this.empresaService.listar().subscribe((event)=>{
+    //   this.listaPessoa= event.result as Empresa[];
+    //   console.log(this.listaPessoa)
+    // })
+    this.empresaService.listar().subscribe({
+      next: (event) => {
+        this.listaPessoa = event
+        console.log(this.listaPessoa, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      }
+    })
+
+    
   }
   // cadastrar(){
   //   console.log(this.form)
@@ -62,12 +74,22 @@ export class NovaPessoaComponent implements OnInit {
     console.log(this.form.value);
     if (this.form.valid) {
       console.log('Submit');
-      this.pessoaService.cadPessoa(this.form.value).subscribe(
-        sucess => console.log('Sucesso'),
-        error => console.log('Error'),
-        () => console.log('Request Completo')  
-      );
-      window.location.reload();
+      // this.pessoaService.cadPessoa(this.form.value).subscribe(
+      //   sucess => console.log('Sucesso'),
+      //   error => console.log('Error'),
+      //   () => console.log('Request Completo')  
+      // );
+      this.pessoaService.cadPessoa(this.form.value).subscribe({
+        next: (event) => {
+          console.log(event);
+        },
+        error: (error) => {
+          console.log('erro: ', error);
+        },
+        complete: () => {  
+          window.location.reload();
+        }
+      })
     }
   }
 

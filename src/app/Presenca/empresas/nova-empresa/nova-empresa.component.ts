@@ -55,12 +55,20 @@ export class NovaEmpresaComponent implements OnInit {
     this.submitted = true;
     console.log(this.form.value);
     if (this.form.valid) {
-      console.log('Submit');
-      this.novaEmpresa.cadEmpresa(this.form.value).subscribe(
-        sucess => console.log('Sucesso'),
-        error => console.log('Error'),
-        () => console.log('Request Completo')
-      );
+      // console.log('Submit');
+      // this.novaEmpresa.cadEmpresa(this.form.value).subscribe(
+      //   sucess => console.log('Sucesso'),
+      //   error => console.log('Error'),
+      //   () => console.log('Request Completo')
+      // );
+      this.novaEmpresa.cadEmpresa(this.form.value).subscribe({
+        next: (event) => {
+          console.log(event);
+        },
+        error: (error) => {
+          console.log('erro: ', error);
+        }
+      })
       window.location.reload();
     }
   }

@@ -10,22 +10,24 @@
 <table *ngIf="listaPessoa.length>0 , else semPessoa">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
-      <th>Cargo</th>
-      <th>Empresa</th>
       <th>E-mail</th>
       <th>Telefone</th>
+      <th>Cargo</th>
+      <th>Empresa</th>
       <th>Editar</th>
       <th>Excluir</th>
       </tr>
   </thead>
   <tbody >
     <tr *ngFor="let pessoa of listaPessoa" >
+      <td>{{pessoa.id}}</td>
       <td>{{pessoa.nome}}</td>
-      <td>{{pessoa.cargo}}</td>
-      <td>{{pessoa.empresa}}</td>
       <td>{{pessoa.email}}</td>
       <td>{{pessoa.telefone}}</td>
+      <td>{{pessoa.cargo}}</td>
+      <td>{{pessoa.nome_empresa}}</td>
       <td><img (click)="updatePessoa(pessoa)" src="../../../../assets/Icons/icon-pencil-black.svg"></td>
       <td><img (click)="delet(pessoa.id)" src="../../../../assets/Icons/icon-lixeira-white.svg"></td>
     </tr>

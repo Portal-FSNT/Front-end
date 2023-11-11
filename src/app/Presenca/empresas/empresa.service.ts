@@ -17,24 +17,23 @@ export class EmpresaService {
     private http: HttpClient
   ) {}
 
-  private readonly API = `${API}/empresas`;
-  private header = new HttpHeaders().set('Authorization',`Bearer ${this.tokenService.returnToken()}`);
+  private readonly API = `${API}empresas`;
 
   listar(): Observable<any> {
-    return this.http.get(`${this.API}`,{headers: this.header});
+    return this.http.get(`${this.API}`);
   }
 
   cadEmpresa(novaEmpresa: string) {
     console.log(novaEmpresa)
-    return this.http.post(`${this.API}`,novaEmpresa,{headers: this.header});
+    return this.http.post(`${this.API}/create`,novaEmpresa);
   }
 
   updateEmpresa(id: number, nome: any): Observable<any> {
     console.log(id);
-    return this.http.patch<any>(`${this.API}/${id}`, nome,{headers: this.header});
+    return this.http.patch<any>(`${this.API}/update/${id}`, nome);
   }
 
   delet(id: number) {
-    return this.http.delete(`${this.API}/${id}`,{headers: this.header});
+    return this.http.delete(`${this.API}/delete/${id}`);
   }
 }
