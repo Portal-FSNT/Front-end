@@ -38,27 +38,23 @@ main {
         line-height: 39px;
         color: var(--gray-200);
       }
-
-      .new-evento{
-        padding: 8px;
-        border: 2px solid var(--color-one);
-        border-radius: 8px;
-        text-decoration: none;
-        text-align: center;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 100%;
-        width: 209px;
-        height: 36px;
-        color: #00A54E;
-        cursor: pointer;
       }
     }
-    .new-evento:hover{
-      
-      background-color: #00a54d1f;
-    }
+  }
+.new-evento{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  background-color: #00A54E;
+  color: white;
+  font-weight: 500;
+  transition: 0.25s;
+}
+.new-evento:hover{
+  background-color: #01853e;
 
+}
     // .card {
     //   display: flex;
     //   align-items: center;
@@ -66,8 +62,7 @@ main {
     //   gap: 24px;
     //   justify-content: center;
     // }
-  }
-}
+ 
 
 
 .card-ng {

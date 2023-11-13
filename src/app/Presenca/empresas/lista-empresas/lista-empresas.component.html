@@ -4,12 +4,15 @@
    
 <div class="conteudo">
   <h1>Lista de Empresas</h1>
-  <button (click)="novoEmpresa()" class="btn btn-primary"><img src="../../../../assets/icon-presenca/plus-circle.svg">Empresa</button>
+</div>
+<div class="bot">
+  <button (click)="novoEmpresa()" class="botao"><img src="../../../../assets/icon-presenca/plus-circle.svg">Empresa</button>
 </div>
 
-<table *ngIf="listaEmpresa.length>0 , else semEmpresa">
 
-  <thead>
+<table *ngIf="listaEmpresa.length>0 , else semEmpresa" >
+
+  <thead class="tabela">
     <tr>
       <th>NOME</th>
       <th>EDITAR</th>
