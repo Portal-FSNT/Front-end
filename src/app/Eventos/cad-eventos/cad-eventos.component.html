@@ -9,17 +9,16 @@
 
           <div class="dados">
             <label for="" class="tittle-form">Nome do Evento</label>
-            <input formControlName="nome" id="input-cad-eventos" type="text" placeholder="Nome do Evento"
-              class="input-form w704">
+            <input formControlName="nome" id="input-cad-eventos" type="text"  class="input-forms" placeholder="Nome do Evento">
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Endereço</label>
-            <input type="text" placeholder="endereco" class="input-form  w704" formControlName="endereco">
+            <input type="text" placeholder="endereco" class="input-forms" formControlName="endereco">
           </div>
            <!-- Tipo -->
           <div class="dados">
             <label for="" class="tittle-form">Tipo de Evento</label>
-            <select formControlName="tipo_evento" name="text" class="select" id="select" class="input-form w392">
+            <select formControlName="tipo_evento" name="text" class="select" id="select" class="input-forms">
               <option value="Público"> Público </option>
               <option value="Privado"> Privado </option>
             </select>
@@ -27,7 +26,7 @@
            <!-- Espaço -->
           <div class="dados">
             <label for="" class="tittle-form">Espaço</label>
-            <select formControlName="id_espaco" name="text" class="select" id="select" class="input-form w392"
+            <select formControlName="id_espaco" name="text" class="select" id="select" class="input-forms "
               placeholder="Nome do Evento">
               <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
             </select>
@@ -35,7 +34,7 @@
            <!-- Instituição -->
           <div class="dados">
             <label for="" class="tittle-form">Modalidade</label>
-            <select formControlName="modalidade" name="text" class="select" id="select" class="input-form w392">
+            <select formControlName="modalidade" name="text" class="select" id="select" class="input-forms ">
               <option value="Online"> Online </option>
               <option value="Presencial"> Presencial </option>
             </select>
@@ -44,7 +43,7 @@
           <div class="dados">
             <label for="" class="tittle-form">Descrição</label>
             <textarea formControlName="descricao" placeholder="Descrição" id="descricao" cols="55" rows="5"
-              class="input-form descri"></textarea>
+              class="input-formsd"></textarea>
           </div>
           
         </div>
@@ -55,41 +54,42 @@
             <div class="dados">
               <label for="" class="tittle-form">Data do evento</label>
               <input formControlName="data_evento" type="date" placeholder="Fundação FSNT"
-                class="input-form w184 pad" />
+              class="input-forms" />
             </div>
 
           </div>
           <div class="collun2">
+            <div class="espaço">
             <div class="dados">
               <label for="" class="tittle-form">Hora de Início</label>
               <input formControlName="hora_inicio" type="time" placeholder="Fundação FSNT"
-                class="input-form w184 pad" />
+              class="input-formsP" />
             </div>
             <div class="dados">
               <label for="" class="tittle-form">Hora de Término</label>
               <input formControlName="hora_termino" type="time" placeholder="Fundação FSNT"
-                class="input-form w184 pad" />
+              class="input-formsP" />
             </div>
           </div>
-          <div class="imagem">
-          <div class="dados">
-            <label for="" class="tittle-form">Imagem princial</label>
           </div>
-          <div class="upload_img">
-            
-                <input
-                  class="upimg"
-                  #imageInput
-                  type="file"
-                  accept="image/*"
-                  
-                />
-             
-              
-            
+          <div class="collun2">
+            <div class="imagem">
+              <div class="dados">
+                <label for="" class="tittle-form">Imagem princial</label>
+              </div>
+              <div class="upload_img">
+                
+                    <input
+                      class="upimg"
+                      #imageInput
+                      type="file"
+                      accept="image/*"
+                      
+                    />
+  
+              </div>
           </div>
-         </div>
-
+        </div>
 
           <!-- <div class="dados">
             <label for="" class="tittle-form">Imagem</label>
