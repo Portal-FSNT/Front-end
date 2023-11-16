@@ -3,15 +3,15 @@
     <section id="body">
         <h2>Lista Usuários Pendentes</h2>
         <div class="buttons">
-            <button class="btn1" routerLink="/users">Usuários</button>
-            <button class="btn1 yellow" routerLink="/register-adm">Cadastrar Usuário</button>
+            <button class="botao" routerLink="/users">Usuários</button>
+            <button class="botao" routerLink="/register-adm">Cadastrar Usuário</button>
         </div>
     </section>
 
     <section id="list">
         <ng-container *ngIf="table.length > 0; else noUsers">
             <table>
-                <thead>
+                <thead class="tabela">
                     <tr class="principal">
                         <th >ID</th>
                         <th >NOME</th>
@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
 
-                <tbody *ngFor="let user of table" (click)="openModalWithComponent(user)">
+                <tbody *ngFor="let user of table" (click)="openModalWithComponent(user)" class="conteudot">
                     <td >{{ user.id }}</td>
                     <td>{{ user.nome }}</td>
                     <td>{{ user.nome_instituicao }}</td>

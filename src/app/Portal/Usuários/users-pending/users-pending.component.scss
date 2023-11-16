@@ -44,3 +44,24 @@
   color: #fff;
   text-align: center;
 }
+.tabela{
+  width: 100%;
+  border-radius: 10px;
+}
+.conteudot{
+  text-align: center;
+}
+.botao{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  background-color: #00A54E;
+  color: white;
+  font-weight: 500;
+  transition: 0.25s;
+}
+.botao:hover{
+  background-color: #01853e;
+
+}

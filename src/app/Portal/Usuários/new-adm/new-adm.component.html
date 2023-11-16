@@ -3,8 +3,8 @@
   <section id="title">
     <h2>Cadastrar Novo Usuário</h2>
     <div class="buttons">
-      <button class="btn1" routerLink="/users">Usuários</button>
-      <button class="btn1 yellow" routerLink="/users-pending">Pendente</button>
+      <button class="botao" routerLink="/users">Usuários</button>
+      <button class="botao" routerLink="/users-pending">Pendente</button>
     </div>
   </section>
 
@@ -14,21 +14,21 @@
         <div class="form-left">
           <div class="dados">
             <label for="" class="tittle-form">Nome</label>
-            <input type="text" placeholder="Nome Completo" class="input-form w392" formControlName="nome" />
+            <input type="text" placeholder="Nome Completo" class="input-forms" formControlName="nome" />
           </div>
 
           <div class="dados">
             <label for="" class="tittle-form">Telefone</label>
             <input maxlength="15" [value]="form.get('telefone')!.value! | phone" appOnlyNumbers type="tel"
-              placeholder="(14) 99999-9999" class="input-form w392" formControlName="telefone" />
+              placeholder="(14) 99999-9999" class="input-forms" formControlName="telefone" />
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Senha</label>
-            <input type="password" placeholder="*************" class="input-form w392" formControlName="senha" />
+            <input type="password" placeholder="*************" class="input-forms" formControlName="senha" />
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Tipo de Usuário</label>
-            <select formControlName="nivelAcesso" name="text" class="select" id="select" class="input-form w392 "
+            <select formControlName="nivelAcesso" name="text" class="select" id="select" class="input-forms "
               placeholder="Nome do Evento">
               <option value="Administrador" > Administrador </option>
               <option value="Solicitante" > Solicitante </option>
@@ -43,7 +43,7 @@
           </div> -->
           <div class="dados">
             <label for="" class="tittle-form">Instituição</label>
-            <select formControlName="instituicao" name="text" class="select" id="select" class="input-form w392 w704"
+            <select formControlName="instituicao" name="text" class="select" id="select" class="input-forms"
               placeholder="Nome do Evento">
               <option value="0" disabled> Selecione uma Instituiçao </option>
               <option *ngFor="let empresa of empresa" name="empresa" value={{empresa.id}}> {{empresa.nome }} </option>
@@ -51,17 +51,17 @@
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Cargo</label>
-            <input type="text" placeholder="Analista" class="input-form w392" formControlName="cargo" />
+            <input type="text" placeholder="Analista" class="input-forms" formControlName="cargo" />
           </div>
           <div class="dados">
             <label for="" class="tittle-form">E-mail Corporativo</label>
-            <input type="email" placeholder="email@email.com" class="input-form w392" formControlName="email" />
+            <input type="email" placeholder="email@email.com" class="input-forms" formControlName="email" />
           </div>
         </div>
       </div>
       <div class="buttons-footer">
-        <button type="button" class="btn2 red" (click)="onCancel()">Cancelar</button>
-        <button type="submit" class="btn2 " (click)="onSubmit()">Cadastrar</button>
+        <button type="button" class="button-cancel" (click)="onCancel()">Cancelar</button>
+        <button type="submit" class="button-register " (click)="onSubmit()">Cadastrar</button>
       </div>
     </form>
   </section>

@@ -2,89 +2,88 @@
 <div class="container">
   <section id="title">
     <h2>Cadastrar Novo Espaços</h2>
-    <div class="buttons">
-      <button class="botao" routerLink="/espacos">Voltar</button>
-    </div>
+
   </section>
 
   <!--Início dos inputs-->
   <section id="body">
-    <div class="inputs">
-      <div class="text">
+    <div class="inputes">
         <div class="campo-cadastro">
           <form class="forms" [formGroup]="form">
-          <div class="dados">
-            <label for="" class="tittle-form">Nome do Espaço</label>
-            <input
-              placeholder="Nome"
-              class="input-form-g"
-              formControlName="nome"
-            />
-          </div>
-          <div class="dados">
-            <label for="" class="tittle-form">Instituição</label>
-            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-form">
-              <option *ngFor="let instituicao of instituicao" name="espaco" value={{instituicao.id}}> {{ instituicao.nome }} </option>
-            </select>
-            
-          </div>
-          <div class="dados">
-            <label for="" class="tittle-form">Ponto de referência</label>
-            <input
-              formControlName="ponto_referencia"
-              placeholder="Ponto de referência"
-              class="input-form"
+            <div class="dados">
+              <label for="" class="tittle-forms">Nome do Espaço</label>
+              <input
+                placeholder="Nome"
+                class="input-forms"
+                formControlName="nome"
               />
+            </div>
+            <div class="dados">
+              <label for="" class="tittle-forms">Instituição</label>
+              <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-forms">
+                <option *ngFor="let instituicao of instituicao" name="espaco" value={{instituicao.id}}> {{ instituicao.nome }} </option>
+              </select>
+              
+            </div>
+            <div class="dados">
+              <label for="" class="tittle-forms">Ponto de referência</label>
+              <input
+                formControlName="ponto_referencia"
+                placeholder="Ponto de referência"
+                class="input-forms"
+                />
+            </div>
+            <div class="dados">
+              <label for="" class="tittle-forms">Localização</label>
+              <input
+                formControlName="localizacao"
+                placeholder="Localização"
+                class="input-forms"
+                />
+            </div>
+            <div class="campo-cadastro">
+              <div class="dados">
+                <label for="" class="tittle-forms">Descrição</label>
+                <textarea
+                  type="text"
+                  placeholder="Breve descrição do ambiente"
+                  class="input-formsd"
+                ></textarea>
+              </div>
           </div>
-          <div class="dados">
-            <label for="" class="tittle-form">Localização</label>
-            <input
-              formControlName="localizacao"
-              placeholder="Localização"
-              class="input-form"
-              />
-          </div>
-        <div class="campo-cadastro">
-          <div class="dados">
-            <label for="" class="tittle-form">Descrição</label>
-            <textarea
-              type="text"
-              placeholder="Breve descrição do ambiente"
-              class="input-form-g"
-              id="description"
-              formControlName="descricao"
-            ></textarea>
-          </div>
+        </form>
         </div>
-     
+    
       <div class="imagem">
         <div class="dados">
           <label for="" class="tittle-form">Imagem princial</label>
         </div>
-      <div class="upload_img">    <!-- (change)="processFile(imageInput)" -->
-        <!-- <label class="image-upload-container btn btn-bwm">  -->
+        <div class="upload_img">    <!-- (change)="processFile(imageInput)" -->
+          <!-- <label class="image-upload-container btn btn-bwm">  -->
+            <input
+              class="upimg"
+              #imageInput
+              type="file"
+              accept="image/*"
+              
+            />
+          <!-- </label> -->
+        </div>
+
+        <div class="dados">
+          <label for="" class="tittle-forms">Link do drive</label>
           <input
-            class="upimg"
-            #imageInput
-            type="file"
-            accept="image/*"
-            
-          />
-        <!-- </label> -->
-        
+            placeholder="Link do drive"
+            class="input-forms"
+            />
+        </div>
       </div>
-      <div class="dados">
-        <label for="" class="tittle-form">Link do drive</label>
-        <input
-          placeholder="Link do drive"
-          class="input-form"
+    
+  
+  </div>
 
-          />
-      </div>
-    </div>
-
-    <div class="botao">
-      <button (click)="onSubmit()" class="btn2">Cadastrar</button>
-    </div>
-  </form>
-</div>
+  <div class="botao">
+      <button type="button" class="button-cancel" routerLink="/espacos">Cancelar</button>
+      <button (click)="onSubmit()" class="button-register">Cadastrar</button>
+  </div>
+  

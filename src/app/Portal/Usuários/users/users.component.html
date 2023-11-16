@@ -4,17 +4,17 @@
   <section id="title">
     <h2>Lista de Usuários</h2>
     <div class="buttons">
-      <button class="btn1" routerLink="/users-pending">
+      <button class="botao" routerLink="/users-pending">
         Pendente
       </button>
-      <button class="btn1 yellow" routerLink="/register-adm">
+      <button class="botao" routerLink="/register-adm">
         Cadastrar Usuário
       </button>
     </div>
   </section>
 
   <section id="list">
-    <table>
+    <table class="tabela">
       <thead>
         <tr>
           <th>NOME</th>
@@ -24,7 +24,7 @@
           <th >TIPO</th>
         </tr>
       </thead>
-      <tbody *ngFor="let user of filteredTable" (click)="openModalWithComponent(user)">
+      <tbody *ngFor="let user of filteredTable" (click)="openModalWithComponent(user)"  class="conteudot">
 
         <td >{{ user.nome }}</td>
         <td>{{ user.nome_instituicao }}</td>
