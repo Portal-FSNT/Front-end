@@ -28,7 +28,8 @@ export class AlterarEventoComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private service: AltEventosService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private altEventosService: AltEventosService) {
 
     this.form = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
@@ -137,4 +138,18 @@ export class AlterarEventoComponent implements OnInit {
     this.form.reset();
     this.router.navigate(['/eventos']);
   }
+
+  onDelete() {
+    const eventId = +this.route.snapshot.params['id'];
+    this.router.navigate(['/eventos']);
+    this.altEventosService.deletarEvento(eventId).subscribe(
+      response => {
+        console.log('Evento excluído com sucesso!', response);
+      },
+      error => {
+        console.error('Erro ao excluir o evento', error);
+      }
+    );
+  }
+
 }

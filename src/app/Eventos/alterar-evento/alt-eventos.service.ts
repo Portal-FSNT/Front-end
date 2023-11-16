@@ -22,7 +22,7 @@ export class AltEventosService {
   private readonly API_BuscarTipos = `${API}/tipos`;
   private readonly API_BuscarInstituicoes = `${API}/instituicoes`;
   private readonly API_BuscarLugares = `${API}/lugar`;
-  private readonly API_BuscarEventos = `${API}/events`;
+  private readonly API_DeletarEventos = `${API}eventos/delete`;
 
   constructor(private http: HttpClient, private tokenService : TokenService, private userService: UserService) { }
 
@@ -57,7 +57,6 @@ export class AltEventosService {
     return this.http.get<MarransatoMode<TipoEvento[]>>(this.API_BuscarTipos, { headers: this.header })
   }
 
-
   listarInstituicoes(): Observable<MarransatoMode<Instituicoes[]>> {  
     return this.http.get<MarransatoMode<Instituicoes[]>>(this.API_BuscarInstituicoes, { headers: this.header })
   }
@@ -66,7 +65,13 @@ export class AltEventosService {
     return this.http.get(this.API_BuscarLugares, { headers: this.header })
   }
 
-
+  deletarEvento(id: number): Observable<any> {
+    const header = this.getHeader();
+  
+    const deleteUrl = `${this.API_DeletarEventos}/${id}`;
+  
+    return this.http.delete<any>(deleteUrl, { headers: header });
+  }
 
  
 
