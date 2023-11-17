@@ -333,7 +333,9 @@
 }
 
 td {
-  text-align: center;
+  text-align: left;
+  max-width: 200px; 
+  word-wrap: break-word; 
 }
 .botao{
   background-color: transparent;
