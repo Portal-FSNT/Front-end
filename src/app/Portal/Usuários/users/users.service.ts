@@ -13,7 +13,7 @@ export class UsersService {
 
   constructor(private tokenService : TokenService, private http: HttpClient) { }
 
-  private readonly API = `${API}/users`;
+  private readonly API = `${API}users`;
   private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
   listUsers(): Observable<any> {

@@ -13,22 +13,25 @@ const API = environment.API;
 })
 export class NewAdmService {
   
-  private readonly API_users = `${API}/user`;
-  private readonly API_BuscarEmpresas = `${API}/instituicoes`;
+  private readonly API_users = `${API}users`;
+  private readonly API_BuscarInsituicoes = `${API}instituicoes`;
   private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
 
   constructor(private http: HttpClient, private tokenService : TokenService) { }
 
 
-
-
-  create(usuario: any){
-    return this.http.post(this.API_users, usuario).pipe(take(1));
+  private getHeader(): HttpHeaders {
+    const token = this.tokenService.returnToken();
+    return new HttpHeaders().set('Authorization', `Bearer ${token}`);
   }
 
-
-  listarEmpresas(): Observable<any> {  
-    return this.http.get(this.API_BuscarEmpresas, { headers: this.header })
+  create(usuario: any): Observable<any> {
+    const header = this.getHeader();
+    return this.http.post<any>(`${API}users/create`, usuario, { headers: header });
   }
+
+  listarInstituicoes(): Observable<any> {
+    return this.http.get(this.API_BuscarInsituicoes);
+}
 }

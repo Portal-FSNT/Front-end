@@ -1,5 +1,5 @@
 export interface Users {
-    id?: string;
+    id?: number;
     nome?: string;
     email?: string;
     senha?: string;
@@ -8,6 +8,5 @@ export interface Users {
     telefone?: string;
     nivel_acesso?: string;
     status_usuario: number;
-    nome_instituicao?: string;
-    nomeTipo?: string;
+    id_instituicao?: number;
 }

@@ -28,7 +28,7 @@
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Tipo de Usuário</label>
-            <select formControlName="nivelAcesso" name="text" class="select" id="select" class="input-forms "
+            <select formControlName="nivel_acesso" name="text" class="select" id="select" class="input-forms "
               placeholder="Nome do Evento">
               <option value="Administrador" > Administrador </option>
               <option value="Solicitante" > Solicitante </option>
@@ -43,15 +43,10 @@
           </div> -->
           <div class="dados">
             <label for="" class="tittle-form">Instituição</label>
-            <select formControlName="instituicao" name="text" class="select" id="select" class="input-forms"
+            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-forms"
               placeholder="Nome do Evento">
-              <option value="0" disabled> Selecione uma Instituiçao </option>
-              <option *ngFor="let empresa of empresa" name="empresa" value={{empresa.id}}> {{empresa.nome }} </option>
+              <option *ngFor="let instituicao of instituicao" name="empresa" value={{instituicao.id}}> {{instituicao.nome }} </option>
             </select>
-          </div>
-          <div class="dados">
-            <label for="" class="tittle-form">Cargo</label>
-            <input type="text" placeholder="Analista" class="input-forms" formControlName="cargo" />
           </div>
           <div class="dados">
             <label for="" class="tittle-form">E-mail Corporativo</label>

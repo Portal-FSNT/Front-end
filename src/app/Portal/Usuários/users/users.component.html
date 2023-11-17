@@ -26,8 +26,8 @@
       </thead>
       <tbody *ngFor="let user of filteredTable" (click)="openModalWithComponent(user)"  class="conteudot">
 
-        <td >{{ user.nome }}</td>
-        <td>{{ user.nome_instituicao }}</td>
+        <td>{{ user.nome }}</td>
+        <td>{{ user.id_instituicao }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.telefone | phone }}</td>
         <td>

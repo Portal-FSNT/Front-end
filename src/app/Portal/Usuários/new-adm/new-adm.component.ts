@@ -1,7 +1,7 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewAdmService } from './new-adm.service';
 import { Router } from '@angular/router';
-import { Empresas } from './empresa.interface';
+import { Instituicoes } from './instituicao';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -15,7 +15,7 @@ export class NewAdmComponent implements OnInit {
 
   form: FormGroup;
   submitted = false;
-  empresa: Empresas[] = [];
+  instituicao: Instituicoes[] = [];
 
 
   constructor(private fb: FormBuilder,
@@ -25,38 +25,27 @@ export class NewAdmComponent implements OnInit {
       nome: [null,[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       email: [null,[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       senha: [null,[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      cargo: [null,[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       telefone: [null,[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      nivelAcesso:  [null,[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      statusUsuario: 1,
-      instituicao: [],
+      id_instituicao: [[Validators.required]],
+      nivel_acesso: [[Validators.required]],
     });
   }
 
   ngOnInit() {
-    this.service.listarEmpresas().subscribe(
-      (results) => {
-        this.empresa = results.results;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-    
+    this.service.listarInstituicoes().subscribe((instituicaolista) => {
+      this.instituicao = instituicaolista
+    });
   }
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.form.value);
     if (this.form.valid) {
-      console.log('Submit');
       this.service.create(this.form.value).subscribe(
-        sucess => console.log('Sucesso'),
-        error => console.log('Error'),
-        () => console.log('Rquest Completo')
+        () => console.log('Request Completo')
         );
         this.router.navigate(['/users']);
     }
+
   }
   onCancel() {
     this.submitted = false;

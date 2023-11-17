@@ -33,21 +33,16 @@ export class UsersComponent {
     ngOnInit() {
       this.service.listUsers().subscribe((event) => {
         this.table = event.result as Users[];
-        this.filterTable();
         console.log(this.filteredTable);
       });
     }
-    filterTable() {
-      this.filteredTable = this.table.filter((user) => user.status_usuario > 0);
-    }
+
 
   openModalWithComponent(user: any) {
     const nome = user.nome;
     const email = user.email;
     const cargo = user.cargo;
     const telefone = user.telefone;
-    const nivel_acesso = user.nivel_acesso;
-    const status_usuario = user.status_usuario;
     const empresa = user.nome_instituicao;
     const id_instituicao = user.id_instituicao;
 
@@ -58,8 +53,6 @@ export class UsersComponent {
           email,
           cargo,
           telefone,
-          nivel_acesso,
-          status_usuario,
           empresa,
           id_instituicao,
         ],
