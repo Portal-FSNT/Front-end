@@ -56,8 +56,15 @@ button{
     align-items: center;
     padding: 6px 10px;
     background: #00A54E;
-    border-radius: 16px;
+    border-radius: 8px;
     gap: 5px;
+    transition: 0.5s;
+
+    
+} 
+.button-logout:hover{
+    background: #016b32;
+
 }
 
 .logout{

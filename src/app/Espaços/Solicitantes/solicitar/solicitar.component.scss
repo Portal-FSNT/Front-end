@@ -4,11 +4,17 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 32px;
+    .titulo{
+      text-align: center;
+      width: 80%;
+      padding-left: 90px;
+    }
     
     .buttons {
       display: flex;
       align-items: center;
       gap: 12px;
+      
       
     }
   }
@@ -22,15 +28,21 @@
     gap: 3rem;
     .inicio{ 
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 10rem;
       margin-bottom: 40px;
       width: 100%;
-
+      
+      align-items: center;
+      
+      
       .inputs{
         display: flex;
         flex-direction: column;
         gap: 16px;
+        
+        
+        
       }
     }
   }
@@ -45,12 +57,25 @@ textarea{
   width: 100%;
   border-radius: 8px;
   border: none;
-  background-color: forestgreen;
-  padding:10px;
+  background-color: #00A54E;
+  padding:16px;
   color: white;
   transition: 0.25s;
 }
 .bot:hover{
+  background-color: rgb(23, 99, 23);
+
+}
+.botao_{
+  width: 360px;
+  border-radius: 8px;
+  border: none;
+  background-color: #00A54E;
+  padding:16px;
+  color: white;
+  transition: 0.25s;
+}
+.botao_:hover{
   background-color: rgb(23, 99, 23);
 
 }
