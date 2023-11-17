@@ -36,7 +36,7 @@ export class AltEventosService {
 
   buscarEventoPorId(eventId: number): Observable<{result: CadEventos}> {
     const header = this.getHeader();
-    return this.http.get<{result: CadEventos}>(`${API}/event/${eventId}`, { headers: header });
+    return this.http.get<{result: CadEventos}>(`${API}eventos/${eventId}`, { headers: header });
   }
 
   updateEvento(eventId: number, campoAtualizado: CadEventos): Observable<any> {
@@ -72,7 +72,5 @@ export class AltEventosService {
   
     return this.http.delete<any>(deleteUrl, { headers: header });
   }
-
- 
 
 }
