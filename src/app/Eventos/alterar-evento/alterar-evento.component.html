@@ -2,7 +2,12 @@
 
 <div class="container">
   <section id="body">
-    <h3>Alterar as Informações do Evento </h3>
+    <div class="topo">
+      <h3>Alterar as Informações do Evento </h3>
+      <div class="botao">
+        <button type="button" class="button-return" (click)="onCancel()">Voltar</button>
+      </div>
+    </div>
     <form class="forms" [formGroup]="form">
       <div class="flex-box-form">
         <div class="form-left">
@@ -48,8 +53,6 @@
           
           <div class="dados">
             <label for="" class="tittle-form">Tipo de Evento</label>
-
-            <label for="" class="tittle-form">Modalidade</label>
             <select formControlName="modalidade" name="text" class="select" id="select" class="input-forms ">
               <option value="Online"> Online </option>
               <option value="Presencial"> Presencial </option>
@@ -57,14 +60,14 @@
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Espaço</label>
-            <select formControlName="id_lugar" name="text" class="select" id="select" class="input-forms" placeholder="Nome do Evento">
+            <select formControlName="id_lugar" name="text" class="select" id="select" class="input-forms" placeholder="Espaço realizado">
               <option value="0"> Selecione um Espaço </option>
               <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
             </select>
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Instituição</label>
-            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-forms" placeholder="Nome do Evento">
+            <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-forms" placeholder="Instituição do evento">
               <option value="0"> Selecione uma Instituiçao </option>
               <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{ instituicoes.nome }} </option>
             </select>
@@ -74,9 +77,9 @@
       </div>
       <div class="buttons">
 
-        <button type="button" class="button-cancel" (click)="onCancel()">Cancelar</button>
-        <button type="button" class="button-register" >Editar</button>
         <button type="submit" class="button-cancel" (click)="onDelete()">Deletar</button>
+        <button type="button" class="button-register" >Validar</button>
+        
 
       </div>
     </form>

@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<div class="body">
 <div id="navbar">
    
 <div class="conteudo">
@@ -10,9 +10,9 @@
 </div>
 
 
-<table *ngIf="listaEmpresa.length>0 , else semEmpresa" >
+<table *ngIf="listaEmpresa.length>0 , else semEmpresa" class="tabela">
 
-  <thead class="tabela">
+  <thead >
     <tr>
       <th>NOME</th>
       <th>EDITAR</th>
@@ -20,7 +20,7 @@
     </tr>
   </thead>
 
-  <tbody >
+  <tbody class="conteudot" >
     <tr *ngFor="let empresa of listaEmpresa">
       <td> {{empresa.nome}}</td>
       <!-- <td><img (click)="edit(empresa.nome,empresa.nome)" src="../../../../assets/icon-presenca/caneta_black.svg"></td> -->
@@ -39,3 +39,4 @@
 <ng-template #semEmpresa>
   <p>Ainda não há empresas cadastradas</p>
 </ng-template>
+</div>

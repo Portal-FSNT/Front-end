@@ -82,7 +82,7 @@ main {
     display: grid;
     position: relative;
     padding: 6px;
-    transition: transform 0.25s ease-in-out, border 0.3s ease-in-out;
+    transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
     &:hover {
         transform: scale(1.1); 
         border: 2px solid #00A54E;
@@ -126,6 +126,10 @@ main {
         right: 5%;
         top: 7%;
         cursor: pointer;
+      }
+      .edit:hover{
+        filter: brightness(0.1);
+     
       }
     }
   

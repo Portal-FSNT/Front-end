@@ -61,10 +61,34 @@
     }
 
   }
+}
+.topo{
+  display:flex;
+  flex-direction: space-between;
+  gap:400px;
   
 }
-
-
+.botao{
+  background-color: transparent;
+  padding-top: 35px;
+  
+  
+}
+.button-return{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #00A54E;;
+    transition: 0.25s;
+    padding: 5px;
+    font-size: 20px;
+    color: #2f3033;
+    font-weight: 500;
+}
+.button-return:hover{
+    font-size: 24px;
+    border: none;
+    color:  rgb(221, 16, 16);
+}
 .option-tipo{
   color: var(--gray-200);
 }

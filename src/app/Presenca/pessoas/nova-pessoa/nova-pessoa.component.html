@@ -8,7 +8,7 @@
 
             <div class="modal-label"><label>Nome</label>
             </div>
-            <input formControlName="nome" class="modal-input" type="text" placeholder="Digite o nome do convidado">
+            <input formControlName="nome" class="modal-inputs" type="text" placeholder="Digite o nome do convidado">
         </div>
         <div class="dados">
 
@@ -16,14 +16,14 @@
                 <label>E-mail</label>
             </div>
             <input type="email" placeholder="Digite o e-mail do convidado" formControlName="email"
-                class="modal-input" />
+                class="modal-inputs" />
         </div>
         <div class="dados">
             <div class="modal-label">
                 <label>Telefone</label>
             </div>
             <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel"
-                placeholder="Digite o telefone do convidado" formControlName="telefone" class="modal-input"
+                placeholder="Digite o telefone do convidado" formControlName="telefone" class="modal-inputs"
                 appOnlyNumbers />
         </div>
         <div class="dados">
@@ -31,21 +31,22 @@
             <div class="modal-label">
                 <label>Cargo</label>
             </div>
-            <input formControlName="cargo" class="modal-input" type="text" placeholder="Digite o cargo do convidado">
+            <input formControlName="cargo" class="modal-inputs" type="text" placeholder="Digite o cargo do convidado">
         </div>
         <div class="dados">
 
             <div class="modal-label">
                 <label>Empresa</label>
             </div>
-            <select formControlName="empresa" class="modal-input" type="text">
+            <select formControlName="empresa" class="modal-inputs" type="text">
                 <option placeholder="Empresas" *ngFor="let empresa of listaPessoa" [value]="empresa.id">{{empresa.nome}}
                 </option>
             </select>
         </div>
 
 
-
-        <button class="modal-button" (click)="onSubmit()"> Cadastrar </button>
+        <div class="botao">
+        <button class="button-register" (click)="onSubmit()"> Cadastrar </button>
+        </div>
     </form>
 </div>
