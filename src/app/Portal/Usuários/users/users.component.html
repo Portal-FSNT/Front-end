@@ -21,20 +21,20 @@
           <th >INSTITUIÇÃO</th>
           <th>E-MAIL</th>
           <th >CONTATO</th>
-          <th >TIPO</th>
+          <!-- <th >TIPO</th> -->
         </tr>
       </thead>
-      <tbody *ngFor="let user of filteredTable" (click)="openModalWithComponent(user)"  class="conteudot">
+      <tbody *ngFor="let user of filteredTable" class="conteudot">
 
         <td>{{ user.nome }}</td>
-        <td>{{ user.id_instituicao }}</td>
+        <td>{{ user.nome_instituicao}}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.telefone | phone }}</td>
-        <td>
+        <!-- <td>
           <div [ngClass]="{'adm':adm === user.nivel_acesso, 'soli': soli===user.nivel_acesso}">
             {{ user.nivel_acesso }}
           </div>
-        </td>
+        </td> -->
 
       </tbody>
     </table>
