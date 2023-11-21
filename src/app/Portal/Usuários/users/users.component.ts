@@ -25,45 +25,19 @@ export class UsersComponent {
   
   bsModalRef?: BsModalRef;
   constructor(
-    private service: UsersService, 
-    private modalService: BsModalService
-    ) {}
+    private service: UsersService, private modalcontroler: ModalController) {}
     
     
     ngOnInit() {
-      this.service.listUsers().subscribe((event) => {
-        this.table = event.result as Users[];
-        console.log(this.filteredTable);
+      this.service.listUsers().subscribe({
+        next: (event) => {
+          this.filteredTable = event
+         console.log(this.filteredTable, event);
+       },
+        error: (error) => {
+        console.log('erro: ', error);
+        }
       });
     }
-
-
-  openModalWithComponent(user: any) {
-    const nome = user.nome;
-    const email = user.email;
-    const cargo = user.cargo;
-    const telefone = user.telefone;
-    const empresa = user.nome_instituicao;
-    const id_instituicao = user.id_instituicao;
-
-    const initialState: ModalOptions = {
-      initialState: {
-        list: [
-          nome,
-          email,
-          cargo,
-          telefone,
-          empresa,
-          id_instituicao,
-        ],
-        title: 'Modal with component'
-      }
-    };
-    this.bsModalRef = this.modalService.show(ModalChangeDataUserComponent, initialState);
-    this.bsModalRef.content.closeBtnName = 'Close';
-    return user; 
-  }
-
-
   
 }
