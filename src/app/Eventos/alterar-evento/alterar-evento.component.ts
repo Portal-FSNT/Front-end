@@ -14,6 +14,7 @@ import { Instituicoes } from './instituicao';
   styleUrls: ['./alterar-evento.component.scss', '../styles.scss']
 })
 export class AlterarEventoComponent implements OnInit {
+[x: string]: any;
 
   form: FormGroup;
   submitted = false;
