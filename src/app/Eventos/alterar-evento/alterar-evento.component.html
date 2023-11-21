@@ -49,9 +49,10 @@
           <div class="dados">
             <label for="" class="tittle-form">Tipo de Evento</label>
 
-            <select formControlName="id_tipo" name="text" class="select" id="select" class="input-forms" placeholder="Nome do Evento">
-              <option value="0"> Selecione um Espaço </option>
-              <option *ngFor="let tipos of tipos" name="espaco" value={{tipos.id}}> {{ tipos.tipo }} </option>
+            <label for="" class="tittle-form">Modalidade</label>
+            <select formControlName="modalidade" name="text" class="select" id="select" class="input-forms ">
+              <option value="Online"> Online </option>
+              <option value="Presencial"> Presencial </option>
             </select>
           </div>
           <div class="dados">
