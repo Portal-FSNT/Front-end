@@ -84,7 +84,7 @@ main {
     padding: 6px;
     transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
     &:hover {
-        transform: scale(1.1); 
+        transform: scale(1.05); 
         border: 2px solid #00A54E;
         
     }
@@ -208,4 +208,23 @@ footer {
       text-align: center;
     }
   }
+}
+
+@media only screen and (max-width: 1300px){
+  .title-card{
+    display:none;
+    width: 95% !important;
+  }
+  
+}
+@media only screen and (max-width: 400px){
+  .title-card{
+    display:none;
+    width: 320px !important;
+  }
+    .card{
+      transition:  transform 0.25s ease-in-out, border 0.35s ease-in-out;
+     
+    }
+
 }

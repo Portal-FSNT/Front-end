@@ -65,6 +65,12 @@
     font-weight: 400;
     font-size: 16px;
     padding-left: 24px;
+    transition: transform 0.3s ease-in-out; 
+}
+input:hover{
+    transform: scale(1.05);
+    border: #00A54E 1px solid;
+    
 }
 .tittle-form{
     width: 448px;
@@ -190,10 +196,10 @@ h1{
         align-items: center;
         justify-content: center;
     }
-    .image-right {
+    .img {
         height: 100vh;
         width: auto;
-        width: 0;
+        width: 0px;
         display: none;
     }
 }
@@ -207,11 +213,11 @@ h1{
         width: 100%;
         height: auto;
         padding: 50px 20px;
+        align-self: center;
     }
-    .image-right {
-        width: 100%;
+    .img {
         height: auto;
-        width: 0;
+        width: 0px;
         display: none;
     }
     .buttons {

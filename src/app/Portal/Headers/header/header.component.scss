@@ -78,7 +78,11 @@ button{
 //     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
 //     max-width: 1422px;
 // }
-
+@media only screen and (max-width: 650px){
+    .navegar{
+        display:none;
+    }
+  }
 
 
    

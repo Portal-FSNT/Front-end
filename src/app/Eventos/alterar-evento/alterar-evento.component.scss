@@ -171,3 +171,70 @@
 .upimg:hover{
   border: forestgreen 3px dashed;
 }
+@media only screen and (max-width: 1100px){
+  .flex-box-form{
+      display: flex;
+      flex-direction: column;
+      width: 800px;
+      padding-left: 0px !important;
+      
+  }
+  body{
+    width: 800px;
+  }
+
+  .form{
+    width: 800px;
+  }
+  .topo{
+    width: 800px;
+    gap: 80px;
+  }
+  .input-formsd{
+    width: 448px;
+    height: 120px;
+  }
+  .buttons{
+    gap:20px;
+    width: 800px;
+  }
+  .form-right{
+    align-items: left;
+  }
+
+}
+@media only screen and (max-width: 650px){
+  .flex-box-form{
+      display: flex;
+      flex-direction: column;
+      width: 380px;
+      padding-left: 0px !important;
+      
+  }
+  body{
+    width: 400px;
+  }
+  .input-forms{
+    width: 360px;
+  }
+  .input-formsd{
+    width: 360px;
+    height: 120px;
+  }
+  .input-formsP{
+    width:120px;
+  }
+  .form{
+    width: 400px;
+  }
+  .topo{
+    width: 120px;
+    gap: 50px;
+  }
+  .buttons{
+    gap:20px;
+    width: 400px;
+  }
+
+}
+
