@@ -34,7 +34,7 @@ export class NovaPessoaComponent implements OnInit {
       email:['',[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       cargo :['',[Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       telefone:['',[Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-      empresa:['', [Validators.required]]
+      id_empresa:[[Validators.required]]
     })
   }
 
