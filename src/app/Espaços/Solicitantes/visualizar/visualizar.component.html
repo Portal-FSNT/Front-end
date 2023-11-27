@@ -2,7 +2,7 @@
 
 <div class="container">
     <section id="title">
-      <h2>Vizualizar Socilitações</h2>
+      <h2>Visualizar Socilitações</h2>
       <div class="buttons">
         <button class="botao" routerLink="/solicitar">
           Solicitar
@@ -20,14 +20,21 @@
             <th>Horário</th>
             <th>Local</th>
             <th>Status</th>
+            <th>Ações</th>
+
+
           </tr>
         </thead>
-        <tbody *ngFor="let rows of solicitacoes" class="conteudot">
+        <tbody *ngFor="let rows of solicitacoes" class="conteudot" submit="aprovarAgendamento()">
           <tr >
             <td>{{ rows.data_uso | date : "dd/MM/yyyy" }}</td>
             <td>{{ rows.hora_inicio | timeFormat }}</td>
             <td>{{ rows.nome_espaco }}</td>
             <td>{{ rows.status_solicitacao }}</td>
+            <td> 
+             <img src="../../../../assets/Icons/icon-aprovado.svg" class="icon-funcion">
+             <img src="../../../../assets/Icons/icon-x-red.svg" class="icon-funcion-x"> 
+            </td>
           </tr>
         </tbody>
       </table>

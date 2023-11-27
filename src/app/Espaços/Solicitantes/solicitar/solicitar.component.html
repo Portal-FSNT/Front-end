@@ -12,19 +12,18 @@
   <section id="body">
     <!--Início dos inputs-->
     <div class="inicio">
-
+    <form class="forms" [formGroup]="form">
       <div class="inputs">
         <div class="dados">
           <label class="tittle-form">Selecione Um Espaço</label>
     
-          <select [(ngModel)]="espacoSelecionado" class="input-forms">
+          <select formControlName="id_espaco" class="input-forms">
             <option *ngFor="let espaco of espacos" name="espaco" value={{espaco.id}}> {{ espaco.nome }} </option>
           </select>
         </div>
         <div class="dados">
           <label for="" class="tittle-form">Data</label>
-          <input type="text" name="data" placeholder="Data" onfocus="(this.type='date')" onblur="(this.type='text')"
-          class="input-forms" [(ngModel)]="data">
+          <input name="data" placeholder="Data" type="date" class="input-forms" formControlName="data_uso">
         </div>
         
         <div class="hora">
@@ -42,16 +41,15 @@
    <div class="dados">
         
         <label for="" class="tittle-form">Descrição</label>
-        <textarea type="text" name="descricao" placeholder="Descrição: Preciso de notebook e datashow. " class="input-form descric" id="description" [(ngModel)]="descricao"></textarea>
+        <textarea type="text" name="descricao" placeholder="Descrição: Preciso de notebook e datashow. " class="input-form descric" id="description" formControlName="descricao"></textarea>
       </div>
       </div>
-      
-     
+    </form>
     </div>
     
 
     <div class="botao">
-      <button class="botao_" (click)="solicitar()">Enviar</button>
+      <button class="botao_" (click)="onSubmit()">Enviar</button>
 
     </div>
   </section>

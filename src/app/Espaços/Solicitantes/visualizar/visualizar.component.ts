@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Visualizar } from './visualizar';
 import { VisualizarService } from './visualizar.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-visualizar',
@@ -9,15 +11,17 @@ import { VisualizarService } from './visualizar.service';
 })
 export class VisualizarComponent implements OnInit {
 
+  form!:FormGroup;
+  list: string[] = [];
   solicitacoes:Visualizar[]=[];
 
-  constructor(private service: VisualizarService) { }
+  constructor(
+    private service: VisualizarService, 
+    private fb : FormBuilder,
+    ) { }
+  
 
   ngOnInit() {
-    // this.service.visualizarAgendamentos().subscribe((event) => {
-    //   this.solicitacoes = event.result as Visualizar[]
-    //   console.log(this.solicitacoes);
-    // })
     this.service.visualizarAgendamentos().subscribe({
       next: (event) => {
         this.solicitacoes = event
@@ -27,9 +31,6 @@ export class VisualizarComponent implements OnInit {
         console.log('erro: ', error);
       }
     })
+  }
 }
-// getStatus(valor: number): string {
-//   return valor === 1 ? 'Aceito' : 'Pendente';
-// }
 
-}

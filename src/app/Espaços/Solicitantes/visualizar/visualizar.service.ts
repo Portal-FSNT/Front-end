@@ -17,7 +17,7 @@ export class VisualizarService {
   private header = new HttpHeaders().set('Authorization', `Bearer ${this.tokenService.returnToken()}`);
 
   visualizarAgendamentos():Observable<any>{
-   
     return this.http.get<any>(this.API, { headers: this.header });
   }
+
 }

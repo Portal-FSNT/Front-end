@@ -4,6 +4,10 @@ import { Modal1Component } from '../modal1/modal1.component';
 import { SolicitarService } from './solicitar.service';
 import { Espaco } from './espaco';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-solicitar',
@@ -12,71 +16,38 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 
 export class SolicitarComponent implements OnInit {
-  espacos: Espaco[] = []
-  espacoSelecionado: string = "0"
-  data: string = ""
-  horario_entrada: string = ""
-  horario_saida: string = ""
-  descricao: string = ""
-  constructor(private modalcontroler:ModalController, private solicitarService: SolicitarService, private modalService: BsModalService) { }
-  bsModalRef?: BsModalRef;
-  async openModal1(){
-    const modal = await this.modalcontroler.create({
-      component: Modal1Component, 
-      cssClass: 'modal1'
+
+  form: FormGroup;
+  submitted = false;
+  espacos: Espaco[] = [];
+
+  constructor(private fb: FormBuilder,
+    private service: SolicitarService,
+    private router: Router) {
+
+    this.form = this.fb.group({
+      descricao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
+      data_uso: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      hora_inicio: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      hora_termino: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      id_espaco: [[Validators.required]],
     });
-    await modal.present();
-    const res = await modal.onDidDismiss();
   }
 
-  ngOnInit(){
-    this.solicitarService.listarEspacos().subscribe((event) => {
-      this.espacos = event.result
-      console.log(event)
-    })
-  } 
-
-  solicitar(): void{
-
-    // Verifica se os dados inseridos são válidos
-    if(parseInt(this.espacoSelecionado) <= 0
-    || this.data == ""
-    || this.horario_entrada == ""
-    || this.horario_saida == ""
-    || this.descricao == "")
-    return;
-
-
-    this.solicitarService.solicitar(
-      parseInt(this.espacoSelecionado),
-      this.data, 
-      this.horario_entrada,
-      this.horario_saida, 
-      this.descricao
-    ).subscribe((event) => {
-      console.log(event)
-      console.log(this.data);
-      event.message = "Solicitação realizada"
-      
-      // Sucesso
-      if(event.message === "Solicitação realizada") {
-
-        // Reset dos Inputs
-        this.espacoSelecionado = "0"
-        this.data = "" 
-        this.horario_entrada = ""
-        this.horario_saida = "" 
-        this.descricao = ""
-        
-        // Abre o modal de confirmação
-        console.log("Modal")
-        this.openModalWithComponent()
-      }
-    })
+  ngOnInit() {
+    this.service.listarEspacos().subscribe((espacolista) => {
+        this.espacos = espacolista
+      });
   }
 
-  openModalWithComponent() {
-    this.bsModalRef = this.modalService.show(Modal1Component);
-    this.bsModalRef.content.closeBtnName = 'Close';
-  }
-}
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.form.value);
+    if (this.form.valid) {
+      this.service.create(this.form.value).subscribe(
+        () => console.log('Request Completo')
+        );
+        this.router.navigate(['/visualizar']);
+    }
+
+  }}
