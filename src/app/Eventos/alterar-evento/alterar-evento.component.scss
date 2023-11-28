@@ -75,9 +75,9 @@
   
 }
 .button-return{
-    background-color: transparent;
-    border:none;
-    border-bottom: 1px solid #00A54E;;
+    background-color:  #00a54d42;
+    border: none;
+    border-radius:4px;
     transition: 0.25s;
     padding: 5px;
     font-size: 20px;
@@ -88,6 +88,8 @@
     font-size: 24px;
     border: none;
     color:  rgb(221, 16, 16);
+    background-color:  rgba(221, 16, 16, 0.322);
+
 }
 .option-tipo{
   color: var(--gray-200);
