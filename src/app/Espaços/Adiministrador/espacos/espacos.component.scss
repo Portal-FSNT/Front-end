@@ -328,6 +328,10 @@
   }
   .conteudot{
     text-align: center;
+    pointer-events: none;
+    .center{
+      pointer-events:auto;
+    }
   }
 
 }
