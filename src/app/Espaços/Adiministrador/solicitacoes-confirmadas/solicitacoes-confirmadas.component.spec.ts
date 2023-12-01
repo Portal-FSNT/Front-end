@@ -20,4 +20,6 @@ describe('SolicitacoesConfirmadasComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+  
+}
+);

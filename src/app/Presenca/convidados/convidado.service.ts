@@ -32,36 +32,36 @@ export class ConvidadoService {
 
 //REQUISIÇÕES_DE_EVENTO -----
   listarStatus(id_evento:number):Observable<MarransatoMode<Status[]>>{
-    return this.http.get<MarransatoMode<Status[]>>(`${this.API}/evento/${id_evento}`)
+    return this.http.get<MarransatoMode<Status[]>>(`${this.API}evento/${id_evento}`)
   }
 
   delet(id_evento:number){
-    return this.http.delete(`${this.API}/evento/${id_evento}`)
+    return this.http.delete(`${this.API}evento/${id_evento}`)
   }
   
   edit(id_evento:any,evento:any):Observable<MarransatoMode<Pessoa[]>>{
-    return this.http.put<MarransatoMode<Pessoa[]>>(`${this.API}/evento/${id_evento}`,evento)
+    return this.http.put<MarransatoMode<Pessoa[]>>(`${this.API}evento/${id_evento}`,evento)
   }
 
 //REQUISIÇÕES_DE_EVENTO-CONVIDADOS -----
   listConvidado():Observable<any>{
-    return this.http.get<any>(`${this.API}/evento_convidado`)
+    return this.http.get<any>(`${this.API}evento_convidado`)
   }
 
   listOneConvidado(id_evento:number):Observable<any>{
-    return this.http.get(`${this.API}/evento_convidado/${id_evento}`)
+    return this.http.get(`${this.API}evento_convidado/${id_evento}`)
   }
 
   editConvidado(id_evento:any,reqBody:any){
-    return this.http.patch(`${this.API}/evento_convidado/${id_evento}`,reqBody)
+    return this.http.patch(`${this.API}evento_convidado/${id_evento}`,reqBody)
   }
 
   cadastrarConvidado(novoConvidado:any){
-   return this.http.post(`${this.API}/evento_convidado`,novoConvidado);
+   return this.http.post(`${this.API}evento_convidado`,novoConvidado);
   }
 
   deletConvidado(id_convidado:number,id_evento:number){
-    return this.http.delete(`${this.API}/evento_convidado/${id_evento}`,{body:{id_convidado}})
+    return this.http.delete(`${this.API}evento_convidado/${id_evento}`,{body:{id_convidado}})
   }
 
 }
