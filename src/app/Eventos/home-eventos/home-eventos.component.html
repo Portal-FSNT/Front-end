@@ -13,14 +13,9 @@
     <section class="card-ng">
       <div class="card" *ngFor="let card of eventos">
         <div class="title-card">
-
-          <div class="folder"></div>
-          <img
-            src="../../../assets/Icons/edit-card.svg"
-            alt=""
-            class="edit"
-            (click)="changeEvent(card)"
-          />
+          <div class="folder">
+            <img src="" class="imagem"/>
+          </div>
         </div>
         <div class="body-card">
           <h2 class="bold">
@@ -48,6 +43,7 @@
           </div>
           <p class="mini">{{card.endereco}}</p>
         </div>
+        <div><img (click)="delet(card.id)" src="../../../../assets/Icons/icon-lixeira-white.svg" class="iconedelete"></div>
       </div>
     </section>
   </div>

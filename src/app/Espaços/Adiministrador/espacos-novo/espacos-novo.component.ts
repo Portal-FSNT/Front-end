@@ -27,7 +27,7 @@ export class EspacosNovoComponent implements OnInit {
 
     this.form = this.fb.group({
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      descricao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
+      descricao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(600)]],
       ponto_referencia: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       localizacao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
       id_instituicao: [[Validators.required]],

@@ -74,7 +74,7 @@ main {
 
   .card {
     width: 392px;
-    height: 430px;
+    height: 500px;
     background: var(--color-white);
     box-shadow: 3px 5px 22px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
@@ -173,6 +173,7 @@ main {
       font-size: 16px;
       line-height: 100%;
       color: var(--gray-200);
+      position: absolute;
     }
 
     .mini {
@@ -180,6 +181,8 @@ main {
       font-size: 10px;
       line-height: 100%;
       color: var(--gray-200);
+      margin-top: 30px;
+      position: absolute;
     }
 
   }
@@ -207,7 +210,9 @@ footer {
       line-height: 29px;
       text-align: center;
     }
+    
   }
+
 }
 
 @media only screen and (max-width: 1300px){
@@ -227,4 +232,43 @@ footer {
      
     }
 
+}
+
+.botao2{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  background-color: #00A54E;
+  color: white;
+  font-weight: 500;
+  transition: 0.25s;
+  }
+.botao2:hover{
+  background-color: #01853e;
+  }  
+
+.cancel{
+  border-radius: 8px;
+  width: 154px;
+  height: 50px;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-white);
+  background-color: rgb(221, 16, 16);
+  transition: 0.25s;
+  margin-left: 230px;
+  margin-top: 440px;
+  position: absolute;
+}
+.cancel:hover{
+  background-color: rgb(158, 10, 10);
+}
+
+.iconedelete{
+  margin-left: 350px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
 }

@@ -61,14 +61,12 @@
           <div class="dados">
             <label for="" class="tittle-form">Espaço</label>
             <select formControlName="id_lugar" name="text" class="select" id="select" class="input-forms" placeholder="Espaço realizado">
-              <option value="0"> Selecione um Espaço </option>
-              <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
+              <option *ngFor="let espaco of espacos" name="espaco" value={{espaco.id}}> {{ espaco.nome }} </option>
             </select>
           </div>
           <div class="dados">
             <label for="" class="tittle-form">Instituição</label>
             <select formControlName="id_instituicao" name="text" class="select" id="select" class="input-forms" placeholder="Instituição do evento">
-              <option value="0"> Selecione uma Instituiçao </option>
               <option *ngFor="let instituicoes of instituicoes" name="espaco" value={{instituicoes.id}}> {{ instituicoes.nome }} </option>
             </select>
           </div>
