@@ -1,5 +1,63 @@
 <app-header></app-header>
 
+<div class="modal-modal">
+  <div class="modal-top">
+      <label class="modal-title">Editar evento </label>
+  </div>
+  <form [formGroup]="form">
+      <div class="dados">
+
+          <div class="modal-label"><label>Nome</label>
+          </div>
+          <input formControlName="nome" class="modal-input" type="text" placeholder="Nome" >
+      </div>
+
+      <div class="dados">
+          
+          <div class="modal-label">
+              <label>E-mail</label>
+          </div>
+          <input type="email" placeholder="example@example.com" formControlName="email" class="modal-input" />
+      </div>
+
+      <div class="dados">
+
+          <div class="modal-label">
+              <label>Telefone</label>
+          </div>
+          <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" formControlName="telefone" class="modal-input" appOnlyNumbers />
+      </div>
+
+      <div class="dados">
+
+          <div class="modal-label">
+              <label>Cargo</label>
+          </div>
+          <input formControlName="cargo" class="modal-input" type="text" placeholder="Cargo"  >
+      </div>
+      
+      <div class="dados">
+          
+          <div  class="modal-label">
+              <label>Empresa</label>
+          </div>
+          <select formControlName="id_empresa" class="modal-input" type="text" aria-placeholder="form.value.empresa">
+              <option placeholder="Empresas" *ngFor="let instituicoes of instituicoes" [value]="instituicoes.id">{{instituicoes.nome}}</option>
+          </select>
+      </div>
+      
+
+      <button type="submit" class="button-cancel" (click)="onDelete()">Deletar</button>
+        <button type="button" class="button-register" >Validar</button>
+  </form>
+</div>
+
+
+
+<!-- 
+
+
+
 <div class="container">
   <section id="body">
     <div class="topo">
@@ -82,4 +140,4 @@
       </div>
     </form>
   </section>
-</div>
+</div> -->

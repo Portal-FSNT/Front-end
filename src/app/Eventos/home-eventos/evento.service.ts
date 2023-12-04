@@ -30,4 +30,9 @@ export class EventoService {
   delet(id: number) {
     return this.http.delete(`${this.API}/delete/${id}`);
   }
+
+  updateEvento(id: number,reqBody: any):Observable<any>{
+    console.log(reqBody)
+    return this.http.patch<any>(`${this.API}/update/${id}`,reqBody);
+  }
 }

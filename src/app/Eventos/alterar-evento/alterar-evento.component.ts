@@ -7,6 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TipoEvento } from './tipo';
 import { Lugares } from './lugar';
 import { Instituicoes } from './instituicao';
+import { BsModalRef } from "ngx-bootstrap/modal";
+
 
 @Component({
   selector: 'app-cad-eventos',
@@ -30,7 +32,9 @@ export class AlterarEventoComponent implements OnInit {
     private service: AltEventosService,
     private router: Router,
     private route: ActivatedRoute,
-    private altEventosService: AltEventosService) {
+    private altEventosService: AltEventosService,
+    public bsModalRef: BsModalRef,
+    ) {
 
     this.form = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
@@ -44,18 +48,6 @@ export class AlterarEventoComponent implements OnInit {
       id_tipo: [],
       id_instituicao: [],
     });
-    // this.form = this.fb.group({
-    //   nome: 'teste',
-    //   descricao: 'teste',
-    //   data_inicio: '20/02/2023',
-    //   data_termino: '20/02/2023',
-    //   hora_inicio: '12:12:12',
-    //   hora_termino: '12:12:12',
-    //   id_usuario: 5,
-    //   id_lugar: 1,
-    //   id_tipo: 1,
-    //   id_instituicao: 1
-    // });
   }
 
   ngOnInit() {
@@ -152,5 +144,40 @@ export class AlterarEventoComponent implements OnInit {
       }
     );
   }
+
+  updateEvento(id: number) {
+    console.log('form', this.form.value);
+      if(this.form.valid){
+        const reqBody = {
+          id: this.form.get('id')?.value,
+          nome: this.form.value.nome,
+          descricao: this.form.value.descricao,
+          data_evento: this.form.value.data_evento,
+          hora_inicio: this.form.value.hora_inicio,
+          hora_termino: this.form.value.hora_termino,
+          endereco: this.form.value.endereco,
+          id_espaco: this.form.value.id_espaco,
+          tipo_evento: this.form.value.tipo_evento,
+          modalidade: this.form.value.modalidade,
+          status_evento: "Confirmado",
+        }
+        console.log('Submit');
+
+        this.service.updateEvento(id, reqBody).subscribe({
+          next: (event) => {
+            console.log('sim', event);
+          },
+          error: (error) => {
+            console.log('erro: ', error);
+          },
+          complete: () => {
+            window.location.reload();
+          }
+        })
+    }else{
+      alert('Por favor, preencha todos os campos do formulário.')
+    } 
+  }
+
 
 }
