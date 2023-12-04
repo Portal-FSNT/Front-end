@@ -4,5 +4,9 @@ export interface Convidado{
     email: string;
     telefone: string;
     cargo: string,
-    nome_empresa: string, 
+    id_empresa: number, 
+          //   sucess => console.log('Sucesso'),
+      //   error => console.log('Error'),
+      //   () => console.log('Requisição Finalizada.')
+      // );: string,
 }
