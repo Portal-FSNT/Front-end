@@ -10,4 +10,5 @@ export interface CadEventos {
     tipo_evento: string;
     modalidade: string;
     status_evento: string;
+    
 }
