@@ -122,9 +122,9 @@ main {
       }
 
       .edit {
-        position: absolute;
-        right: 5%;
+        left: 80%;
         top: 7%;
+        width: 20px;
         cursor: pointer;
       }
       .edit:hover{
@@ -271,4 +271,10 @@ footer {
   width: 30px;
   height: 30px;
   position: absolute;
+}
+
+.editar{
+  position: absolute;
+  color: black;
+  background-color: black;
 }
