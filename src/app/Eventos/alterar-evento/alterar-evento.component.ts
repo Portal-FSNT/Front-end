@@ -37,16 +37,15 @@ export class AlterarEventoComponent implements OnInit {
     ) {
 
     this.form = this.fb.group({
-      nome: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      descricao: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
-      data_inicio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      data_termino: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      hora_inicio: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      hora_termino: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
-      endereco: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
-      id_lugar: [],
-      id_tipo: [],
-      id_instituicao: [],
+      nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      descricao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(1000)]],
+      data_evento: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      hora_inicio: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      hora_termino: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(80)]],
+      endereco: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
+      id_espaco: [[Validators.required]],
+      tipo_evento: [[Validators.required]],
+      modalidade: [[Validators.required]],
     });
   }
 
