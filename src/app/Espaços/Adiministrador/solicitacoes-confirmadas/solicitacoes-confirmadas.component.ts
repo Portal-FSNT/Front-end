@@ -30,7 +30,4 @@ export class SolicitacoesConfirmadasComponent implements OnInit {
         }
       })
   }
-
- 
-  
 }

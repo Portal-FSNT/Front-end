@@ -38,23 +38,6 @@ export class NovoConvidadoComponent implements OnInit {
       console.log('EVENTO_ID - '+this.id_evento)
     }
 
-    this.form=this.fb.group({
-      condicao: 'Pendente',
-      anunciado: 0,
-      presenca: 0,
-      id_convidado: [Number],
-      id_presenca: this.id_evento,
-    });
-
-    // this.service.listPessoa().subscribe(
-    //   (results) => {
-    //     this.pessoa = results.result;
-    //     console.log('Lista de Pessoas: '+this.pessoa); 
-    //   },
-    //   (error) => {
-    //     console.error(error)
-    //   }
-    // )
     this.service.listPessoa().subscribe({
       next: (event) => {
         this.pessoa = event
