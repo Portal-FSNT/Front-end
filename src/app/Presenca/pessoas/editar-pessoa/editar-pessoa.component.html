@@ -8,7 +8,7 @@
 
             <div class="modal-label"><label>Nome</label>
             </div>
-            <input formControlName="nome" class="modal-input" type="text" placeholder="Nome" >
+            <input formControlName="nome" class="modal-inputs" type="text" placeholder="Nome" >
         </div>
 
         <div class="dados">
@@ -16,7 +16,7 @@
             <div class="modal-label">
                 <label>E-mail</label>
             </div>
-            <input type="email" placeholder="example@example.com" formControlName="email" class="modal-input" />
+            <input type="email" placeholder="example@example.com" formControlName="email" class="modal-inputs" />
         </div>
 
         <div class="dados">
@@ -24,7 +24,7 @@
             <div class="modal-label">
                 <label>Telefone</label>
             </div>
-            <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" formControlName="telefone" class="modal-input" appOnlyNumbers />
+            <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" formControlName="telefone" class="modal-inputs" appOnlyNumbers />
         </div>
 
         <div class="dados">
@@ -32,7 +32,7 @@
             <div class="modal-label">
                 <label>Cargo</label>
             </div>
-            <input formControlName="cargo" class="modal-input" type="text" placeholder="Cargo"  >
+            <input formControlName="cargo" class="modal-inputs" type="text" placeholder="Cargo"  >
         </div>
         
         <div class="dados">
@@ -40,12 +40,12 @@
             <div  class="modal-label">
                 <label>Empresa</label>
             </div>
-            <select formControlName="id_empresa" class="modal-input" type="text" aria-placeholder="form.value.empresa">
+            <select formControlName="id_empresa" class="modal-inputs" type="text" aria-placeholder="form.value.empresa">
                 <option placeholder="Empresas" *ngFor="let empresa of listaPessoa" [value]="empresa.id">{{empresa.nome}}</option>
             </select>
         </div>
         
 
-        <button class="modal-button" (click)="updatePessoa(+this.list[0])"> Confirmar </button>
+        <button class="button-register" (click)="updatePessoa(+this.list[0])"> Confirmar </button>
     </form>
 </div>

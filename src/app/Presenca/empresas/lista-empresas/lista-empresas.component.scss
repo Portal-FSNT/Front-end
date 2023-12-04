@@ -95,8 +95,13 @@ tr:hover {
     color: white;
     font-weight: 500;
     transition: 0.25s;
+    
   }
   .botao:hover{
     background-color: #01853e;
   
+  }
+
+  .lista{
+    pointer-events: none;
   }

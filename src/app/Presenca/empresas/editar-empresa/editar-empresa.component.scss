@@ -1,0 +1,28 @@
+.modal-inputs{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #f1f0f5;
+    width: 400px;
+
+}
+.modal-buttons{
+    padding: 10px;
+    background-color: #00a54e ;
+    color: #f1f0f5;
+    border: none;
+    border-radius: 4px;
+    width: 150px;
+    align-self: center;
+}
+.modal-buttons:hover{
+    background-color: darkgreen;
+}
+.inputes{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal-modal{
+    height: 300px;
+}
