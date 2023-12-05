@@ -30,7 +30,7 @@ import { EspacosNovoComponent } from './Espaços/Adiministrador/espacos-novo/esp
 import { CadEventosComponent } from './Eventos/cad-eventos/cad-eventos.component';
 import { HomeEventosComponent } from './Eventos/home-eventos/home-eventos.component';
 import { AlterarEventoComponent } from './Eventos/alterar-evento/alterar-evento.component';
-
+import { HomeEventosListaComponent } from './Eventos/home-eventos-lista/home-eventos-lista.component';
 
 
 
@@ -94,6 +94,12 @@ const routes: Routes = [
   },
   {
     path: 'cad-eventos', component: CadEventosComponent, canActivate: [UserAdm, RoleGuard],
+    data: {
+      expectedRole: ['Administrador']
+    }
+  },
+  {
+    path: 'eventos-lista', component: HomeEventosListaComponent, canActivate: [UserAdm, RoleGuard],
     data: {
       expectedRole: ['Administrador']
     }

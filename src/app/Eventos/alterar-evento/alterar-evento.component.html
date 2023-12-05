@@ -69,15 +69,8 @@
             class="input-formsP" />
           </div> 
 
-        
-          <select formControlName="id_empresa" class="modal-input" type="text" aria-placeholder="form.value.empresa">
-              <option placeholder="Empresas" *ngFor="let instituicoes of instituicoes" [value]="instituicoes.id">{{instituicoes.nome}}</option>
-          </select>
-      </div>
-      
-
       <button type="submit" class="button-cancel" (click)="onDelete()">Deletar</button>
-        <button type="button" class="button-register" (click)="updateEvento(id_evento)">Editar</button>
+        <button type="button" class="button-register" (click)="updateEvento(id)">Editar</button>
 </div>
 
 
