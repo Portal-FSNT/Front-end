@@ -5,10 +5,13 @@
   <div class="container">
     <div class="main-header">
       <h3>Calendário de Eventos</h3>
-      <button *ngIf="presenca || presenca === undefined || presenca === null" routerLink="/cad-eventos" class="new-evento">
-        Cadastrar novo evento
+      <button class="botao" routerLink="/cad-eventos">
+        Novo Evento
       </button>
 
+      <button class="botao" routerLink="/eventos-lista">
+        Visualização em tabela
+      </button>
 
     </div>
 
@@ -42,9 +45,26 @@
             </div>
           </div>
           <div class="localidade">
-            <p>{{ card.nome_espaco }}</p>
-          </div>
-          <p class="mini">{{card.endereco}}</p>
+            <p *ngIf="card.modalidade === 'Online'; else presencial">
+              {{ '---' }}
+            </p>
+            <ng-template #presencial>
+              <p>
+                {{ card.nome_espaco}}
+              </p>
+            </ng-template>
+            </div>
+
+            <div class="mini">
+            <p *ngIf="card.modalidade == 'Online'; else presencial2">
+              {{ '---' }}
+          </p>
+          <ng-template #presencial2>
+           <p>
+            {{ card.endereco }}
+            </p>
+         </ng-template>
+        </div>
         </div>
       </div>
     </section>

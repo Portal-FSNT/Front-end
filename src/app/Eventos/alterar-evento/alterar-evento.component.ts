@@ -25,7 +25,7 @@ export class AlterarEventoComponent implements OnInit {
   lugares: Lugares[] = [];
   instituicoes: Instituicoes[] = [];
   eventId: string | null | undefined;
-  id_evento: any;
+  id: any;
   evento: any;
 
   constructor(private fb: FormBuilder,
@@ -50,12 +50,16 @@ export class AlterarEventoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.service.listarLugares().subscribe((lugareslista) => {
+      this.lugares = lugareslista
+    });
+
     this.route.paramMap.subscribe(paramMap => {
-      this.id_evento = paramMap.get('id');
+      this.id = paramMap.get('id');
 
-      console.log("Event Id: " + this.id_evento);
+      console.log("Event Id: " + this.id);
 
-      this.service.buscarEventoPorId(this.id_evento).subscribe(
+      this.service.buscarEventoPorId(this.id).subscribe(
         (res) => {
           const evento = res.result;
           if (evento) {

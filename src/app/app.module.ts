@@ -65,6 +65,8 @@ import { ModalChangePasswordComponent } from './Portal/Modal/modal-change-passwo
 import { ModalAvisoComponent } from './Portal/Modal/modal-aviso/modal-aviso.component';
 import { FuncionsUsersComponent } from './Portal/Headers/header/funcions-users/funcions-users.component';
 import { AuthTokenInterceptor } from 'src/shared/auth-token.interceptor';
+import { HomeEventosListaComponent } from './Eventos/home-eventos-lista/home-eventos-lista.component';
+import { ModalDeletarEventosComponent } from './Eventos/modal-deletar-eventos/modal-deletar-eventos.component';
 
 
 @NgModule({
@@ -127,6 +129,8 @@ import { AuthTokenInterceptor } from 'src/shared/auth-token.interceptor';
     ModalChangePasswordComponent,
     ModalAvisoComponent,
     FuncionsUsersComponent,
+    HomeEventosListaComponent,
+    ModalDeletarEventosComponent,
 
 
   ],

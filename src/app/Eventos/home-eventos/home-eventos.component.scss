@@ -278,3 +278,18 @@ footer {
   color: black;
   background-color: black;
 }
+
+.botao{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  background-color: #00A54E;
+  color: white;
+  font-weight: 500;
+  transition: 0.25s;
+}
+.botao:hover{
+  background-color: #01853e;
+
+}

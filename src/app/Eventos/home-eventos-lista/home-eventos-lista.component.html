@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="body">
+  <div class="container">
+    <section id="title">
+      <h2>Lista de Eventos</h2>
+      <div class="buttons">
+        <button class="botao" routerLink="/cad-eventos">
+          Novo Evento
+        </button>
+
+        <button class="botao" routerLink="/eventos">
+            Visualização em cards
+        </button>
+
+      </div>
+    </section>
+
+    <!--Início da tabela-->
+
+    <section id="body">
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Data do evento</th>
+            <th>Horário</th>
+            <th>Modalidade</th>
+            <th>Tipo</th>
+            <th>Espaço</th>
+            <th>Endereço</th>
+            <th>Editar</th>
+          </tr>
+
+        </thead>
+        <tbody *ngFor="let card of eventos" class="conteudot">
+
+          <tr >
+            <td>{{ card.nome }}</td>
+            <td>{{ card.data_evento | date : "dd/MM/yyyy" }}</td>
+            <td>{{ card.hora_inicio | timeFormat }} - {{ card.hora_termino | timeFormat }}</td>
+            <td>{{ card.modalidade }}</td>
+            <td>{{ card.tipo_evento }}</td>
+            <td *ngIf="card.modalidade === 'Online'; else presencial">
+                {{ '---' }}
+              </td>
+              <ng-template #presencial>
+                <td>
+                  {{ card.nome_espaco}}
+                </td>
+              </ng-template>
+
+            <td *ngIf="card.modalidade == 'Online'; else presencial2">
+                {{ '---' }}
+            </td>
+            <ng-template #presencial2>
+             <td>
+              {{ card.endereco }}
+              </td>
+           </ng-template>
+           <td class="center" (click)="openModal_deletar_evento(card)"><img src="../../../../assets/Icons/icon-lixeira-white.svg"
+            alt=""></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</div>
