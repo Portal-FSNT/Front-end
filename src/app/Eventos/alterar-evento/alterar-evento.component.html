@@ -1,46 +1,75 @@
-<app-header></app-header>
-
 <div class="modal-modal">
   <div class="modal-top">
-      <label class="modal-title">Editar evento </label>
+    <label class="modal-title">Editar evento</label>
   </div>
   <form [formGroup]="form">
       <div class="dados">
 
-          <div class="modal-label"><label>Nome</label>
-          </div>
-          <input formControlName="nome" class="modal-input" type="text" placeholder="Nome" >
+        <div class="dados">
+          <label for="" class="tittle-form">Nome do Evento</label>
+          <input formControlName="nome" id="input-cad-eventos" type="text"  class="input-forms" placeholder="Nome do Evento">
+        </div>
+        <div class="dados">
+          <label for="" class="tittle-form">Endereço</label>
+          <input type="text" placeholder="endereco" class="input-forms" formControlName="endereco">
+        </div>
+         <!-- Tipo -->
+        <div class="dados">
+          <label for="" class="tittle-form">Tipo de Evento</label>
+          <select formControlName="tipo_evento" name="text" class="select" id="select" class="input-forms">
+            <option value="Público"> Público </option>
+            <option value="Privado"> Privado </option>
+          </select>
+        </div>
+         <!-- Espaço -->
+        <div class="dados">
+          <label for="" class="tittle-form">Espaço</label>
+          <select formControlName="id_espaco" name="text" class="select" id="select" class="input-forms "
+            placeholder="Nome do Evento">
+            <option *ngFor="let lugares of lugares" name="espaco" value={{lugares.id}}> {{ lugares.nome }} </option>
+          </select>
+        </div>
+         <!-- Instituição -->
+        <div class="dados">
+          <label for="" class="tittle-form">Modalidade</label>
+          <select formControlName="modalidade" name="text" class="select" id="select" class="input-forms ">
+            <option value="Online"> Online </option>
+            <option value="Presencial"> Presencial </option>
+          </select>
+        </div>
+        <!-- descrição -->
+        <div class="dados">
+          <label for="" class="tittle-form">Descrição</label>
+          <textarea formControlName="descricao" placeholder="Descrição" id="descricao" cols="55" rows="5"
+            class="input-formsd"></textarea>
+        </div>
+        
       </div>
 
-      <div class="dados">
-          
-          <div class="modal-label">
-              <label>E-mail</label>
-          </div>
-          <input type="email" placeholder="example@example.com" formControlName="email" class="modal-input" />
-      </div>
+      <div class="form-right">
 
-      <div class="dados">
-
-          <div class="modal-label">
-              <label>Telefone</label>
+        <div class="collun2">
+          <div class="dados">
+            <label for="" class="tittle-form">Data do evento</label>
+            <input formControlName="data_evento" type="date" placeholder="Fundação FSNT"
+            class="input-forms" />
           </div>
-          <input maxlength="15" [value]="form.get('telefone')!.value! | phone" type="tel" placeholder="(99) 99999-9999" formControlName="telefone" class="modal-input" appOnlyNumbers />
-      </div>
 
-      <div class="dados">
+        </div>
+        <div class="collun2">
+          <div class="espaço">
+          <div class="dados">
+            <label for="" class="tittle-form">Hora de Início</label>
+            <input formControlName="hora_inicio" type="time" placeholder="Fundação FSNT"
+            class="input-formsP" />
+          </div>
+          <div class="dados">
+            <label for="" class="tittle-form">Hora de Término</label>
+            <input formControlName="hora_termino" type="time" placeholder="Fundação FSNT"
+            class="input-formsP" />
+          </div> 
 
-          <div class="modal-label">
-              <label>Cargo</label>
-          </div>
-          <input formControlName="cargo" class="modal-input" type="text" placeholder="Cargo"  >
-      </div>
-      
-      <div class="dados">
-          
-          <div  class="modal-label">
-              <label>Empresa</label>
-          </div>
+        
           <select formControlName="id_empresa" class="modal-input" type="text" aria-placeholder="form.value.empresa">
               <option placeholder="Empresas" *ngFor="let instituicoes of instituicoes" [value]="instituicoes.id">{{instituicoes.nome}}</option>
           </select>
@@ -48,8 +77,7 @@
       
 
       <button type="submit" class="button-cancel" (click)="onDelete()">Deletar</button>
-        <button type="button" class="button-register" >Validar</button>
-  </form>
+        <button type="button" class="button-register" (click)="updateEvento(id_evento)">Editar</button>
 </div>
 
 
