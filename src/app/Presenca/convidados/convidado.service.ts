@@ -49,8 +49,12 @@ export class ConvidadoService {
     return this.http.get<any>(`${this.API}convidados`)
   }
 
-  listOneConvidado(id_evento:number):Observable<any>{
-    return this.http.get(`${this.API}convidados`)
+  listOneConvidado(id:number):Observable<any>{
+    return this.http.get(`${this.API}convidados?id=${id}`)
+  }
+
+  listConvidadoByEvento(id_evento:number):Observable<any>{
+    return this.http.get(`${this.API}convidados?id_evento=${id_evento}`)
   }
 
   editConvidado(id_evento:any,reqBody:any){
@@ -62,7 +66,7 @@ export class ConvidadoService {
   }
 
   deletConvidado(id_convidado:number,id_evento:number){
-   return this.http.delete(`${this.API}evento_convidado/${id_evento}`,{body:{id_convidado}})
+   return this.http.post(`${this.API}convidados/desconvidar`,{id_convidado,id_evento})
   }
 
 }

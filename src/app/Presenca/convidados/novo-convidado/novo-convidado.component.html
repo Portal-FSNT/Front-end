@@ -1,7 +1,7 @@
 <div class="modal-modal">
     <div class="modal-top">
         <label class="modal-title">Adicionar convidado</label>
-     <a>   <img (click)="bsModalRef.hide()" src="../../../../assets/icon-presenca/x.svg"></a>
+     <a>   <img (click)="cancelar()" src="../../../../assets/icon-presenca/x.svg"></a>
     </div>
     <form [formGroup]="form">
         <div class="dados">
@@ -16,7 +16,12 @@
                 </option>
             </select>
         </div>
-        
-        <button class="modal-button" (click)="onSubmit()"> Adicionar </button>
+        <p>
+        <small *ngIf="form.get('id_convidade')?.hasError('required')">
+        Favor selecione um usuario
+        </small>
+        <small *ngIf="errorAlreadyInvited">Usuario ja convidado ao evento</small>
+    </p>
+        <button class="modal-button" [disabled]="form.invalid" (click)="onSubmit()"> Adicionar </button>
     </form>
 </div>

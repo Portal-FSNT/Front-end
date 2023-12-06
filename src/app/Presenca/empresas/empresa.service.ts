@@ -33,7 +33,7 @@ export class EmpresaService {
     return this.http.patch<any>(`${this.API}/update/${id}`, nome);
   }
 
-  delet(id: number) {
-    return this.http.delete(`${this.API}/delete/${id}`);
+  deletarEmpresas(id: number): Observable<any>{
+    return this.http.delete<any>(`${this.API}/delete/${id}`)
   }
 }

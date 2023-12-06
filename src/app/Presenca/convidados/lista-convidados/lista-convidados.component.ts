@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { filter } from "rxjs";
 //MODALS -----
 import { ModalOptions } from 'ngx-bootstrap/modal';
-import { ModalController } from "@ionic/angular";
+import { LoadingController, ModalController } from "@ionic/angular";
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 //SERVICE -----
 import { ConvidadoService } from "./../convidado.service";
@@ -42,7 +42,8 @@ export class ListaConvidadosComponent implements OnInit {
     private service: ConvidadoService,
     private eventService: EventoService,
     private router: Router,
-    private modalService: BsModalService
+    private modalService: ModalController,
+    public loader:LoadingController
     //private ser:UsuarioService
   ) {}
 
@@ -50,52 +51,59 @@ export class ListaConvidadosComponent implements OnInit {
   ngOnInit(): void {
 
 //PEGA_ID_DA_URL -----
-    const id_evento = this.route.snapshot.paramMap.get('id');
-    console.log('ID do Evento:', id_evento);
+    this.id_evento = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('ID do Evento:', this.id_evento);
 
 
 
 //LISTA_OS_CONVIDADOS_DO_EVENTO -----
-  this.service.listConvidado().subscribe({
-    next: (event) => {
-      this.listConvidados = event
-      console.log(this.listConvidados, event);
-    }, 
-    error: (error) => {
-      console.log('erro: ', error);
-    }
-  })
+  this.refresh();
 }
 
+
+  private async refresh() {
+    const loader = await this.loader.create()
+    await loader.present()
+    this.service.listConvidadoByEvento(this.id_evento).subscribe({
+      next: (event) => {
+        this.listConvidados = event;
+        console.log(this.listConvidados, event);
+      },
+      error: (error) => {
+        console.log('erro: ', error);
+      },
+      complete:async ()=>{
+        await loader.dismiss()
+      }
+    });
+  }
 
 // FUNÇÕES - EVENTO_CONVIDADO -----
   // filterList(){
   //   this.filteredListConvidados = this.listConvidados.filter((convidado) => convidado.id_evento == this.id_evento);
   // }
 
-  addConvidado() {
-    const id_evento = this.route.snapshot.paramMap.get('id');
+  async addConvidado() {
+   
+    
+    const modal = await this.modalService.create({
+      component:NovoConvidadoComponent, 
+      componentProps:{id_evento: this.id_evento,},
+      cssClass: "modal_deletar_espaco",
+    });
+    await modal.present()
+    const {role}  = await modal.onDidDismiss()
+    
+    if(role === 'user_added'){
+      this.refresh()
+    }
 
-    const requestBody = {
-      id_evento: id_evento,
-    }
-    
-    const initialState:ModalOptions = {
-      initialState: {
-       requestObject: requestBody,
-        
-      }
-    }
-    
-    this.bsModalRef = this.modalService.show(NovoConvidadoComponent, initialState);
-    this.bsModalRef.content.closeBtnName = 'Close';
   }
 
   deletConvidado(id_convidado: number) {
     this.service.deletConvidado(id_convidado, this.id_evento).subscribe(() => {
-      this.router.navigate([`evento_convidados/${this.id_evento}`]);
+      this.refresh()
     },
     (error: any) => console.log(error))
-    window.location.reload();
   }
 }

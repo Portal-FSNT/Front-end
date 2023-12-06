@@ -1,0 +1,77 @@
+.modal {
+    display: flex;
+    flex-direction: row;
+    padding: 64px;
+}
+
+.componentes-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+h2 {
+    color: var(--gray-100);
+    font-weight: 700;
+    text-align: left;
+    font-size: 32px;
+    text-transform: initial;
+    margin-bottom: 40px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.informacoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.link {
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+}
+
+
+
+.exit {
+    width: 40px;
+    height: 40px;
+}
+
+.btn{
+    width: 137px;
+    height: 48px;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 80px;
+}
+.not {
+    background-color: var(--color-four);
+    font-weight: 300;
+}
+
+.yes {
+    background-color: var(--color-one);
+    font-weight: 300;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

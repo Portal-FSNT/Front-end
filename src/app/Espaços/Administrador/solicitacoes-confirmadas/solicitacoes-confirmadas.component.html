@@ -8,6 +8,9 @@
         <button class="botao" routerLink="/solicitacoes">
           Solicitações Pendentestes
         </button>
+        <button class="botao" routerLink="/espacos-lista">
+          Visualização em cards
+        </button>
         <button class="botao" routerLink="/espacos">
           Espaços
         </button>
@@ -26,7 +29,6 @@
             <th>ESPAÇO</th>
             <th>USUÁRIO</th>
             <th>DESCRIÇÃO</th>
-            <th>Convidados</th>
           </tr>
         </thead>
         <tbody *ngFor="let rows of table">
@@ -37,7 +39,6 @@
             <td>{{ rows.nome_espaco }}</td>
             <td>{{ rows.nome_usuario }}</td>
             <td>{{ rows.descricao }}</td>
-            <th> <button [routerLink]="['/lista-convidados/', rows.id]">Convidados</button> </th>
           </tr>
         </tbody>
       </table>

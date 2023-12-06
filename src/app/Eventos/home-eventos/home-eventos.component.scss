@@ -118,14 +118,19 @@ main {
         width: 392px;
         border-radius: 16px;
         opacity: 0.1;
+        position: relative;
         background-color:#335744;
       }
 
       .edit {
-        left: 80%;
+        left: 90%;
         top: 7%;
         width: 20px;
+        height: 20px;
+        z-index: 1;
+        position: absolute;
         cursor: pointer;
+        
       }
       .edit:hover{
         filter: brightness(0.1);
