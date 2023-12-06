@@ -17,11 +17,11 @@ import { NewAdmComponent } from './Portal/Usuários/new-adm/new-adm.component';
 //======= IMPORTS DE ESPAÇOS ==============
 import { SolicitarComponent } from './Espaços/Solicitantes/solicitar/solicitar.component';
 import { VisualizarComponent } from './Espaços/Solicitantes/visualizar/visualizar.component';
-import { SolicitacoesComponent } from './Espaços/Adiministrador/solicitacoes/solicitacoes.component';
-import { SolicitacoesConfirmadasComponent } from './Espaços/Adiministrador/solicitacoes-confirmadas/solicitacoes-confirmadas.component';
-import { EspacosComponent } from './Espaços/Adiministrador/espacos/espacos.component';
-import { EspacosNovoComponent } from './Espaços/Adiministrador/espacos-novo/espacos-novo.component';
-import { EspacosListaComponent } from './Espaços/Adiministrador/espacos-lista/espacos-lista.component';
+import { SolicitacoesComponent } from './Espaços/Administrador/solicitacoes/solicitacoes.component';
+import { SolicitacoesConfirmadasComponent } from './Espaços/Administrador/solicitacoes-confirmadas/solicitacoes-confirmadas.component';
+import { EspacosComponent } from './Espaços/Administrador/espacos/espacos.component';
+import { EspacosNovoComponent } from './Espaços/Administrador/espacos-novo/espacos-novo.component';
+import { EspacosListaComponent } from './Espaços/Administrador/espacos-lista/espacos-lista.component';
 
 
 
