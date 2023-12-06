@@ -30,13 +30,13 @@ import { VisualizarComponent } from './Espaços/Solicitantes/visualizar/visualiz
 import { Modal1Component } from './Espaços/Solicitantes/modal1/modal1.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HeaderSolicitanteComponent } from './Portal/Headers/header-solicitante/header-solicitante.component';
-import { ModalAceitarComponent } from './Espaços/Administrador/modal-aceitar/modal-aceitar.component';
-import { SolicitacoesComponent } from './Espaços/Administrador/solicitacoes/solicitacoes.component';
-import { SolicitacoesConfirmadasComponent } from './Espaços/Administrador/solicitacoes-confirmadas/solicitacoes-confirmadas.component';
-import { EspacosComponent } from './Espaços/Administrador/espacos/espacos.component';
-import { ModalDeletarEspacoComponent } from './Espaços/Administrador/modal-deletar-espaco/modal-deletar-espaco.component';
-import { EspacosNovoComponent } from './Espaços/Administrador/espacos-novo/espacos-novo.component';
-import { Modal4Component } from './Espaços/Administrador/modal4/modal4.component';
+import { ModalAceitarComponent } from './Espaços/Adiministrador/modal-aceitar/modal-aceitar.component';
+import { SolicitacoesComponent } from './Espaços/Adiministrador/solicitacoes/solicitacoes.component';
+import { SolicitacoesConfirmadasComponent } from './Espaços/Adiministrador/solicitacoes-confirmadas/solicitacoes-confirmadas.component';
+import { EspacosComponent } from './Espaços/Adiministrador/espacos/espacos.component';
+import { ModalDeletarEspacoComponent } from './Espaços/Adiministrador/modal-deletar-espaco/modal-deletar-espaco.component';
+import { EspacosNovoComponent } from './Espaços/Adiministrador/espacos-novo/espacos-novo.component';
+import { Modal4Component } from './Espaços/Adiministrador/modal4/modal4.component';
 import { UsersPendingComponent } from './Portal/Usuários/users-pending/users-pending.component';
 import { ModalAcceptDenyUserComponent } from './Portal/Modal/modal-accept-deny-user/modal-accept-deny-user.component';
 import { NewAdmComponent } from './Portal/Usuários/new-adm/new-adm.component';
@@ -67,7 +67,7 @@ import { FuncionsUsersComponent } from './Portal/Headers/header/funcions-users/f
 import { AuthTokenInterceptor } from 'src/shared/auth-token.interceptor';
 import { HomeEventosListaComponent } from './Eventos/home-eventos-lista/home-eventos-lista.component';
 import { ModalDeletarEventosComponent } from './Eventos/modal-deletar-eventos/modal-deletar-eventos.component';
-import { EspacosListaComponent } from './Espaços/Administrador/espacos-lista/espacos-lista.component';
+import { EspacosListaComponent } from './Espaços/Adiministrador/espacos-lista/espacos-lista.component';
 
 
 @NgModule({
