@@ -1,6 +1,6 @@
 //ANGULAR -----
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Component, OnInit,Input } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 //MODAL -----
@@ -19,26 +19,26 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class NovoConvidadoComponent implements OnInit {
 
-  form!:FormGroup;
-  list!: any[];
+  form: FormGroup = new FormGroup({
+    id_evento: new FormControl(undefined, [Validators.required]),
+    id_convidado: new FormControl(undefined, [Validators.required])
+  });
   pessoa!: Convidado[];
   submitted = false;
 
-@Input() id_evento: number | undefined
+  @Input() id_evento: number | undefined
+  public errorAlreadyInvited = false;
   constructor(
-    private fb:FormBuilder,
-    private service:ConvidadoService,
-    private modalController:ModalController,
+    private fb: FormBuilder,
+    private service: ConvidadoService,
+    private modalController: ModalController,
     public bsModalRef: BsModalRef,
   ) { }
 
-  ngOnInit(){
-    if(this.list && this.list.length > 0){
-      this.id_evento = this.list[0];
-      console.log('EVENTO_ID - '+this.id_evento)
-    }
-
-    this.service.listPessoa().subscribe({
+  ngOnInit() {
+    console.log("idEve: ", this.id_evento)
+    this.form.get('id_evento')!.setValue(this.id_evento)
+    this.service.listConvidado().subscribe({
       next: (event) => {
         this.pessoa = event
         console.log(this.pessoa, event);
@@ -50,11 +50,12 @@ export class NovoConvidadoComponent implements OnInit {
 
   }
 
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
-    console.log(this.form.value);
+    this.errorAlreadyInvited = false
+    console.log(this.form.get('id_convidado')?.errors)
+
     if (this.form.valid) {
-      console.log('Submit');
       // this.service.cadastrarConvidado(this.form.value).subscribe(
       //   sucess => console.log('Sucesso'),
       //   error => console.log('Error'),
@@ -62,24 +63,20 @@ export class NovoConvidadoComponent implements OnInit {
       // );
       this.service.cadastrarConvidado(this.form.value).subscribe({
         next: (event) => {
-          console.log(event);
+          this.modalController.dismiss(undefined,'user_added')
         },
         error: (error) => {
+          const { status } = error
+          this.errorAlreadyInvited = true
           console.log('erro: ', error);
         },
-        complete: () => {
-          window.location.reload();
-        }
+
       })
 
     }
   }
 
-  salvar(){
-    this.onSubmit();
-    this.modalController.dismiss();
-  }
-  cancelar(){ this.modalController.dismiss()}
+  cancelar() { this.modalController.dismiss() }
 }
 
 //PROJETO_ORIGINAL -----
