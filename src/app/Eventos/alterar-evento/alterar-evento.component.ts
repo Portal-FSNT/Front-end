@@ -48,6 +48,7 @@ export class AlterarEventoComponent implements OnInit {
       modalidade: [[Validators.required]],
     });
   }
+  
 
   ngOnInit() {
     this.service.listarLugares().subscribe((lugareslista) => {

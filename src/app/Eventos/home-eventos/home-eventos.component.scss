@@ -197,10 +197,10 @@ main {
   border: none;
   width: 30px;
   height: 30px;
-  box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.3); ;
+  transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
 }
 .botao-lista:hover{
-  background-color: #00a54d1e;
+  transform: scale(1.08); 
   box-shadow: none;
 
 }

@@ -8,7 +8,7 @@
       .buttons {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 50px;;
       }
     }
   
@@ -37,7 +37,7 @@
     border-radius: 8px;
     padding: 8px;
     border: none;
-    background-color: #00A54E;
+    background-color:#00A54E;
     color: white;
     font-weight: 500;
     transition: 0.25s;
@@ -46,4 +46,25 @@
     background-color: #01853e;
   
   }
+  .botao-c{
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    transition: 0.25s;
+  }
+  .botao-card{
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
+  }
+  .botao-card:hover{
+    transform: scale(1.2); 
+    box-shadow: none;
   
+  }

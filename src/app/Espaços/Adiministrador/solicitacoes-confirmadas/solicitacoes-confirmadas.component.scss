@@ -19,7 +19,7 @@
   .content-table{
     width: 100%;
     border-radius: 10px;
-    pointer-events: none;
+
   }
   .conteudot{
     text-align: center;
@@ -30,6 +30,8 @@ td {
   text-align: left;
   max-width: 200px; 
   word-wrap: break-word; 
+  pointer-events: none;
+  text-align: center;
 }
 .botao{
   background-color: transparent;
@@ -44,4 +46,23 @@ td {
 .botao:hover{
   background-color: #01853e;
 
+}
+.icon{
+  filter:brightness(5);
+  width: 24px;
+  height: 24px;
+}
+.icone{
+  filter:brightness(0);
+  width: 24px;
+  height: 24px;
+}
+.botom{
+  width: 180px;
+  background-color: transparent;
+  border:none;
+  transition: transform 0.25s ease-in-out;
+}
+.botom:hover{
+  transform: scale(1.08);;
 }
