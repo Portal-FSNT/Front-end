@@ -11,6 +11,8 @@ import { NovaEmpresaComponent } from "./../nova-empresa/nova-empresa.component";
 import { EmpresaService } from "./../empresa.service";
 // INTERFACE -----
 import { Empresa } from "../empresa";
+import { ModalDeletarEmpresasComponent } from '../modal-deletar-empresas/modal-deletar-empresas.component';
+
 
 @Component({
   selector: "app-lista-empresas",
@@ -52,39 +54,6 @@ export class ListaEmpresasComponent implements OnInit {
     await modal.present();
   }
 
-  // async edit(empresa: string, empresas: string) {
-  //   console.log(empresa, empresas);
-  //   const modal = await this.modalController.create({
-  //     component: EditarEmpresaComponent,
-  //     componentProps: { empresa, empresas },
-  //     cssClass: "modal",
-  //   });
-  //   console.log("modal")
-  //   await modal.present();
-  // }
-
-  delet(id: number) {
-    // this.service.delet(id).subscribe(
-    //   () => {
-    //     this.router.navigate(["/empresas"]);
-    //   },
-    //   (error) => console.log(error)
-    // );
-    this.service.delet(id).subscribe({
-      next: (event) => {
-        this.router.navigate(["/empresas"]);
-        console.log(event);
-      },
-      error: (error) => {
-        console.log('erro: ', error);
-        alert(error.error.message);
-      },
-      complete: () => {
-        window.location.reload();
-      }
-    })
-    
-  }
   
 bsModalRef?: BsModalRef;
 novoEmpresa(){
@@ -108,5 +77,21 @@ editarEmpresa(empresa: any){
   this.bsModalRef = this.modalService.show(EditarEmpresaComponent, initialState);
   this.bsModalRef.content.closeBtnName = 'Close';
   return id_empresa;
+}
+
+async openModal_deletar_empresa(empresa: Empresa) {
+
+  const modal = await this.modalController.create({
+    component: ModalDeletarEmpresasComponent,
+    componentProps: {
+      empresa: empresa,
+    },
+    cssClass: 'modal_deletar_espaco'
+  });
+  await modal.present();
+  // Recarrega a página ao fechar o modal
+  if (await modal.onDidDismiss()) {
+    this.ngOnInit()
+  }
 }
 }

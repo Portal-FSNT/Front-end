@@ -1,0 +1,73 @@
+<app-header></app-header>
+<header></header>
+
+<main>
+  <div class="container">
+    <div class="main-header">
+      <h3>Calendário de espaços</h3>
+      <button class="botao" routerLink="/solicitacoes">
+        Solicitações Pendentestes
+      </button>
+      <button class="botao" routerLink="/solicitacoes-confirmadas">
+        Visualização em tabela
+      </button>
+      <button class="botao" routerLink="/espacos">
+        Espaços
+      </button>
+
+    </div>
+
+    <section class="card-ng">
+      <div class="card" *ngFor="let rows of table">
+        <div class="title-card">
+          <div class="folder">
+            <img src="" class="imagem"/>
+          </div>
+        </div>
+        <div class="body-card">
+            <div class="data-hora">
+                <div class="row1">
+                  <h5>
+                    Data da solicitação: {{ rows.data_solicitacao| date : "dd/MM/yyyy" }}
+                 </h5>
+                </div>
+                </div>
+          <div class="data-hora">
+            <div class="row1">
+              <img src="../../../assets/Icons/icon-calendario-g.svg" alt="" />
+              <p class="info">
+                Data de uso: {{ rows.data_uso| date : "dd/MM/yyyy" }}
+              </p>
+            </div>
+            <div class="row1">
+              <img
+                src="../../../assets/Icons/icon-relogio-pulso-g.svg"
+                alt=""
+              />
+              <p class="info">
+                Horário: {{ rows.hora_inicio | timeFormat }} - {{ rows.hora_inicio | timeFormat }}
+              </p>
+              <div class="localidade">
+              <p class="info2">
+               Local: {{ rows.nome_espaco }}
+              </p>
+            </div>
+            <div class="localidade">
+                <p class="info3">
+                 Solicitante: {{ rows.nome_usuario }}
+                </p>
+              </div>
+              <div class="localidade">
+              <p class="info4">
+                Descrição: {{ rows.descricao }}
+              </p>
+            </div>
+
+            </div>
+          </div>
+         
+        </div>
+        </div>
+    </section>
+  </div>
+</main>

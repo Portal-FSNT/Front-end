@@ -88,7 +88,7 @@ export class ListaPessoasComponent implements OnInit {
       error => console.log('Error'),
       () => console.log('Requisição completa.')
     );
-    window.location.reload();
+    // window.location.reload();
   }
 
   bsModalRef?: BsModalRef;
