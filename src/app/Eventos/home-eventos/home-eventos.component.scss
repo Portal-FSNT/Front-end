@@ -192,6 +192,23 @@ main {
 
   }
 }
+.botao-lista{
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  box-shadow:  5px 5px 10px rgba(0, 0, 0, 0.3); ;
+}
+.botao-lista:hover{
+  background-color: #00a54d1e;
+  box-shadow: none;
+
+}
+.botoes{
+  display: flex;
+  flex-direction: row;
+  gap:50px;
+}
 
 footer {
   padding-bottom: 24px;
