@@ -44,8 +44,7 @@ export class NewAdmComponent implements OnInit {
         () => console.log('Request Completo')
         );
         this.router.navigate(['/users']);
-    }
-
+      }
   }
   onCancel() {
     this.submitted = false;
