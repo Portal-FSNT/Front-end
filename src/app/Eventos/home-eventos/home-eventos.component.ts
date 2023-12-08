@@ -5,6 +5,7 @@ import { EventoService } from './evento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { AlterarEventoComponent } from './../alterar-evento/alterar-evento.component';
+import { ModalDeletarEventosComponent } from './../modal-deletar-eventos/modal-deletar-eventos.component';
 
 
 
@@ -67,18 +68,18 @@ export class HomeEventosComponent implements OnInit {
     
   }
   
-  updateEvento(evento: any){
-    console.log(evento.id)
-    const id = evento.id;
-    const nome = evento.nome;
-    const descricao = evento.descricao;
-    const data_evento = evento.data_evento;
-    const hora_inicio = evento.hora_inicio;
-    const hora_termino = evento.hora_termino;
-    const endereco = evento.endereco;
-    const id_espaco = evento.data_evento;
-    const tipo_evento = evento.hora_inicio;
-    const modalidade = evento.hora_termino;
+  updateEvento(card: any){
+    const id = card.id;
+    const nome = card.nome;
+    const descricao = card.descricao;
+    const data_evento = card.data_evento;
+    const hora_inicio = card.hora_inicio;
+    const hora_termino = card.hora_termino;
+    const endereco = card.endereco;
+    const id_espaco = card.data_evento;
+    const tipo_evento = card.hora_inicio;
+    const modalidade = card.hora_termino;
+    console.log(card.id)
 
     const initialState: ModalOptions = {
       initialState: {
@@ -102,7 +103,21 @@ export class HomeEventosComponent implements OnInit {
     this.bsModalRef.content.closeBtnName ='Close';
   }
   
+  async openModal_deletar_evento(evento: Evento) {
 
+    const modal = await this.modalController.create({
+      component: ModalDeletarEventosComponent,
+      componentProps: {
+        evento: evento,
+      },
+      cssClass: 'modal_deletar_espaco'
+    });
+    await modal.present();
+    // Recarrega a página ao fechar o modal
+    if (await modal.onDidDismiss()) {
+      this.ngOnInit()
+    }
+  }
 
   
 }
