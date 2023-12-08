@@ -68,6 +68,7 @@ import { AuthTokenInterceptor } from 'src/shared/auth-token.interceptor';
 import { HomeEventosListaComponent } from './Eventos/home-eventos-lista/home-eventos-lista.component';
 import { ModalDeletarEventosComponent } from './Eventos/modal-deletar-eventos/modal-deletar-eventos.component';
 import { EspacosListaComponent } from './Espaços/Administrador/espacos-lista/espacos-lista.component';
+import { ModalDeletarSolicitacoesComponent } from './Espaços/Administrador/modal-deletar-solicitacoes/modal-deletar-solicitacoes.component';
 
 
 @NgModule({
@@ -133,6 +134,7 @@ import { EspacosListaComponent } from './Espaços/Administrador/espacos-lista/es
     HomeEventosListaComponent,
     ModalDeletarEventosComponent,
     EspacosListaComponent,
+    ModalDeletarSolicitacoesComponent,
 
 
   ],

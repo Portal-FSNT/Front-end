@@ -20,8 +20,8 @@ export class AltEventosService {
 
   
   private readonly API_BuscarTipos = `${API}/tipos`;
-  private readonly API_BuscarInstituicoes = `${API}/instituicoes`;
-  private readonly API_BuscarLugares = `${API}/lugar`;
+  private readonly API_BuscarInstituicoes = `${API}instituicoes`;
+  private readonly API_BuscarLugares = `${API}espacos`;
   private readonly API_DeletarEventos = `${API}eventos/delete`;
 
   constructor(private http: HttpClient, private tokenService : TokenService, private userService: UserService) { }
@@ -39,19 +39,10 @@ export class AltEventosService {
     return this.http.get<{result: CadEventos}>(`${API}eventos/${eventId}`, { headers: header });
   }
 
-  updateEvento(eventId: number, campoAtualizado: CadEventos): Observable<any> {
-    const header = this.getHeader();
-
-    return this.userService.returnUser().pipe(
-      take(1),
-      switchMap(user => {
-        const userId = user.id;
-        const params = { ...campoAtualizado, id_usuario: userId }; 
-
-    return this.http.patch<any>(`${API}/event/${eventId}`, params, { headers: header });
-  })
-  );
-}
+  updateEvento(id: number, nome: any): Observable<any> {
+    console.log(id);
+    return this.http.patch<any>(`${API}update/${id}`, nome);
+  }
 
   listarTipos(): Observable<MarransatoMode<TipoEvento[]>> {
     return this.http.get<MarransatoMode<TipoEvento[]>>(this.API_BuscarTipos, { headers: this.header })
