@@ -6,7 +6,7 @@
       <h2>Lista de Agendamentos Confirmados</h2>
       <div class="buttons">
         <button class="botao" routerLink="/solicitacoes">
-          Solicitações Pendentestes
+          <img class="icon" src="../../../../assets\Icons\chec-box-vazia.png">    Solicitações Pendentes
         </button>
         <button class="botao" routerLink="/espacos-lista">
           Visualização em cards
@@ -16,7 +16,6 @@
         </button>
       </div>
     </section>
-
     <!--Início da tabela-->
 
     <section id="body">
@@ -40,7 +39,7 @@
             <td>{{ rows.nome_espaco }}</td>
             <td>{{ rows.nome_usuario }}</td>
             <td>{{ rows.descricao }}</td>
-            <td><img (click)="openModal_deletar_solicitacao(rows)" src="../../../../assets/Icons/icon-lixeira-white.svg" class="icon-funcion"></td>
+//aquiiiiiiiiiii
           </tr>
         </tbody>
       </table>

@@ -192,6 +192,23 @@ main {
 
   }
 }
+.botao-lista{
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
+}
+.botao-lista:hover{
+  transform: scale(1.08); 
+  box-shadow: none;
+
+}
+.botoes{
+  display: flex;
+  flex-direction: row;
+  gap:50px;
+}
 
 footer {
   padding-bottom: 24px;

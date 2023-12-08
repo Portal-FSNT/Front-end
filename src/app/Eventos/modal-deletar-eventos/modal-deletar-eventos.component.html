@@ -3,18 +3,24 @@
       <h2>Deseja deletar este evento?</h2>
   
       <div class="list">
+        <div class=" dados">
         <div class="informacoes">
-          <span class="link">{{ exibir.nome }}</span>
+          <img class="icon" src="../../../../assets\Icons\icon-pencil-black.svg" alt="" />
+            <span class="link">{{ exibir.nome }}</span>
+        </div>
+        <div class="informacoes">
+          <img class="icon" src="../../../../assets\Icons\icon-calendario-g.svg" alt="" />
+          <span class="link">{{ exibir.data_evento | date : "dd/MM/yyyy" }}</span>
+        </div>
+          <div class="informacoes">
+            <img class="icon" src="../../../../assets\Icons\icon-clock.svg" alt="" />
+              <span class="link">{{ exibir.hora_inicio | timeFormat }} - {{ exibir.hora_termino | timeFormat }}</span>
+          </div>
+        </div>
+          <div class="buttons">
+              <!-- <button class="button-cancel" (click)="fecharModal()">Cancelar</button> -->
+              <button class="button-register" (click)="deletarEvento()">Deletar</button>
+          </div>
       </div>
-      <div class="informacoes">
-        <span class="link">{{ exibir.data_evento | date : "dd/MM/yyyy" }}</span>
-    </div>
-    <div class="informacoes">
-        <span class="link">{{ exibir.hora_inicio | timeFormat }} - {{ exibir.hora_termino | timeFormat }}</span>
-    </div>
-      <div class="buttons">
-        <button class="not btn" (click)="fecharModal()">Cancelar</button>
-        <button class="yes btn" (click)="deletarEvento()">Deletar</button>
-      </div>
-    </div>
   </div>
+</div>

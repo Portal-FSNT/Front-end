@@ -5,23 +5,23 @@
   <div class="container">
     <div class="main-header">
       <h3>Calendário de Eventos</h3>
+      <div class="botoes">
       <button class="botao" routerLink="/cad-eventos">
-        Novo Evento
+        <img src="../../../../assets/icon-presenca/plus-circle.svg">  Novo Evento
       </button>
-
-      <button class="botao" routerLink="/eventos-lista">
-        Visualização em tabela
+     
+      <button class="botao-lista" routerLink="/eventos-lista"> <img class="botao-lista" src="../../../../assets\Icons\listagem.png"
+        alt=""> 
+        
       </button>
+    </div>
 
     </div>
 
     <section class="card-ng">
       <div class="card" *ngFor="let card of eventos">
         <div class="title-card">
-          <img (click)="updateEvento(card)" src="../../../../assets/Icons/icon-pencil-black.svg" class="edit">
-          <div class="folder">
-            <img src="" class="imagem"/>
-          </div>
+//aquiiiiii
         </div>
         <div class="body-card">
           <h2 class="bold">

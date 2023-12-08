@@ -22,8 +22,16 @@ h2 {
 .list {
     display: flex;
     flex-direction: column;
-}
+    border: #00A54E solid 1px;
+    padding:20px;
+    border-radius: 8px;
+    transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
 
+}
+.list:hover{
+    transform: scale(1.05); 
+    border: #4ddf91 solid 1px;
+  }
 
 .informacoes {
     display: flex;
@@ -31,6 +39,7 @@ h2 {
     align-items: center;
     gap: 8px;
     margin-bottom: 24px;
+
 }
 
 .icon {
@@ -42,6 +51,9 @@ h2 {
     font-size: 20px;
     color: #000;
     font-weight: 400;
+    word-wrap: break-word; 
+    width: 400px;
+
 }
 
 
@@ -60,15 +72,36 @@ h2 {
     color: #FFFFFF;
     margin-top: 80px;
 }
-.not {
-    background-color: var(--color-four);
-    font-weight: 300;
-}
-
-.yes {
-    background-color: var(--color-one);
-    font-weight: 300;
-}
+.button-cancel {  
+    background-color: rgb(221, 16, 16);
+    transition: 0.25s;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #ffffff;
+    height: 56px;
+    width: 154px;
+    border: none;
+  }
+  .button-cancel:hover{
+    background-color: rgb(158, 10, 10);
+  }
+  .button-register {  
+    background-color: #00A54E;
+    transition: 0.25s;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #ffffff;
+    height: 56px;
+    width: 154px;
+    border: none;
+  }
+  .button-register:hover{
+    background-color: rgb(5, 122, 5);
+  }  
 
 .buttons{
     display: flex;

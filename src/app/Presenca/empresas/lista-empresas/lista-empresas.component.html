@@ -6,7 +6,7 @@
   <h1>Lista de Empresas</h1>
 </div>
 <div class="bot">
-  <button (click)="novoEmpresa()" class="botao"><img src="../../../../assets/icon-presenca/plus-circle.svg">Empresa</button>
+  <button (click)="novoEmpresa()" class="botao"><img src="../../../../assets/icon-presenca/plus-circle.svg">  Empresa</button>
 </div>
 
 
@@ -22,7 +22,7 @@
 
   <tbody class="conteudot" >
     <tr *ngFor="let empresa of listaEmpresa">
-      <td> {{empresa.nome}}</td>
+      <td class="lista"> {{empresa.nome}}</td>
       <!-- <td><img (click)="edit(empresa.nome,empresa.nome)" src="../../../../assets/icon-presenca/caneta_black.svg"></td> -->
       <td><img (click)="editarEmpresa(empresa)" src="../../../../assets/Icons/icon-pencil-black.svg" class="icon-funcion"></td>
 
