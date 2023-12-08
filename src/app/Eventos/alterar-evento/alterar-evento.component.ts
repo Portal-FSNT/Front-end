@@ -28,7 +28,7 @@ export class AlterarEventoComponent implements OnInit {
   eventId: string | null | undefined;
   id: any;
   evento: any;
-  exibir:CadEventos = this.navParams.get('evento')
+  list: string[] = [];
 
 
   constructor(private fb: FormBuilder,
@@ -134,7 +134,7 @@ export class AlterarEventoComponent implements OnInit {
     console.log('form', this.form.value);
       if(this.form.valid){
         const reqBody = {
-          id: this.form.get(this.evento)?.value,
+          id: +this.route.snapshot.params['id'],
           nome: this.form.value.nome,
           descricao: this.form.value.descricao,
           data_evento: this.form.value.data_evento,
