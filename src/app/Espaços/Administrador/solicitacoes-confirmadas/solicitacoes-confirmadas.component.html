@@ -28,6 +28,7 @@
             <th>ESPAÇO</th>
             <th>USUÁRIO</th>
             <th>DESCRIÇÃO</th>
+            <th>Excluir</th>
           </tr>
         </thead>
         <tbody *ngFor="let rows of table">
@@ -38,10 +39,7 @@
             <td>{{ rows.nome_espaco }}</td>
             <td>{{ rows.nome_usuario }}</td>
             <td>{{ rows.descricao }}</td>
-            <th> <button [routerLink]="['/lista-convidados/', rows.id]" class="botom"> 
-              <img class="icone" src="../../../../assets\icon-presenca\plus-circle.svg">
-              <img class="icone" src="../../../../assets\Icons\pessoas.png">
-                </button> </th>
+//aquiiiiiiiiiii
           </tr>
         </tbody>
       </table>

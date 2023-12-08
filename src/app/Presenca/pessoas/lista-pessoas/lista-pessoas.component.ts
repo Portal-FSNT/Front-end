@@ -11,6 +11,7 @@ import { NovaPessoaComponent } from './../nova-pessoa/nova-pessoa.component';
 import { PessoaService } from './../pessoa.service';
 //INTERFACE -----
 import { Pessoa } from "../pessoa";
+import { ModalDeletarPessoasComponent } from "../modal-deletar-pessoas/modal-deletar-pessoas.component";
 
 @Component({
   selector: "app-lista-pessoas",
@@ -28,7 +29,8 @@ export class ListaPessoasComponent implements OnInit {
     private service: PessoaService,
     private modalController:ModalController,
     private router:Router,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    
   ) {}
 
   ngOnInit(): void {
@@ -82,13 +84,20 @@ export class ListaPessoasComponent implements OnInit {
     this.bsModalRef.content.closeBtnName ='Close';
   }
 
-  delet(id:number){
-    this.service.delet(id).subscribe(
-      sucess => console.log('Sucesso'),
-      error => console.log('Error'),
-      () => console.log('Requisição completa.')
-    );
-    // window.location.reload();
+  async openModal_deletar_espaco(pessoa: Pessoa) {
+
+    const modal = await this.modalController.create({
+      component: ModalDeletarPessoasComponent,
+      componentProps: {
+        pessoa: pessoa,
+      },
+      cssClass: 'modal_deletar_espaco'
+    });
+    await modal.present();
+    // Recarrega a página ao fechar o modal
+    if (await modal.onDidDismiss()) {
+      this.ngOnInit()
+    }
   }
 
   bsModalRef?: BsModalRef;

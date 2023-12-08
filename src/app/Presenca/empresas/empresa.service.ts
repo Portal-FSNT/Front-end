@@ -30,7 +30,7 @@ export class EmpresaService {
 
   updateEmpresa(id: number, nome: any): Observable<any> {
     console.log(id);
-    return this.http.patch<any>(`${this.API}/update/${id}`, nome);
+    return this.http.patch<any>(`${this.API}update/${id}`, nome);
   }
 
   deletarEmpresas(id: number): Observable<any>{
