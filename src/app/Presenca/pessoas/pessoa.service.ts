@@ -30,7 +30,7 @@ export class PessoaService {
     return this.http.patch<any>(`${this.API}/update/${id}`,reqBody);
   }
 
-  delet(id:number){
+  deletarPessoa(id:number){
     return this.http.delete(`${this.API}/delete/${id}`)
   }
 }

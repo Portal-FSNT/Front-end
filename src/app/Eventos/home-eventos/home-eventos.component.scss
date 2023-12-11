@@ -91,9 +91,10 @@ main {
     .title-card {
       position: relative;
       display: flex;
-      height: 180px;
+      height: 170px;
       width: 97%;
       border-radius: 16px;
+      margin-bottom: -90px;
 
       .andamento {
         margin-top: 18px;
@@ -133,6 +134,36 @@ main {
         
       }
       .edit:hover{
+        filter: brightness(0.1);
+     
+      }
+
+      .excluir {
+        left: 80%;
+        top: 7%;
+        width: 20px;
+        height: 20px;
+        z-index: 1;
+        position: absolute;
+        cursor: pointer;
+        
+      }
+      .excluir:hover{
+        filter: brightness(0.1);
+     
+      }
+
+      .convidados {
+        left: 70%;
+        top: 7%;
+        width: 20px;
+        height: 20px;
+        z-index: 1;
+        position: absolute;
+        cursor: pointer;
+        
+      }
+      .convidados:hover{
         filter: brightness(0.1);
      
       }
@@ -338,7 +369,26 @@ footer {
   font-weight: 500;
   transition: 0.25s;
 }
+
 .botao:hover{
+  background-color: #01853e;
+
+}
+
+.botaoConvidados{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  background-color: #00A54E;
+  color: white;
+  font-weight: 500;
+  transition: 0.25s;
+  font-size: 12px;
+}
+
+
+.botaoConvidados:hover{
   background-color: #01853e;
 
 }

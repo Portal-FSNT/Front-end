@@ -68,3 +68,28 @@
     box-shadow: none;
   
   }
+
+  .excluir {
+    left: 80%;
+    top: 7%;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+    
+  }
+  .excluir:hover{
+    filter: brightness(0.1);
+ 
+  }
+
+  .convidados {
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+    
+  }
+  .convidados:hover{
+    filter: brightness(0.1);
+  }

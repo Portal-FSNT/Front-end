@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SolicitacoesConfirmadasService } from './solicitacoes-confirmadas.service';
 import { SolicitacoesConfirmadas } from './solicitacoes-confirmadas';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController,} from "@ionic/angular";
+import { ModalDeletarSolicitacoesComponent } from './../modal-deletar-solicitacoes/modal-deletar-solicitacoes.component';
+
 
 
 @Component({
@@ -16,6 +19,8 @@ export class SolicitacoesConfirmadasComponent implements OnInit {
   constructor(
     private service: SolicitacoesConfirmadasService,
     private router: Router, 
+    private modalController: ModalController,
+
 
   ) { }
 
@@ -29,5 +34,21 @@ export class SolicitacoesConfirmadasComponent implements OnInit {
           console.log('erro: ', error);
         }
       })
+  }
+
+  async openModal_deletar_solicitacao(solicitacao: SolicitacoesConfirmadas) {
+
+    const modal = await this.modalController.create({
+      component: ModalDeletarSolicitacoesComponent,
+      componentProps: {
+        solicitacao: solicitacao,
+      },
+      cssClass: 'modal_deletar_espaco'
+    });
+    await modal.present();
+    // Recarrega a página ao fechar o modal
+    if (await modal.onDidDismiss()) {
+      this.ngOnInit()
+    }
   }
 }

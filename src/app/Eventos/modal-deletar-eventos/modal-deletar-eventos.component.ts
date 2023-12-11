@@ -35,8 +35,8 @@ export class ModalDeletarEventosComponent {
         window.location.reload();
       },
       error: (error) => {
-        console.error('erro: ', error);
-        window.alert(error.error.message);
+        console.error('Há convidados cadastrados nesse evento. Remová-os para excluir o evento.');
+        window.alert('Há convidados cadastrados nesse evento. Remová-os para excluir o evento.');
       }
     })
   }

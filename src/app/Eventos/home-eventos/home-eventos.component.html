@@ -21,11 +21,12 @@
     <section class="card-ng">
       <div class="card" *ngFor="let card of eventos">
         <div class="title-card">
-          
-          <div class="folder"> </div>
-            <img (click)="updateEvento(eventos)" src="../../../../assets/Icons/icon-pencil-black.svg" class="edit">
-
-          
+          <img (click)="updateEvento(card.id)" src="../../../../assets/Icons/icon-pencil-black.svg" alt="" class="edit">
+          <img (click)="openModal_deletar_evento(card)" src="../../../../assets/Icons/icon-lixeira-white.svg" alt="" class="excluir">
+          <img [routerLink]="['/lista-convidados/', card.id]" src="../../../../assets/Icons/icon-convidados.svg" alt="" class="convidados"> 
+          <div class="folder">
+            <img src="" class="imagem"/>
+          </div>
         </div>
         <div class="body-card">
           <div class="cima">
@@ -75,7 +76,10 @@
             </p>
          </ng-template>
         </div>
+<<<<<<< HEAD
        
+=======
+>>>>>>> 20f074e9bd36dfc865b0279358621692145084eb
         </div>
       </div>
     </section>

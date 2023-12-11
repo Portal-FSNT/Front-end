@@ -8,6 +8,7 @@ import { TipoEvento } from './tipo';
 import { Lugares } from './lugar';
 import { Instituicoes } from './instituicao';
 import { BsModalRef } from "ngx-bootstrap/modal";
+import { NavParams } from '@ionic/angular';
 
 
 @Component({
@@ -27,10 +28,13 @@ export class AlterarEventoComponent implements OnInit {
   eventId: string | null | undefined;
   id: any;
   evento: any;
+  list: string[] = [];
+
 
   constructor(private fb: FormBuilder,
     private service: AltEventosService,
     private router: Router,
+    public navParams: NavParams, 
     private route: ActivatedRoute,
     private altEventosService: AltEventosService,
     public bsModalRef: BsModalRef,
@@ -56,9 +60,7 @@ export class AlterarEventoComponent implements OnInit {
     });
 
     this.route.paramMap.subscribe(paramMap => {
-      this.id = paramMap.get('id');
 
-      console.log("Event Id: " + this.id);
 
       this.service.buscarEventoPorId(this.id).subscribe(
         (res) => {
@@ -106,28 +108,7 @@ export class AlterarEventoComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Oi')
-    this.submitted = true;
-    console.log(this.form.valid);
-    console.log(this.form);
-    if (this.form.valid) {
-      const eventId = +this.route.snapshot.params['id'];
-      const campoAtualizado: CadEventos = this.form.value;
-    
-      this.service.updateEvento(eventId, campoAtualizado).subscribe(
-        () => {
-          console.log('Sucesso');
-          this.router.navigate(['/eventos']);
-        },
-        (error: any) => {
-          console.error(error);
-          console.log('Error');
-        },
-        () => {
-          console.log('Request Completo');
-        }
-      );
-    }
+   
   }
   
   onCancel() {
@@ -153,7 +134,7 @@ export class AlterarEventoComponent implements OnInit {
     console.log('form', this.form.value);
       if(this.form.valid){
         const reqBody = {
-          id: this.form.get('id')?.value,
+          id: +this.route.snapshot.params['id'],
           nome: this.form.value.nome,
           descricao: this.form.value.descricao,
           data_evento: this.form.value.data_evento,
@@ -165,22 +146,13 @@ export class AlterarEventoComponent implements OnInit {
           modalidade: this.form.value.modalidade,
           status_evento: "Confirmado",
         }
-        console.log('Submit');
-
-        this.service.updateEvento(id, reqBody).subscribe({
-          next: (event) => {
-            console.log('sim', event);
-          },
-          error: (error) => {
-            console.log('erro: ', error);
-          },
-          complete: () => {
-            window.location.reload();
-          }
-        })
-    }else{
-      alert('Por favor, preencha todos os campos do formulário.')
-    } 
+      this.service.updateEvento(id, reqBody).subscribe(
+        success => console.log('Sucesso'),
+        error => console.log('Error'),
+        () => console.log('Requisição completa.')  
+      );
+      window.location.reload();
+    }
   }
 
 
