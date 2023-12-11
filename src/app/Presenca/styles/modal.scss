@@ -25,22 +25,25 @@
   }
   
   .modal-input {
-    width: 392px;
-    height: 40px;
     background: #F1F0F5;
-    border-radius: 50px;
     border: none;
     font-family: 'Montserrat', sans-serif;
-    padding: 0 24px;
     font-weight: 300;
     font-size: 16px;
     line-height: 100%;
     color: #2F3033;
+    width: 448px;
+    height: 50px;
+    border-radius: 8px;
+    padding-left: 10px;
+  }
+  .modal-input:hover{
+    border: #57b055 1 px solid;
   }
   
   .modal-button {
-    background: #FF9F10;
-    border-radius: 50px;
+    background-color: #57b055 ;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;

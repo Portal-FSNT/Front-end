@@ -28,9 +28,15 @@
           
         </div>
         <div class="body-card">
-          <h2 class="bold">
-            {{ card.nome }}
-          </h2>
+          <div class="cima">
+            <h2 class="bold">
+              {{ card.nome }} 
+            </h2>
+            <th> <button [routerLink]="['/lista-convidados/', card.id]" class="botom">
+              <img class="icone" src="../../../../assets\icon-presenca\plus-circle.svg">
+              <img class="icone" src="../../../../assets\Icons\pessoas.png">
+            </button> </th>
+        </div>
           <div class="data-hora">
             <div class="row1">
               <img src="../../../assets/Icons/icon-calendario-g.svg" alt="" />
@@ -69,7 +75,7 @@
             </p>
          </ng-template>
         </div>
-        <th> <button [routerLink]="['/lista-convidados/', card.id]">Convidados</button> </th>
+       
         </div>
       </div>
     </section>

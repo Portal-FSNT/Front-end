@@ -192,6 +192,11 @@ main {
 
   }
 }
+.cima{
+  display: flex;
+  flex-direction:row;
+  gap: 190px;
+}
 .botao-lista{
   background-color: transparent;
   border: none;
@@ -226,7 +231,7 @@ footer {
       background-color: var(--color-primary);
       border: none;
       border-radius: 8px;
-      color: #ffffff;
+      color: transparent;
       font-weight: 400;
       font-size: 22px;
       line-height: 29px;
@@ -234,6 +239,28 @@ footer {
     }
     
   }
+
+}
+.icon{
+  filter:brightness(5);
+  width: 24px;
+  height: 24px;
+}
+.icone{
+  filter:brightness(0);
+  width: 24px;
+  height: 24px;
+  margin-right:5px;
+}
+.botom{
+  padding: 5px;
+  background-color: transparent;
+  border:none;
+  transition: transform 0.25s ease-in-out;
+}
+.botom:hover{
+  transform: scale(1.08);
+   border-bottom:#00A54E 1px solid;
 
 }
 

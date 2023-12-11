@@ -25,18 +25,17 @@ table {
      border-collapse: collapse;
      margin:      5;
      font-size: 0.9em;
-     border-radius: 25px 25px 0 0;
      overflow: scroll;
      
  
 }
 
 th:first-child {
-  border-radius: 25px 0 0 0; /* Adicione o border-radius desejado */
+  border-radius: 8px 0 0 0; /* Adicione o border-radius desejado */
 }
 
 th:last-child {
-  border-radius: 0 25px 0 0; /* Adicione o border-radius desejado */
+  border-radius: 0 8px 0 0; /* Adicione o border-radius desejado */
 }
 
 th, td {
@@ -101,7 +100,11 @@ margin-bottom: 60px;
  }
 
  .btn.btn-primary{
-  border-radius: 25px;
+  border-radius: 8px;
+  background-color: #00A54E;
+ }
+ .btn.btn-primary:hover{
+  background-color: #088040;
  }
 
   button.btn.btn-edit{
@@ -147,6 +150,6 @@ th {
 }
 
 button{
-  border-radius: 16px;
+  border-radius: 8px;
   border: none;
 }

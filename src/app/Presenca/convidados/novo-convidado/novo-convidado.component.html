@@ -20,7 +20,7 @@
         <small *ngIf="form.get('id_convidade')?.hasError('required')">
         Favor selecione um usuario
         </small>
-        <small *ngIf="errorAlreadyInvited">Usuario ja convidado ao evento</small>
+        <small *ngIf="errorAlreadyInvited">Usuário ja convidado ao evento</small>
     </p>
         <button class="modal-button" [disabled]="form.invalid" (click)="onSubmit()"> Adicionar </button>
     </form>

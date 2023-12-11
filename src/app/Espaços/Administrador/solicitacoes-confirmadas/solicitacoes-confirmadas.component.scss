@@ -66,3 +66,25 @@ td {
 .botom:hover{
   transform: scale(1.08);;
 }
+.botao-c{
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  transition: 0.25s;
+}
+.botao-card{
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.25s ease-in-out, border 0.35s ease-in-out;
+}
+.botao-card:hover{
+  transform: scale(1.2); 
+  box-shadow: none;
+
+}
