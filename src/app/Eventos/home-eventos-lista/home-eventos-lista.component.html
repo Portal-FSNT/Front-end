@@ -59,7 +59,7 @@
            </ng-template>
            <td class="center"> 
            <img [routerLink]="['/lista-convidados/', card.id]" src="../../../../assets/Icons/icon-convidados.svg" alt="">&nbsp;&nbsp;
-           <img src="../../../../assets/Icons/icon-pencil-black.svg" (click)="openModal_deletar_evento(card)" alt="">&nbsp;&nbsp;
+           <img src="../../../../assets/Icons/icon-pencil-black.svg" (click)="updateEvento(card)" alt="">&nbsp;&nbsp;
            <img src="../../../../assets/Icons/icon-lixeira-white.svg" (click)="openModal_deletar_evento(card)"alt="">
           </tr>
         </tbody>

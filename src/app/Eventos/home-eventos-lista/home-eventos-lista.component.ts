@@ -95,4 +95,40 @@ export class HomeEventosListaComponent {
       this.ngOnInit()
     }
   }
+
+
+  updateEvento(card: any){
+    const id = card.id;
+    const nome = card.nome;
+    const descricao = card.descricao;
+    const data_evento = card.data_evento;
+    const hora_inicio = card.hora_inicio;
+    const hora_termino = card.hora_termino;
+    const endereco = card.endereco;
+    const id_espaco = card.data_evento;
+    const tipo_evento = card.hora_inicio;
+    const modalidade = card.hora_termino;
+    console.log(card.id)
+
+    const initialState: ModalOptions = {
+      initialState: {
+        list: [
+          id,
+          nome,
+          descricao,
+          data_evento,
+          hora_inicio,
+          hora_termino,
+          endereco,
+          id_espaco,
+          tipo_evento,
+          modalidade,
+        ],
+        title: 'Modal update evento',
+        cssClass:"modal",
+      }
+    };
+    this.bsModalRef = this.modalService.show(AlterarEventoComponent, initialState);
+    this.bsModalRef.content.closeBtnName ='Close';
+  }
 }

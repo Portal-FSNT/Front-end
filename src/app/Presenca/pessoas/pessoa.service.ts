@@ -19,7 +19,7 @@ export class PessoaService {
 
 
   listar(): Observable<any> {
-    return this.http.get<any>(`${this.API}`);
+    return this.http.get<any>(`${this.API}/listapessoas`);
   }
 
   cadPessoa(reqBody:Pessoa){

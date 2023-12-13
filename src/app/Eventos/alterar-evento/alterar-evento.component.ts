@@ -134,7 +134,7 @@ export class AlterarEventoComponent implements OnInit {
     console.log('form', this.form.value);
       if(this.form.valid){
         const reqBody = {
-          id: +this.route.snapshot.params['id'],
+          id: [id],
           nome: this.form.value.nome,
           descricao: this.form.value.descricao,
           data_evento: this.form.value.data_evento,
